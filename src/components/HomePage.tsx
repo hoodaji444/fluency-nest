@@ -248,12 +248,12 @@ export default function HomePage() {
       <section className={styles.trustStrip} aria-label="Key Institute Standards & Credentials">
         <div className={`container ${styles.trustStripInner}`}>
           {[
-            { label: "CEFR ALIGNED", sub: "European Framework A1–C2" },
-            { label: "GOETHE & TELC PREP", sub: "Exam-Oriented Syllabus" },
-            { label: "LIVE & INTERACTIVE", sub: "Zero Pre-Recorded Videos" },
-            { label: "100% SMALL BATCHES", sub: "Personal Teacher Mentorship" },
-            { label: "SONIPAT CENTRE", sub: "SCO-10, Eldeco County" },
-            { label: "EST. 2024", sub: "Trusted Foundation" },
+            { label: "NSDC & SKILL INDIA", sub: "National Skill Mission" },
+            { label: "ISO 9001 CERTIFIED", sub: "Quality Management" },
+            { label: "TELC EXAM AFFILIATE", sub: "The European Certificates" },
+            { label: "AMAZON KDP PUBLISHED", sub: "Proprietary Books" },
+            { label: "CEFR ALIGNED", sub: "A1 to C2 Framework" },
+            { label: "EST. 2024", sub: "Online & Sonipat Centre" },
           ].map((item, idx, arr) => (
             <div key={item.label} style={{ display: "contents" }}>
               <div className={styles.trustItem}>
@@ -332,6 +332,103 @@ export default function HomePage() {
                   Enquire About Admission
                   <ArrowRight size={17} />
                 </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── ACCREDITATIONS & RECOGNITIONS ── */}
+      <section className={`section ${styles.accreditationsSection}`} id="accreditations">
+        <div className="container">
+          <div className={`${styles.accreditationsHeader} reveal`}>
+            <div className="section-label">Accreditations &amp; Affiliations</div>
+            <h2 className={`heading-display heading-lg ${styles.accreditationsTitle}`}>
+              National &amp; International Standards
+            </h2>
+            <p className={styles.accreditationsSub}>
+              Registered with NSDC &amp; Skill India — India&apos;s National Skill Development Mission. ISO Certified. telc Digital Exam Affiliate. Amazon KDP Published.
+            </p>
+          </div>
+
+          <div className={`${styles.accreditationsGrid} reveal reveal-delay-2`}>
+            {/* 1. NSDC & Skill India */}
+            <div className={styles.accreditationCard}>
+              <div className={styles.accreditationImgWrap}>
+                <Image
+                  src="/accreditations/nsdc-skill-india.png"
+                  alt="Skill India & NSDC - National Skill Development Corporation"
+                  width={300}
+                  height={180}
+                  className={styles.accreditationImg}
+                />
+              </div>
+              <div className={styles.accreditationBody}>
+                <span className={styles.accreditationBadge}>Govt of India Mission</span>
+                <h3 className={styles.accreditationCardTitle}>Registered with NSDC &amp; Skill India</h3>
+                <p className={styles.accreditationCardDesc}>
+                  Aligned with India&apos;s National Skill Development Corporation ecosystem, delivering certified language competencies for overseas careers and education.
+                </p>
+              </div>
+            </div>
+
+            {/* 2. ISO 9001:2015 */}
+            <div className={styles.accreditationCard}>
+              <div className={styles.accreditationImgWrap}>
+                <Image
+                  src="/accreditations/iso-certified.png"
+                  alt="ISO 9001:2015 Certified Quality Management System"
+                  width={300}
+                  height={180}
+                  className={styles.accreditationImg}
+                />
+              </div>
+              <div className={styles.accreditationBody}>
+                <span className={styles.accreditationBadge}>Quality Benchmark</span>
+                <h3 className={styles.accreditationCardTitle}>ISO Certified</h3>
+                <p className={styles.accreditationCardDesc}>
+                  Globally recognized Quality Management System benchmark ensuring standardized curriculum delivery, student assessment, and teaching excellence.
+                </p>
+              </div>
+            </div>
+
+            {/* 3. telc Digital Exam Affiliate */}
+            <div className={styles.accreditationCard}>
+              <div className={styles.accreditationImgWrap}>
+                <Image
+                  src="/accreditations/telc-affiliate.png"
+                  alt="telc Language Tests - The European Language Certificates"
+                  width={300}
+                  height={180}
+                  className={styles.accreditationImg}
+                />
+              </div>
+              <div className={styles.accreditationBody}>
+                <span className={styles.accreditationBadge}>European Testing</span>
+                <h3 className={styles.accreditationCardTitle}>telc Digital Exam Affiliate</h3>
+                <p className={styles.accreditationCardDesc}>
+                  Affiliated for European CEFR exam preparation, mock simulations, and digital test readiness recognized across German universities and embassies.
+                </p>
+              </div>
+            </div>
+
+            {/* 4. Amazon KDP Published */}
+            <div className={styles.accreditationCard}>
+              <div className={styles.accreditationImgWrap}>
+                <Image
+                  src="/accreditations/amazon-kdp.png"
+                  alt="Amazon KDP Published Author & Educational Publisher"
+                  width={300}
+                  height={180}
+                  className={styles.accreditationImg}
+                />
+              </div>
+              <div className={styles.accreditationBody}>
+                <span className={styles.accreditationBadge}>Published Curriculum</span>
+                <h3 className={styles.accreditationCardTitle}>Amazon KDP Published</h3>
+                <p className={styles.accreditationCardDesc}>
+                  Published foreign language guides, grammar manuals, and practice workbooks authored by our faculty, available worldwide on Amazon Kindle &amp; Paperback.
+                </p>
               </div>
             </div>
           </div>

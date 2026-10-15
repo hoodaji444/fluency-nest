@@ -274,6 +274,126 @@
   flex-shrink: 0;
 }
 
+/* ── ACCREDITATIONS & RECOGNITIONS ── */
+.accreditationsSection {
+  background: #ffffff;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.accreditationsHeader {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 48px;
+}
+
+.accreditationsTitle {
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+
+.accreditationsSub {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.accreditationsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.accreditationCard {
+  background: var(--off-white);
+  border: 1px solid rgba(13, 27, 46, 0.08);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.accreditationCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(13, 27, 46, 0.12);
+  border-color: rgba(218, 165, 32, 0.4);
+}
+
+.accreditationImgWrap {
+  width: 100%;
+  height: 200px;
+  background: #ffffff;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border-bottom: 1px solid rgba(13, 27, 46, 0.06);
+}
+
+.accreditationImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.35s ease;
+}
+
+.accreditationCard:hover .accreditationImg {
+  transform: scale(1.04);
+}
+
+.accreditationBody {
+  padding: 22px 18px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.accreditationBadge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--red-accent);
+  background: rgba(200, 16, 46, 0.08);
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.accreditationCardTitle {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.accreditationCardDesc {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 1024px) {
+  .accreditationsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .accreditationsGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
 /* ── COURSES ── */
 .courses {
   background: var(--beige);

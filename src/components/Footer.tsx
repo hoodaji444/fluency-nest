@@ -72,6 +72,7 @@ export default function Footer() {
           <ul className={styles.linkList}>
             <li><a href="/#home">Home</a></li>
             <li><a href="/#about">About Us</a></li>
+            <li><a href="/#accreditations">Accreditations</a></li>
             <li><a href="/#why-us">Why Choose Us</a></li>
             <li><a href="/#faq">FAQ</a></li>
             <li><a href="/#enquiry">Enquire Now</a></li>
