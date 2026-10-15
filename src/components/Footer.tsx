@@ -84,13 +84,14 @@ export default function Footer() {
         <div className={styles.linkCol}>
           <h3 className={styles.colTitle}>Our Courses</h3>
           <ul className={styles.linkList}>
-            {germanCourses.map((c) => (
-              <li key={c.id}>
-                <a href={`/#course-${c.id}`}>{c.subtitle}</a>
-              </li>
-            ))}
-            <li><a href="/#courses-other">French Language</a></li>
-            <li><a href="/#courses-other">English Language</a></li>
+            <li><a href="/#courses-german">German A1–C2 (Goethe / telc)</a></li>
+            <li><a href="/#courses-french">French A1–C2 (DELF / DALF)</a></li>
+            <li><a href="/#courses-english">English A1–C2 (Spoken &amp; IELTS)</a></li>
+            <li><a href="/#courses-german">German A1 — Beginner</a></li>
+            <li><a href="/#courses-german">German B1 — Intermediate</a></li>
+            <li><a href="/#courses-german">German B2 &amp; C1 (Work &amp; Study)</a></li>
+            <li><a href="/#courses-french">French A1–B2 Everyday &amp; Exam</a></li>
+            <li><a href="/#courses-english">English Corporate &amp; Fluency</a></li>
           </ul>
         </div>
 

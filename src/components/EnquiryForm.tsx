@@ -5,15 +5,29 @@ import { CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import styles from "./EnquiryForm.module.css";
 
 const COURSES_OPTIONS = [
+  // German (A1–C2)
   { value: "german-a1", label: "German A1 — Beginner" },
   { value: "german-a2", label: "German A2 — Elementary" },
   { value: "german-b1", label: "German B1 — Intermediate" },
   { value: "german-b2", label: "German B2 — Upper Intermediate" },
   { value: "german-c1", label: "German C1 — Advanced" },
   { value: "german-c2", label: "German C2 — Mastery" },
-  { value: "french", label: "French Language" },
-  { value: "english", label: "English Language" },
-  { value: "not-sure", label: "Not Sure — Need Guidance" },
+  // French (A1–C2)
+  { value: "french-a1", label: "French A1 — Beginner (DELF A1)" },
+  { value: "french-a2", label: "French A2 — Elementary (DELF A2)" },
+  { value: "french-b1", label: "French B1 — Intermediate (DELF B1)" },
+  { value: "french-b2", label: "French B2 — Upper Intermediate (DELF B2)" },
+  { value: "french-c1", label: "French C1 — Advanced (DALF C1)" },
+  { value: "french-c2", label: "French C2 — Mastery (DALF C2)" },
+  // English (A1–C2)
+  { value: "english-a1", label: "English A1 — Foundational Beginner" },
+  { value: "english-a2", label: "English A2 — Elementary Speaking" },
+  { value: "english-b1", label: "English B1 — Intermediate & Spoken Fluency" },
+  { value: "english-b2", label: "English B2 — Professional & Business Fluency" },
+  { value: "english-c1", label: "English C1 — Advanced & Global Academic" },
+  { value: "english-c2", label: "English C2 — Native Mastery & Public Speaking" },
+  // Guidance
+  { value: "not-sure", label: "Not Sure — Need Level Assessment" },
 ];
 
 const MODE_OPTIONS = [

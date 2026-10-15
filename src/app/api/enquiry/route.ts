@@ -50,14 +50,30 @@ function validateMobile(mobile: string): boolean {
 
 // Map course IDs to display names
 const COURSE_LABELS: Record<string, string> = {
+  // German
   "german-a1": "German A1 — Beginner",
   "german-a2": "German A2 — Elementary",
   "german-b1": "German B1 — Intermediate",
   "german-b2": "German B2 — Upper Intermediate",
   "german-c1": "German C1 — Advanced",
   "german-c2": "German C2 — Mastery",
-  "french": "French Language",
-  "english": "English Language",
+  // French
+  "french-a1": "French A1 — Beginner (DELF A1)",
+  "french-a2": "French A2 — Elementary (DELF A2)",
+  "french-b1": "French B1 — Intermediate (DELF B1)",
+  "french-b2": "French B2 — Upper Intermediate (DELF B2)",
+  "french-c1": "French C1 — Advanced (DALF C1)",
+  "french-c2": "French C2 — Mastery (DALF C2)",
+  "french": "French Language (General)",
+  // English
+  "english-a1": "English A1 — Foundational Beginner",
+  "english-a2": "English A2 — Elementary Speaking",
+  "english-b1": "English B1 — Intermediate & Spoken Fluency",
+  "english-b2": "English B2 — Professional & Business Fluency",
+  "english-c1": "English C1 — Advanced & Global Academic",
+  "english-c2": "English C2 — Native Mastery & Public Speaking",
+  "english": "English Language (General)",
+  // Other
   "not-sure": "Not Sure — Need Guidance",
 };
 

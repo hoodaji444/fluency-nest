@@ -151,7 +151,23 @@ export default function HomePage() {
 
   const [formOpen, setFormOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState("");
-  const [activeTab, setActiveTab] = useState<"german" | "other">("german");
+  const [activeTab, setActiveTab] = useState<"german" | "french" | "english">("german");
+
+  useEffect(() => {
+    const handleHash = () => {
+      const hash = window.location.hash.toLowerCase();
+      if (hash.includes("french")) {
+        setActiveTab("french");
+      } else if (hash.includes("english")) {
+        setActiveTab("english");
+      } else if (hash.includes("german")) {
+        setActiveTab("german");
+      }
+    };
+    handleHash();
+    window.addEventListener("hashchange", handleHash);
+    return () => window.removeEventListener("hashchange", handleHash);
+  }, []);
 
   useScrollReveal([activeTab]);
 
@@ -163,8 +179,16 @@ export default function HomePage() {
     }, 50);
   }, []);
 
-  const germanCourses = COURSES.filter((c) => c.language === "German");
-  const otherCourses  = COURSES.filter((c) => c.language !== "German");
+  const germanCourses  = COURSES.filter((c) => c.language === "German");
+  const frenchCourses  = COURSES.filter((c) => c.language === "French");
+  const englishCourses = COURSES.filter((c) => c.language === "English");
+
+  const displayedCourses =
+    activeTab === "german"
+      ? germanCourses
+      : activeTab === "french"
+      ? frenchCourses
+      : englishCourses;
 
   return (
     <>
@@ -436,7 +460,11 @@ export default function HomePage() {
       </section>
 
       {/* ── COURSES ── */}
-      <section className={`section ${styles.courses}`} id="courses-german">
+      <section className={`section ${styles.courses}`} id="courses">
+        <span id="courses-german" />
+        <span id="courses-french" />
+        <span id="courses-english" />
+        <span id="courses-other" />
         <div className="container">
           <div className={`${styles.coursesHeader} reveal`}>
             <div className="section-label">Our Courses</div>
@@ -444,8 +472,8 @@ export default function HomePage() {
               German, French &amp; English
             </h2>
             <p className={styles.coursesSub}>
-              All courses follow the CEFR framework. Contact us to confirm current
-              batch timings and fees — they vary by level and mode.
+              All German, French, and English programmes follow the international CEFR framework from beginner (A1) to near-native mastery (C2).
+              Available in live interactive online batches and offline classroom sessions in Sonipat.
             </p>
           </div>
 
@@ -453,23 +481,28 @@ export default function HomePage() {
             <button
               className={`${styles.courseTab} ${activeTab === "german" ? styles.courseTabActive : ""}`}
               onClick={() => setActiveTab("german")}
+              id="tab-german"
             >
               German (A1–C2)
             </button>
             <button
-              className={`${styles.courseTab} ${activeTab === "other" ? styles.courseTabActive : ""}`}
-              onClick={() => setActiveTab("other")}
-              id="courses-other"
+              className={`${styles.courseTab} ${activeTab === "french" ? styles.courseTabActive : ""}`}
+              onClick={() => setActiveTab("french")}
+              id="tab-french"
             >
-              French &amp; English
+              French (A1–C2)
+            </button>
+            <button
+              className={`${styles.courseTab} ${activeTab === "english" ? styles.courseTabActive : ""}`}
+              onClick={() => setActiveTab("english")}
+              id="tab-english"
+            >
+              English (A1–C2)
             </button>
           </div>
 
-          <span id="courses-french" />
-          <span id="courses-english" />
-
           <div className={styles.coursesGrid}>
-            {(activeTab === "german" ? germanCourses : otherCourses).map((course, i) => (
+            {displayedCourses.map((course, i) => (
               <CourseCard
                 key={course.id}
                 course={course}
