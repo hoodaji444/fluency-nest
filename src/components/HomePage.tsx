@@ -184,10 +184,14 @@ export default function HomePage() {
 
         <div className={`container ${styles.heroContent}`}>
           <div className={styles.heroInner}>
-            {/* Location tag — plain text, no glass */}
+            {/* Established badge & location */}
+            <div className={styles.heroBadge}>
+              <span>✨ Teaching Since 2024 · Now In Sonipat</span>
+            </div>
+
             <p className={styles.heroLocation}>
               <MapPin size={13} aria-hidden="true" />
-              Sonipat, Haryana · Online &amp; Offline Classes
+              SCO-10, Eldeco County, Murthal, Sonipat · Online &amp; Offline Classes
             </p>
 
             <h1 className={`heading-display heading-xl ${styles.heroTitle}`}>
@@ -196,8 +200,8 @@ export default function HomePage() {
             </h1>
 
             <p className={`body-lg ${styles.heroSub}`}>
-              Structured German courses from A1 to C2 — taught in small batches,
-              online and in Sonipat. French and English also available.
+              Teaching online since 2024 — now bringing our structured CEFR German, French,
+              and English courses offline to our new Sonipat centre. Small batches, live interaction.
             </p>
 
             <div className={styles.heroCTAs}>
@@ -257,34 +261,37 @@ export default function HomePage() {
 
             <div className={styles.aboutContent}>
               <div className="reveal">
-                <div className="section-label">About Fluency Nest</div>
+                <div className="section-label">Our Journey · Since 2024</div>
                 <h2 className={`heading-display heading-lg ${styles.aboutTitle}`}>
-                  A language school in Sonipat,<br />
-                  <em>focused on one thing.</em>
+                  Teaching online since 2024.<br />
+                  <em>Now opening offline in Sonipat.</em>
                 </h2>
                 <div className="divider" />
               </div>
 
               <div className="reveal reveal-delay-2">
                 <p className={styles.aboutPara}>
-                  Fluency Nest is a language institute in Sonipat, Haryana. We teach German
-                  from A1 to C2, along with French and English, using the CEFR framework —
-                  the same standard used by German universities and employers worldwide.
+                  Fluency Nest began its journey in 2024 as a dedicated online language institute,
+                  mentoring students from across the country in German, French, and English.
+                  By focusing on real conversational practice, structured grammar explanations, and small
+                  interactive batches, we built a trusted foundation of successful language learners.
                 </p>
                 <p className={styles.aboutPara}>
-                  Classes are live and interactive, kept to small batches so every student
-                  gets real practice time. You can attend in person in Sonipat or join
-                  online — same teacher, same curriculum.
+                  Now, we are taking our proven teaching method offline with our brand-new physical centre
+                  at <strong>SCO-10, Eldeco County, Murthal, Sonipat</strong>. Learners in Sonipat and the NCR
+                  can now experience direct classroom immersion, face-to-face peer discussions, and in-person
+                  teacher mentorship — while our popular live online batches continue uninterrupted.
                 </p>
               </div>
 
               <ul className={`${styles.aboutPoints} reveal reveal-delay-3`}>
                 {[
-                  "German A1 to C2 — all CEFR levels",
-                  "French and English courses available",
-                  "Small batch sizes for focused learning",
-                  "Online and offline, same curriculum",
-                  "Based in Sonipat, Haryana",
+                  "Teaching languages since 2024",
+                  "Established online track record, now offline in Sonipat",
+                  "German A1 to C2 — full CEFR framework",
+                  "French & English communication programmes",
+                  "Small batch sizes — live interaction, zero recorded lectures",
+                  "Located at SCO-10, Eldeco County, Murthal, Sonipat",
                 ].map((pt) => (
                   <li key={pt} className={styles.aboutPoint}>
                     <span className={styles.aboutPointDot} aria-hidden="true" />
@@ -431,8 +438,8 @@ export default function HomePage() {
                   desc: "We explain German grammar with clear logic and examples you can apply immediately.",
                 },
                 {
-                  title: "Online and offline — same class",
-                  desc: "Attend in Sonipat or join the same live session online. No separate recordings.",
+                  title: "Online foundation, now offline in Sonipat",
+                  desc: "Training students since 2024 online, now expanding with our physical classroom centre. Same expert curriculum whether you learn in-person or virtually.",
                 },
                 {
                   title: "Exam-aligned curriculum",
@@ -519,22 +526,22 @@ export default function HomePage() {
             </div>
             <div className={styles.classroomContent}>
               <div className="reveal">
-                <div className="section-label">Our Classroom</div>
+                <div className="section-label">Our Classroom &amp; Studio</div>
                 <h2 className={`heading-display heading-md ${styles.classroomTitle}`}>
-                  Live sessions, small groups,<br />no pre-recorded content
+                  From online excellence to our<br />new Sonipat classroom
                 </h2>
                 <div className="divider" />
               </div>
               <div className="reveal reveal-delay-2">
                 <p className={styles.classroomText}>
-                  Every class at Fluency Nest — whether in our Sonipat centre or
-                  online — is a live, interactive session with your teacher.
-                  You speak, ask questions, and receive corrections in real time.
+                  Since 2024, Fluency Nest has delivered high-engagement online sessions
+                  with students speaking and practicing in real time. We have now brought
+                  that exact interactive focus into our physical classroom at SCO-10, Eldeco County, Murthal.
                 </p>
                 <p className={styles.classroomText}>
-                  Our lessons cover all four skills: speaking, listening, reading,
-                  and writing — following the structure of the CEFR levels so you
-                  are always building toward a measurable milestone.
+                  Whether you attend in Sonipat for round-table face-to-face discussions or join
+                  live online from home, every session is 100% live with your instructor — covering
+                  speaking, listening, reading, and writing under the official CEFR framework.
                 </p>
               </div>
             </div>

@@ -4,7 +4,7 @@ import HomePage from "@/components/HomePage";
 export const metadata: Metadata = {
   title: "Fluency Nest — German Language Institute in Sonipat, Haryana",
   description:
-    "Learn German, French & English at Fluency Nest in Sonipat, Haryana. Structured A1–B2 German courses with expert guidance. Online & offline classes available. Enquire now.",
+    "Teaching since 2024. Proven online language training, now expanding with our dedicated offline institute in Sonipat, Haryana. Learn German (A1–C2), French & English. Enquire now.",
 };
 
 export default function Page() {

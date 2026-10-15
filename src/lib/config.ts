@@ -8,7 +8,7 @@ export const SITE_CONFIG = {
   name: "Fluency Nest",
   tagline: "German Language Institute",
   description:
-    "Learn German, French & English with expert guidance in Sonipat, Haryana. Structured courses from beginner (A1) to mastery (C2). Online & offline classes available.",
+    "Teaching since 2024. Proven online language education, now expanding with our dedicated offline institute in Sonipat, Haryana. Learn German (A1–C2), French & English with expert live guidance.",
 
   // Contact Details — UPDATE THESE
   phone: "+91 90509 06044",
@@ -203,9 +203,14 @@ export const FAQ_ITEMS = [
       "Yes, we offer both online and offline German classes. Our online classes are conducted through live, interactive sessions, ensuring the same quality of learning as offline classes. You can choose the learning mode that suits your schedule and location.",
   },
   {
+    question: "How long has Fluency Nest been training students?",
+    answer:
+      "Fluency Nest was established in 2024 as an online language training institute. After successfully mentoring students across India online with structured, CEFR-aligned courses, we have taken our next big leap by opening our dedicated offline physical centre in Sonipat, Haryana.",
+  },
+  {
     question: "Do you offer offline classes in Sonipat?",
     answer:
-      "Yes, our institute is located in Sonipat, Haryana, and we conduct regular offline classroom sessions. Offline classes allow for direct interaction with the teacher and fellow students, which can greatly benefit language learning.",
+      "Yes! After building a trusted track record online since 2024, we are now open offline at SCO-10, Eldeco County, Murthal, Sonipat. Students in Sonipat and the NCR can now attend in-person classroom batches with round-table speaking sessions, or continue to join our live interactive online batches.",
   },
   {
     question: "How can I enquire about course fees?",

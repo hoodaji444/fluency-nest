@@ -37,16 +37,32 @@
   max-width: 680px;
 }
 
-/* Plain location tag — no glass, no blur */
-.heroLocation {
+.heroBadge {
   display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(218, 165, 32, 0.15);
+  border: 1px solid rgba(218, 165, 32, 0.35);
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #f5cf6d;
+  margin-bottom: 16px;
+  backdrop-filter: blur(8px);
+}
+
+/* Plain location tag */
+.heroLocation {
+  display: flex;
   align-items: center;
   gap: 6px;
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.7);
   margin-bottom: 24px;
 }
 
