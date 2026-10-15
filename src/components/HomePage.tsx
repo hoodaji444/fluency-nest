@@ -244,6 +244,28 @@ export default function HomePage() {
         </a>
       </section>
 
+      {/* ── TRUST & CREDENTIALS STRIP ── */}
+      <section className={styles.trustStrip} aria-label="Key Institute Standards & Credentials">
+        <div className={`container ${styles.trustStripInner}`}>
+          {[
+            { label: "CEFR ALIGNED", sub: "European Framework A1–C2" },
+            { label: "GOETHE & TELC PREP", sub: "Exam-Oriented Syllabus" },
+            { label: "LIVE & INTERACTIVE", sub: "Zero Pre-Recorded Videos" },
+            { label: "100% SMALL BATCHES", sub: "Personal Teacher Mentorship" },
+            { label: "SONIPAT CENTRE", sub: "SCO-10, Eldeco County" },
+            { label: "EST. 2024", sub: "Trusted Foundation" },
+          ].map((item, idx, arr) => (
+            <div key={item.label} style={{ display: "contents" }}>
+              <div className={styles.trustItem}>
+                <span className={styles.trustLabel}>{item.label}</span>
+                <span className={styles.trustSub}>{item.sub}</span>
+              </div>
+              {idx < arr.length - 1 && <div className={styles.trustDivider} aria-hidden="true" />}
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* ── ABOUT ── */}
       <section className={`section ${styles.about}`} id="about">
         <div className="container">
@@ -261,36 +283,38 @@ export default function HomePage() {
 
             <div className={styles.aboutContent}>
               <div className="reveal">
-                <div className="section-label">Est. 2024 · Our Journey</div>
+                <div className="section-label">A New Standard of Language Education</div>
                 <h2 className={`heading-display heading-lg ${styles.aboutTitle}`}>
-                  Est. 2024.<br />
-                  <em>Started online, now opening offline in Sonipat.</em>
+                  A new kind of German institute<br />
+                  <em>built for Sonipat &amp; India.</em>
                 </h2>
                 <div className="divider" />
               </div>
 
               <div className="reveal reveal-delay-2">
-                <p className={styles.aboutPara}>
-                  Fluency Nest was established in 2024 as a dedicated online language institute,
-                  mentoring students from across the country in German, French, and English.
-                  By focusing on real conversational practice, structured grammar explanations, and small
-                  interactive batches, we built a trusted foundation of successful language learners.
+                <p className={styles.aboutLead}>
+                  Fluency Nest was founded on a single conviction: that Indian learners deserve
+                  a German language education as rigorous and refined as those offered in Europe.
+                  Not rote memorisation. Not recorded videos. Live, structured, outcome-driven instruction.
                 </p>
+                <div className={styles.aboutPhilos}>
+                  &ldquo;Language is not merely communication. It is the bridge to academic excellence,
+                  global career opportunities in Germany, and the cultivation of the self.&rdquo;
+                </div>
                 <p className={styles.aboutPara}>
-                  Now, we are taking our proven teaching method offline with our brand-new physical centre
-                  at <strong>SCO-10, Eldeco County, Murthal, Sonipat</strong>. Learners in Sonipat and the NCR
-                  can now experience direct classroom immersion, face-to-face peer discussions, and in-person
-                  teacher mentorship — while our popular live online batches continue uninterrupted.
+                  Est. 2024 as an online language academy, we built our foundation mentoring students across
+                  India in German, French, and English. Today, we are proud to bring that proven European standard
+                  offline to our dedicated physical institute at <strong>SCO-10, Eldeco County, Murthal, Sonipat</strong>.
                 </p>
               </div>
 
               <ul className={`${styles.aboutPoints} reveal reveal-delay-3`}>
                 {[
-                  "Est. 2024 — Online & Offline",
-                  "Established online track record, now offline in Sonipat",
-                  "German A1 to C2 — full CEFR framework",
+                  "Est. 2024 — Trusted Online & Now Offline in Sonipat",
+                  "German A1 to C2 — complete CEFR framework",
+                  "Targeted Goethe-Zertifikat & telc exam preparation",
                   "French & English communication programmes",
-                  "Small batch sizes — live interaction, zero recorded lectures",
+                  "Small batches — live interactive speaking, zero pre-recorded lessons",
                   "Located at SCO-10, Eldeco County, Murthal, Sonipat",
                 ].map((pt) => (
                   <li key={pt} className={styles.aboutPoint}>

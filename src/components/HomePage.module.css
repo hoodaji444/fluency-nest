@@ -138,9 +138,75 @@
 
 .heroScroll:hover { color: rgba(255, 255, 255, 0.8); }
 
+/* ── TRUST & CREDENTIALS STRIP ── */
+.trustStrip {
+  background: #08121f;
+  border-top: 1px solid rgba(218, 165, 32, 0.25);
+  border-bottom: 1px solid rgba(218, 165, 32, 0.2);
+  padding: 24px 0;
+  position: relative;
+  z-index: 5;
+}
+
+.trustStripInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.trustItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.trustLabel {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #f5cf6d;
+  text-transform: uppercase;
+}
+
+.trustSub {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.02em;
+}
+
+.trustDivider {
+  width: 1px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
 /* ── ABOUT ── */
 .about {
   background: var(--off-white);
+}
+
+.aboutLead {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: var(--navy);
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.aboutPhilos {
+  padding: 18px 24px;
+  background: rgba(200, 16, 46, 0.04);
+  border-left: 3px solid #c8102e;
+  border-radius: 0 10px 10px 0;
+  margin: 20px 0;
+  font-style: italic;
+  color: #1e3a5f;
+  font-size: 0.98rem;
+  line-height: 1.6;
 }
 
 .aboutGrid {
