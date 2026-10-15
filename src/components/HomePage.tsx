@@ -186,7 +186,7 @@ export default function HomePage() {
           <div className={styles.heroInner}>
             {/* Established badge & location */}
             <div className={styles.heroBadge}>
-              <span>✨ Teaching Since 2024 · Now In Sonipat</span>
+              <span>✨ Est. 2024 · Now In Sonipat</span>
             </div>
 
             <p className={styles.heroLocation}>
@@ -200,7 +200,7 @@ export default function HomePage() {
             </h1>
 
             <p className={`body-lg ${styles.heroSub}`}>
-              Teaching online since 2024 — now bringing our structured CEFR German, French,
+              Est. 2024 — started online, now bringing our structured CEFR German, French,
               and English courses offline to our new Sonipat centre. Small batches, live interaction.
             </p>
 
@@ -261,17 +261,17 @@ export default function HomePage() {
 
             <div className={styles.aboutContent}>
               <div className="reveal">
-                <div className="section-label">Our Journey · Since 2024</div>
+                <div className="section-label">Est. 2024 · Our Journey</div>
                 <h2 className={`heading-display heading-lg ${styles.aboutTitle}`}>
-                  Teaching online since 2024.<br />
-                  <em>Now opening offline in Sonipat.</em>
+                  Est. 2024.<br />
+                  <em>Started online, now opening offline in Sonipat.</em>
                 </h2>
                 <div className="divider" />
               </div>
 
               <div className="reveal reveal-delay-2">
                 <p className={styles.aboutPara}>
-                  Fluency Nest began its journey in 2024 as a dedicated online language institute,
+                  Fluency Nest was established in 2024 as a dedicated online language institute,
                   mentoring students from across the country in German, French, and English.
                   By focusing on real conversational practice, structured grammar explanations, and small
                   interactive batches, we built a trusted foundation of successful language learners.
@@ -286,7 +286,7 @@ export default function HomePage() {
 
               <ul className={`${styles.aboutPoints} reveal reveal-delay-3`}>
                 {[
-                  "Teaching languages since 2024",
+                  "Est. 2024 — Online & Offline",
                   "Established online track record, now offline in Sonipat",
                   "German A1 to C2 — full CEFR framework",
                   "French & English communication programmes",
@@ -439,7 +439,7 @@ export default function HomePage() {
                 },
                 {
                   title: "Online foundation, now offline in Sonipat",
-                  desc: "Training students since 2024 online, now expanding with our physical classroom centre. Same expert curriculum whether you learn in-person or virtually.",
+                  desc: "Est. 2024 online, now expanding with our physical classroom centre. Same expert curriculum whether you learn in-person or virtually.",
                 },
                 {
                   title: "Exam-aligned curriculum",
@@ -534,7 +534,7 @@ export default function HomePage() {
               </div>
               <div className="reveal reveal-delay-2">
                 <p className={styles.classroomText}>
-                  Since 2024, Fluency Nest has delivered high-engagement online sessions
+                  Established in 2024, Fluency Nest has delivered high-engagement online sessions
                   with students speaking and practicing in real time. We have now brought
                   that exact interactive focus into our physical classroom at SCO-10, Eldeco County, Murthal.
                 </p>

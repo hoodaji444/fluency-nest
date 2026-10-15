@@ -8,7 +8,7 @@ export const SITE_CONFIG = {
   name: "Fluency Nest",
   tagline: "German Language Institute",
   description:
-    "Teaching since 2024. Proven online language education, now expanding with our dedicated offline institute in Sonipat, Haryana. Learn German (A1–C2), French & English with expert live guidance.",
+    "Est. 2024. Proven online language education, now expanding with our dedicated offline institute in Sonipat, Haryana. Learn German (A1–C2), French & English with expert live guidance.",
 
   // Contact Details — UPDATE THESE
   phone: "+91 90509 06044",

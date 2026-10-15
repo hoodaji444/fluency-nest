@@ -27,7 +27,7 @@ export default function Footer() {
             </div>
           </Link>
           <p className={styles.footerDesc}>
-            Teaching languages since 2024. Established with proven online German, French, and English courses, now welcoming students to our dedicated offline institute at SCO-10, Eldeco County, Murthal, Sonipat.
+            Est. 2024. Proven online German, French, and English courses, now welcoming students to our dedicated offline institute at SCO-10, Eldeco County, Murthal, Sonipat.
           </p>
           <div className={styles.footerSocial}>
             <a
