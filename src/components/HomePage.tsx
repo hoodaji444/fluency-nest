@@ -310,7 +310,7 @@ export default function HomePage() {
 
               <ul className={`${styles.aboutPoints} reveal reveal-delay-3`}>
                 {[
-                  "Est. 2024 — Trusted Online & Now Offline in Sonipat",
+                  "Fluency Nest — Trusted Online & Now Offline in Sonipat, Haryana",
                   "German A1 to C2 — complete CEFR framework",
                   "Targeted Goethe-Zertifikat & telc exam preparation",
                   "French & English communication programmes",
