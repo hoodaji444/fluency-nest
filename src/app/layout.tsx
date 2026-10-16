@@ -99,6 +99,56 @@ export default function RootLayout({
             },
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": ["EducationalOrganization", "LanguageSchool", "LocalBusiness"],
+              "name": SITE_CONFIG.name,
+              "alternateName": "Fluency Nest German Language Institute",
+              "url": SITE_CONFIG.siteUrl,
+              "logo": `${SITE_CONFIG.siteUrl}/logo.png`,
+              "image": `${SITE_CONFIG.siteUrl}/og-image.png`,
+              "description": SITE_CONFIG.description,
+              "telephone": SITE_CONFIG.phone,
+              "email": SITE_CONFIG.email,
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": SITE_CONFIG.address.line1,
+                "addressLocality": SITE_CONFIG.address.city,
+                "addressRegion": SITE_CONFIG.address.state,
+                "postalCode": SITE_CONFIG.address.pin,
+                "addressCountry": "IN",
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 29.009771,
+                "longitude": 77.077504,
+              },
+              "sameAs": [
+                SITE_CONFIG.social.instagram,
+                SITE_CONFIG.social.facebook,
+              ],
+              "priceRange": "₹₹",
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                  ],
+                  "opens": "09:00",
+                  "closes": "19:00",
+                },
+              ],
+            }),
+          }}
+        />
         <Navbar />
         <main>{children}</main>
         <Footer />
