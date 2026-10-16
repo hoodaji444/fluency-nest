@@ -8,7 +8,7 @@ export const SITE_CONFIG = {
   name: "Fluency Nest",
   tagline: "German Language Institute",
   description:
-    "Est. 2024. Premier German, French & English language institute offering live interactive online classes nationwide. If you prefer offline classroom learning, we also welcome you at our physical institute at SCO-10, Eldeco County, Murthal, Sonipat, Haryana — 131001.",
+    "Est. 2024. Premier German, French & English language institute offering live interactive online classes nationwide, with dedicated offline classroom batches for in-person learners.",
 
   // Contact Details — UPDATE THESE
   phone: "+91 90509 06044",

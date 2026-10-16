@@ -441,14 +441,14 @@ export default function HomePage() {
                 <p className={styles.aboutPara}>
                   Est. 2024 as an online language academy, we built our foundation mentoring students across
                   India in German, French, and English with live, interactive instruction. For learners who prefer
-                  in-person classroom training, we also welcome you to our dedicated physical institute located at <strong>SCO-10, Eldeco County, Murthal, Sonipat, Haryana — 131001</strong>.
+                  in-person classroom training, we also offer offline batches at our dedicated physical institute.
                 </p>
               </div>
 
               <ul className={`${styles.aboutPoints} reveal reveal-delay-3`}>
                 {[
                   "Live, interactive online batches for learners across India & abroad",
-                  "If you want offline classes: SCO-10, Eldeco County, Murthal, Sonipat, Haryana — 131001",
+                  "Dedicated physical institute for learners who prefer offline classroom training",
                   "German, French & English A1 to C2 — complete CEFR framework",
                   "Targeted Goethe-Zertifikat & Telc exam preparation",
                   "Small batches — live interactive speaking, zero pre-recorded lessons",
@@ -586,7 +586,7 @@ export default function HomePage() {
             </h2>
             <p className={styles.coursesSub}>
               All German, French, and English programmes follow the international CEFR framework from beginner (A1) to near-native mastery (C2).
-              Available in live interactive online batches nationwide. If you prefer offline classes, we welcome you in-person at our physical institute (SCO-10, Eldeco County, Murthal, Sonipat, Haryana — 131001).
+              Available in live interactive online batches nationwide, plus offline classroom batches if you prefer in-person learning.
             </p>
           </div>
 
@@ -706,7 +706,7 @@ export default function HomePage() {
                 },
                 {
                   title: "Online & offline flexibility",
-                  desc: "Live interactive online batches nationwide. If you want offline classes, attend in-person at our physical institute: SCO-10, Eldeco County, Murthal, Sonipat, Haryana — 131001.",
+                  desc: "Live interactive online batches nationwide, plus offline classroom batches if you prefer in-person learning.",
                 },
                 {
                   title: "Exam-aligned curriculum",
