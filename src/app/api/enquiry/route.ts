@@ -21,9 +21,11 @@ import { NextRequest, NextResponse } from "next/server";
 // ============================================================
 
 const GOOGLE_SHEET_WEBHOOK_URL = process.env.GOOGLE_SHEET_WEBHOOK_URL || "";
-const EMAIL_USER = process.env.EMAIL_USER || "";
-const EMAIL_PASS = process.env.EMAIL_PASS || "";
-const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || "";
+const EMAIL_USER = process.env.EMAIL_USER || process.env.SMTP_USER || "";
+const EMAIL_PASS = process.env.EMAIL_PASS || process.env.SMTP_PASS || "";
+const SMTP_HOST = process.env.SMTP_HOST || "";
+const SMTP_PORT = process.env.SMTP_PORT ? parseInt(process.env.SMTP_PORT) : 465;
+const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || "info@fluencynest.in";
 
 interface EnquiryData {
   fullName: string;
@@ -158,57 +160,91 @@ export async function POST(req: NextRequest) {
     // ── 2. Email Notification ──
     if (EMAIL_USER && EMAIL_PASS && NOTIFY_EMAIL) {
       try {
-        // Dynamically import nodemailer to avoid build errors if not configured
         const nodemailer = (await import("nodemailer")).default;
 
-        const transporter = nodemailer.createTransport({
-          service: "gmail",
-          auth: {
-            user: EMAIL_USER,
-            pass: EMAIL_PASS,
-          },
-        });
+        // Auto-detect Hostinger vs Gmail vs custom SMTP
+        const isGmail = EMAIL_USER.toLowerCase().endsWith("@gmail.com");
+        const host = SMTP_HOST || (isGmail ? undefined : "smtp.hostinger.com");
+        const port = SMTP_PORT || 465;
+
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const transportConfig: any = host
+          ? {
+              host,
+              port,
+              secure: port === 465,
+              auth: {
+                user: EMAIL_USER,
+                pass: EMAIL_PASS,
+              },
+            }
+          : {
+              service: "gmail",
+              auth: {
+                user: EMAIL_USER,
+                pass: EMAIL_PASS,
+              },
+            };
+
+        const transporter = nodemailer.createTransport(transportConfig);
 
         const isQuickLead = source.includes("Pop-up") || courseCode === "quick-callback";
         const emailSubject = isQuickLead
           ? `⚡ Quick Pop-up Lead: ${data.name} (${data.mobile}) — Fluency Nest`
-          : `New Enquiry: ${data.name} — ${data.course}`;
+          : `🎯 New Student Lead: ${data.name} (${data.course}) — Fluency Nest`;
+
+        const cleanMobile = data.mobile.replace(/\D/g, "").slice(-10);
 
         await transporter.sendMail({
-          from: `"Fluency Nest Website" <${EMAIL_USER}>`,
+          from: `"Fluency Nest Admissions" <${EMAIL_USER}>`,
           to: NOTIFY_EMAIL,
+          replyTo: data.email || EMAIL_USER,
           subject: emailSubject,
           html: `
-            <div style="font-family: Inter, sans-serif; max-width: 600px; margin: 0 auto; background: #f8f5f0; padding: 32px; border-radius: 16px;">
-              <div style="background: #0d1b2e; padding: 24px 32px; border-radius: 12px; margin-bottom: 24px;">
-                <h1 style="color: white; font-size: 1.4rem; margin: 0;">${isQuickLead ? "⚡ Quick Pop-up Lead Received" : "New Student Enquiry"}</h1>
-                <p style="color: rgba(255,255,255,0.7); margin: 8px 0 0; font-size: 0.875rem;">Received via Fluency Nest website</p>
+            <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 620px; margin: 0 auto; background: #f8fafc; padding: 24px; border-radius: 16px;">
+              <div style="background: linear-gradient(135deg, #0d1b2e 0%, #172a45 100%); padding: 28px; border-radius: 12px; margin-bottom: 20px; text-align: center;">
+                <h1 style="color: #ffd978; font-size: 1.5rem; margin: 0 0 6px 0; font-weight: 700;">
+                  ${isQuickLead ? "⚡ Quick Pop-up Callback Lead" : "🎓 New Student Admission Enquiry"}
+                </h1>
+                <p style="color: rgba(255,255,255,0.8); margin: 0; font-size: 0.9rem;">
+                  Received via Fluency Nest Website (${data.source})
+                </p>
+              </div>
+
+              <!-- Quick Action Buttons -->
+              <div style="display: flex; gap: 12px; margin-bottom: 20px; justify-content: center;">
+                <a href="tel:${data.mobile}" style="background: #2563eb; color: #ffffff; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; display: inline-block;">
+                  📞 Call Student (${data.mobile})
+                </a>
+                <a href="https://wa.me/91${cleanMobile}?text=${encodeURIComponent(`Hello ${data.name}, thank you for contacting Fluency Nest! We received your enquiry for ${data.course}. How can we assist you?`)}" style="background: #22c55e; color: #ffffff; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; display: inline-block;">
+                  💬 WhatsApp Student
+                </a>
               </div>
               
-              <div style="background: white; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0;">
+              <div style="background: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
                 ${[
-                  ["⚡ Source", data.source],
-                  ["📅 Received", data.timestamp],
-                  ["👤 Name", data.name],
-                  ["📞 Mobile", data.mobile],
-                  ["✉️ Email", data.email || "Not provided"],
+                  ["⚡ Lead Source", data.source],
+                  ["📅 Date & Time", data.timestamp],
+                  ["👤 Full Name", data.name],
+                  ["📞 Phone Number", data.mobile],
+                  ["✉️ Email Address", data.email || "Not provided"],
                   ["📚 Course Interest", data.course],
                   ["🎓 Learning Mode", data.mode],
-                  ["📍 City", data.city || "Not provided"],
-                  ["⏰ Preferred Timing", data.timing || "Not specified"],
-                  ["🎯 Learning Goal", data.goal || "Not specified"],
-                  ["💬 Message", data.message || "Quick callback requested via pop-up"],
+                  ["📍 Student City", data.city || "Not provided"],
+                  ["⏰ Preferred Timing", data.timing || "Flexible / Not specified"],
+                  ["🎯 Primary Goal", data.goal || "Not specified"],
+                  ["💬 Student Message", data.message || "Requested direct phone callback"],
                 ].map(([label, value], i) => `
-                  <div style="display: flex; padding: 14px 20px; background: ${i % 2 === 0 ? "#fff" : "#f8f9fa"}; gap: 16px; border-bottom: 1px solid #f0f0f0;">
-                    <strong style="color: #4a5568; font-size: 0.85rem; min-width: 140px; flex-shrink: 0;">${label}</strong>
-                    <span style="color: #0d1b2e; font-size: 0.9rem;">${value}</span>
+                  <div style="display: flex; padding: 12px 20px; background: ${i % 2 === 0 ? "#ffffff" : "#f8fafc"}; gap: 16px; border-bottom: 1px solid #edf2f7;">
+                    <strong style="color: #64748b; font-size: 0.85rem; min-width: 140px; flex-shrink: 0;">${label}</strong>
+                    <span style="color: #0f172a; font-size: 0.92rem; font-weight: 500;">${value}</span>
                   </div>
                 `).join("")}
               </div>
               
-              <div style="margin-top: 24px; padding: 16px 20px; background: rgba(200,16,46,0.08); border-radius: 10px; border: 1px solid rgba(200,16,46,0.2);">
-                <p style="color: #c8102e; font-size: 0.85rem; margin: 0; font-weight: 600;">
-                  Please contact this student within 24 hours of receiving this enquiry.
+              <div style="margin-top: 20px; padding: 14px 18px; background: #fef2f2; border-radius: 10px; border: 1px solid #fee2e2; text-align: center;">
+                <p style="color: #991b1b; font-size: 0.85rem; margin: 0; font-weight: 600;">
+                  ⚡ Tip: Calling leads within 15 minutes increases student enrollment conversion by over 40%!
                 </p>
               </div>
             </div>
