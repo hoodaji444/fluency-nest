@@ -84,7 +84,7 @@ export default function Footer() {
         <div className={styles.linkCol}>
           <h3 className={styles.colTitle}>Our Courses</h3>
           <ul className={styles.linkList}>
-            <li><a href="/#courses-german">German A1–C2 (Goethe / telc)</a></li>
+            <li><a href="/#courses-german">German A1–C2 (Goethe / Telc)</a></li>
             <li><a href="/#courses-french">French A1–C2 (DELF / DALF)</a></li>
             <li><a href="/#courses-english">English A1–C2 (Spoken &amp; IELTS)</a></li>
             <li><a href="/#courses-german">German A1 — Beginner</a></li>

@@ -338,7 +338,7 @@ export default function HomePage() {
                   "Live, interactive online batches for learners across India & abroad",
                   "If you want offline classes: SCO-10, Eldeco County, Murthal, Sonipat, Haryana — 131001",
                   "German, French & English A1 to C2 — complete CEFR framework",
-                  "Targeted Goethe-Zertifikat & telc exam preparation",
+                  "Targeted Goethe-Zertifikat & Telc exam preparation",
                   "Small batches — live interactive speaking, zero pre-recorded lessons",
                   "Direct faculty mentorship and personalised progress tracking",
                 ].map((pt) => (
@@ -372,7 +372,7 @@ export default function HomePage() {
               National &amp; International Standards
             </h2>
             <p className={styles.accreditationsSub}>
-              Registered with NSDC &amp; Skill India — India&apos;s National Skill Development Mission. ISO Certified. telc Digital Exam Affiliate. Amazon KDP Published.
+              Registered with NSDC &amp; Skill India — India&apos;s National Skill Development Mission. ISO Certified. Telc Digital Exam Affiliate. Amazon KDP Published.
             </p>
           </div>
 
@@ -417,12 +417,12 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* 3. telc Digital Exam Affiliate */}
+            {/* 3. Telc Digital Exam Affiliate */}
             <div className={styles.accreditationCard}>
               <div className={styles.accreditationImgWrap}>
                 <Image
                   src="/accreditations/telc-affiliate.png"
-                  alt="telc Language Tests - The European Language Certificates"
+                  alt="Telc Language Tests - The European Language Certificates"
                   width={300}
                   height={180}
                   className={styles.accreditationImg}
@@ -430,7 +430,7 @@ export default function HomePage() {
               </div>
               <div className={styles.accreditationBody}>
                 <span className={styles.accreditationBadge}>European Testing</span>
-                <h3 className={styles.accreditationCardTitle}>telc Digital Exam Affiliate</h3>
+                <h3 className={styles.accreditationCardTitle}>Telc Digital Exam Affiliate</h3>
                 <p className={styles.accreditationCardDesc}>
                   Affiliated for European CEFR exam preparation, mock simulations, and digital test readiness recognized across German universities and embassies.
                 </p>
