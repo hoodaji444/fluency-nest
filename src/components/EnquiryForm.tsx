@@ -31,8 +31,8 @@ const COURSES_OPTIONS = [
 ];
 
 const MODE_OPTIONS = [
-  { value: "offline", label: "Offline Classes (Sonipat)" },
-  { value: "online", label: "Online Classes" },
+  { value: "online", label: "Online Classes (Live Interactive)" },
+  { value: "offline", label: "Offline In-Person (SCO-10, Eldeco County, Murthal, Sonipat)" },
   { value: "guidance", label: "Need Guidance" },
 ];
 
@@ -414,7 +414,7 @@ export default function EnquiryForm({ defaultCourse = "" }: EnquiryFormProps) {
               id="city"
               name="city"
               className="form-input"
-              placeholder="e.g. Sonipat, Delhi"
+              placeholder="e.g. Delhi, Chandigarh, Sonipat"
               value={form.city}
               onChange={handleChange}
               maxLength={60}

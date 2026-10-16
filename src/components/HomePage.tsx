@@ -132,7 +132,7 @@ const STEPS = [
   {
     number: "02",
     title: "Submit an enquiry",
-    desc: "Fill in the short form below with your preferred course, learning mode (online or Sonipat), and a convenient time to be contacted.",
+    desc: "Fill in the short form below with your preferred course, learning mode (live online or in-person offline), and a convenient time to be contacted.",
   },
   {
     number: "03",
@@ -142,7 +142,7 @@ const STEPS = [
   {
     number: "04",
     title: "Attend your first class",
-    desc: "Join a live session — in our Sonipat classroom or online — and start building the language from day one.",
+    desc: "Join a live session — via our interactive online classroom or at our physical institute — and start building fluency from day one.",
   },
 ];
 
@@ -210,12 +210,12 @@ export default function HomePage() {
           <div className={styles.heroInner}>
             {/* Established badge & location */}
             <div className={styles.heroBadge}>
-              <span>✨ Est. 2024 · Now In Sonipat</span>
+              <span>✨ Est. 2024 · Premier Language Institute</span>
             </div>
 
             <p className={styles.heroLocation}>
               <MapPin size={13} aria-hidden="true" />
-              SCO-10, Eldeco County, Murthal, Sonipat · Online &amp; Offline Classes
+              Live Interactive Online Nationwide · Offline Institute: SCO-10, Eldeco County, Murthal, Sonipat, Haryana — 131001
             </p>
 
             <h1 className={`heading-display heading-xl ${styles.heroTitle}`}>
@@ -224,8 +224,8 @@ export default function HomePage() {
             </h1>
 
             <p className={`body-lg ${styles.heroSub}`}>
-              Est. 2024 — started online, now bringing our structured CEFR German, French,
-              and English courses offline to our new Sonipat centre. Small batches, live interaction.
+              Est. 2024. Structured CEFR German, French, and English language programmes.
+              Live interactive online batches across India, plus offline classroom batches if you prefer in-person learning.
             </p>
 
             <div className={styles.heroCTAs}>
@@ -277,7 +277,7 @@ export default function HomePage() {
             { label: "TELC EXAM AFFILIATE", sub: "The European Certificates" },
             { label: "AMAZON KDP PUBLISHED", sub: "Proprietary Books" },
             { label: "CEFR ALIGNED", sub: "A1 to C2 Framework" },
-            { label: "EST. 2024", sub: "Online & Sonipat Centre" },
+            { label: "EST. 2024", sub: "Online & Physical Centre" },
           ].map((item, idx, arr) => (
             <div key={item.label} style={{ display: "contents" }}>
               <div className={styles.trustItem}>
@@ -297,7 +297,7 @@ export default function HomePage() {
             <div className={styles.aboutImage}>
               <Image
                 src="/teacher.jpg"
-                alt="German language class at Fluency Nest, Sonipat"
+                alt="Language mentoring at Fluency Nest"
                 width={480}
                 height={560}
                 className={styles.aboutImg}
@@ -310,7 +310,7 @@ export default function HomePage() {
                 <div className="section-label">A New Standard of Language Education</div>
                 <h2 className={`heading-display heading-lg ${styles.aboutTitle}`}>
                   A new kind of German institute<br />
-                  <em>built for Sonipat &amp; India.</em>
+                  <em>built for Indian learners &amp; global careers.</em>
                 </h2>
                 <div className="divider" />
               </div>
@@ -327,19 +327,19 @@ export default function HomePage() {
                 </div>
                 <p className={styles.aboutPara}>
                   Est. 2024 as an online language academy, we built our foundation mentoring students across
-                  India in German, French, and English. Today, we are proud to bring that proven European standard
-                  offline to our dedicated physical institute at <strong>SCO-10, Eldeco County, Murthal, Sonipat</strong>.
+                  India in German, French, and English with live, interactive instruction. For learners who prefer
+                  in-person classroom training, we also welcome you to our dedicated physical institute located at <strong>SCO-10, Eldeco County, Murthal, Sonipat, Haryana — 131001</strong>.
                 </p>
               </div>
 
               <ul className={`${styles.aboutPoints} reveal reveal-delay-3`}>
                 {[
-                  "Fluency Nest — Trusted Online & Now Offline in Sonipat, Haryana",
-                  "German A1 to C2 — complete CEFR framework",
+                  "Live, interactive online batches for learners across India & abroad",
+                  "If you want offline classes: SCO-10, Eldeco County, Murthal, Sonipat, Haryana — 131001",
+                  "German, French & English A1 to C2 — complete CEFR framework",
                   "Targeted Goethe-Zertifikat & telc exam preparation",
-                  "French & English communication programmes",
                   "Small batches — live interactive speaking, zero pre-recorded lessons",
-                  "Located at SCO-10, Eldeco County, Murthal, Sonipat",
+                  "Direct faculty mentorship and personalised progress tracking",
                 ].map((pt) => (
                   <li key={pt} className={styles.aboutPoint}>
                     <span className={styles.aboutPointDot} aria-hidden="true" />
@@ -473,7 +473,7 @@ export default function HomePage() {
             </h2>
             <p className={styles.coursesSub}>
               All German, French, and English programmes follow the international CEFR framework from beginner (A1) to near-native mastery (C2).
-              Available in live interactive online batches and offline classroom sessions in Sonipat.
+              Available in live interactive online batches nationwide. If you prefer offline classes, we welcome you in-person at our physical institute (SCO-10, Eldeco County, Murthal, Sonipat, Haryana — 131001).
             </p>
           </div>
 
@@ -592,8 +592,8 @@ export default function HomePage() {
                   desc: "We explain German grammar with clear logic and examples you can apply immediately.",
                 },
                 {
-                  title: "Online foundation, now offline in Sonipat",
-                  desc: "Est. 2024 online, now expanding with our physical classroom centre. Same expert curriculum whether you learn in-person or virtually.",
+                  title: "Online & offline flexibility",
+                  desc: "Live interactive online batches nationwide. If you want offline classes, attend in-person at our physical institute: SCO-10, Eldeco County, Murthal, Sonipat, Haryana — 131001.",
                 },
                 {
                   title: "Exam-aligned curriculum",
@@ -671,7 +671,7 @@ export default function HomePage() {
             <div className={styles.classroomImage}>
               <Image
                 src="/classroom.jpg"
-                alt="Live German language class at Fluency Nest, Sonipat"
+                alt="Interactive language classroom at Fluency Nest"
                 width={600}
                 height={440}
                 className={styles.classroomImg}
@@ -680,22 +680,22 @@ export default function HomePage() {
             </div>
             <div className={styles.classroomContent}>
               <div className="reveal">
-                <div className="section-label">Our Classroom &amp; Studio</div>
+                <div className="section-label">Our Physical Institute</div>
                 <h2 className={`heading-display heading-md ${styles.classroomTitle}`}>
-                  From online excellence to our<br />new Sonipat classroom
+                  Prefer in-person classes?<br />Visit our offline institute
                 </h2>
                 <div className="divider" />
               </div>
               <div className="reveal reveal-delay-2">
                 <p className={styles.classroomText}>
-                  Established in 2024, Fluency Nest has delivered high-engagement online sessions
-                  with students speaking and practicing in real time. We have now brought
-                  that exact interactive focus into our physical classroom at SCO-10, Eldeco County, Murthal.
+                  If you want offline classes, we welcome you to our dedicated physical institute located at:
+                  <br />
+                  <strong style={{ display: "inline-block", marginTop: "8px", color: "var(--navy)" }}>
+                    SCO-10, Eldeco County, Murthal, Sonipat, Haryana — 131001
+                  </strong>
                 </p>
                 <p className={styles.classroomText}>
-                  Whether you attend in Sonipat for round-table face-to-face discussions or join
-                  live online from home, every session is 100% live with your instructor — covering
-                  speaking, listening, reading, and writing under the official CEFR framework.
+                  Equipped with modern multimedia learning tools, dedicated round-table speaking setups, and direct faculty mentorship. Whether you join our live interactive online batches from anywhere or attend offline in person, every session follows the official CEFR framework.
                 </p>
               </div>
             </div>
@@ -776,10 +776,13 @@ export default function HomePage() {
       <section className={`section ${styles.contactSection}`} id="contact">
         <div className="container">
           <div className={`${styles.contactHeader} reveal`}>
-            <div className="section-label">Contact</div>
+            <div className="section-label">Contact &amp; Offline Institute</div>
             <h2 className={`heading-display heading-lg ${styles.contactTitle}`}>
-              Find us in Sonipat
+              Get in Touch or Visit Our Institute
             </h2>
+            <p style={{ marginTop: "12px", color: "var(--text-secondary)", fontSize: "1rem" }}>
+              If you want offline classes, visit our physical institute in person. For online admissions nationwide, connect directly with our admissions team.
+            </p>
           </div>
 
           <div className={styles.contactGrid}>

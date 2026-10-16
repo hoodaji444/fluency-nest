@@ -4,7 +4,7 @@ import styles from "../privacy-policy/legal.module.css";
 
 export const metadata: Metadata = {
   title: "Terms & Conditions — Fluency Nest",
-  description: "Terms and Conditions for Fluency Nest German Language Institute in Sonipat, Haryana.",
+  description: "Terms and Conditions for Fluency Nest German Language Institute.",
 };
 
 export default function TermsPage() {

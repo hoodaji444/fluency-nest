@@ -27,7 +27,7 @@ export default function Footer() {
             </div>
           </Link>
           <p className={styles.footerDesc}>
-            Est. 2024. Proven online German, French, and English courses, now welcoming students to our dedicated offline institute at SCO-10, Eldeco County, Murthal, Sonipat.
+            Est. 2024. Structured online German, French, and English language training across India. If you prefer offline classes, we welcome you in-person at SCO-10, Eldeco County, Murthal, Sonipat, Haryana — 131001.
           </p>
           <div className={styles.footerSocial}>
             <a

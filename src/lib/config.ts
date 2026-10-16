@@ -8,7 +8,7 @@ export const SITE_CONFIG = {
   name: "Fluency Nest",
   tagline: "German Language Institute",
   description:
-    "Est. 2024. Proven online language education, now expanding with our dedicated offline institute in Sonipat, Haryana. Learn German (A1–C2), French & English with expert live guidance.",
+    "Est. 2024. Premier German, French & English language institute offering live interactive online classes nationwide. If you prefer offline classroom learning, we also welcome you at our physical institute at SCO-10, Eldeco County, Murthal, Sonipat, Haryana — 131001.",
 
   // Contact Details — UPDATE THESE
   phone: "+91 90509 06044",
@@ -369,12 +369,12 @@ export const FAQ_ITEMS = [
   {
     question: "How long has Fluency Nest been training students?",
     answer:
-      "Fluency Nest was established in 2024 as an online language training institute. After successfully mentoring students across India online with structured, CEFR-aligned courses, we have taken our next big leap by opening our dedicated offline physical centre in Sonipat, Haryana.",
+      "Fluency Nest was established in 2024 as an online language training institute. After successfully mentoring students across India online with structured, CEFR-aligned courses, we also established our dedicated physical institute for students who prefer in-person classroom learning.",
   },
   {
-    question: "Do you offer offline classes in Sonipat?",
+    question: "Do you offer offline in-person classes?",
     answer:
-      "Yes! After building a trusted track record online since 2024, we are now open offline at SCO-10, Eldeco County, Murthal, Sonipat. Students in Sonipat and the NCR can now attend in-person classroom batches with round-table speaking sessions, or continue to join our live interactive online batches.",
+      "Yes! If you want offline classes, we welcome you to our dedicated physical institute located at SCO-10, Eldeco County, Murthal, Sonipat, Haryana — 131001. We provide multimedia classrooms with round-table speaking sessions, or you can join our live interactive online batches from anywhere.",
   },
   {
     question: "How can I enquire about course fees?",
