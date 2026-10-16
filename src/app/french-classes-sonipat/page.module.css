@@ -1,0 +1,593 @@
+/* ── LOCAL LANDING PAGE: FRENCH CLASSES IN SONIPAT ── */
+
+.pageWrapper {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* ── HERO ── */
+.localHero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding-top: 110px;
+  padding-bottom: 70px;
+  overflow: hidden;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(8, 15, 28, 0.94) 0%,
+    rgba(14, 23, 42, 0.88) 55%,
+    rgba(8, 15, 28, 0.82) 100%
+  );
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 20px;
+}
+
+.breadcrumb a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+  color: #daa520;
+}
+
+.breadcrumbSep {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.breadcrumbCurrent {
+  color: #ffd978;
+  font-weight: 600;
+}
+
+.locationBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(218, 165, 32, 0.18);
+  border: 1px solid rgba(218, 165, 32, 0.45);
+  border-radius: 9999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #ffd978;
+  margin-bottom: 18px;
+  backdrop-filter: blur(8px);
+}
+
+.heroTitle {
+  color: #ffffff;
+  max-width: 820px;
+  margin-bottom: 20px;
+  line-height: 1.15;
+}
+
+.heroTitle em {
+  font-style: italic;
+  color: #ffd978;
+}
+
+.heroSub {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.15rem;
+  line-height: 1.7;
+  max-width: 680px;
+  margin-bottom: 32px;
+}
+
+.heroCTAs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.trustPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.trustPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.85rem;
+  font-weight: 500;
+  backdrop-filter: blur(4px);
+}
+
+.trustPill svg {
+  color: #ffd978;
+}
+
+/* ── COMMON SECTION WRAPPERS ── */
+.sectionLocal {
+  padding: 80px 0;
+}
+
+.sectionAlt {
+  background-color: var(--bg-secondary);
+}
+
+.sectionHeader {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px auto;
+}
+
+.sectionTitle {
+  margin-top: 10px;
+  margin-bottom: 16px;
+}
+
+.sectionDesc {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+/* ── HIGHLIGHTS GRID ── */
+.highlightsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.highlightCard {
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, rgba(0, 0, 0, 0.08));
+  border-radius: 16px;
+  padding: 32px 28px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.highlightCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.highlightIconBox {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: rgba(218, 165, 32, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b8860b;
+  margin-bottom: 20px;
+}
+
+.highlightCardTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.highlightCardDesc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ── CANADA PR SPECIAL FEATURE BANNER ── */
+.canadaBanner {
+  background: linear-gradient(135deg, #0d1b2e 0%, #172a45 100%);
+  border-radius: 16px;
+  padding: 40px;
+  color: #ffffff;
+  margin-bottom: 50px;
+  border: 1px solid rgba(218, 165, 32, 0.3);
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.canadaBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: rgba(220, 38, 38, 0.2);
+  border: 1px solid rgba(220, 38, 38, 0.4);
+  color: #fca5a5;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.canadaTitle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+
+.canadaDesc {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.canadaPointsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.canadaPointItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.92rem;
+  color: #f3f4f6;
+}
+
+.canadaPointItem svg {
+  color: #ffd978;
+  flex-shrink: 0;
+}
+
+.canadaStatsBox {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+}
+
+.canadaBigStat {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #ffd978;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.canadaStatLabel {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* ── LEVELS GRID ── */
+.levelsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.levelCard {
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, rgba(0, 0, 0, 0.08));
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.levelBadge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.levelBadgeA1 {
+  background: rgba(34, 197, 94, 0.15);
+  color: #15803d;
+}
+
+.levelBadgeA2 {
+  background: rgba(59, 130, 246, 0.15);
+  color: #1d4ed8;
+}
+
+.levelBadgeB1 {
+  background: rgba(218, 165, 32, 0.18);
+  color: #b8860b;
+}
+
+.levelBadgeB2 {
+  background: rgba(168, 85, 247, 0.15);
+  color: #7e22ce;
+}
+
+.levelBadgeTEF {
+  background: rgba(220, 38, 38, 0.15);
+  color: #b91c1c;
+}
+
+.levelTitle {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+}
+
+.levelDesc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.levelSkills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.skillTag {
+  background: var(--tag-bg, #f3f4f6);
+  color: var(--tag-color, #374151);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.levelFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-color, rgba(0, 0, 0, 0.08));
+}
+
+.levelMode {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+/* ── AMENITIES ── */
+.amenitiesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.amenitiesImgWrapper {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  min-height: 440px;
+}
+
+.amenitiesList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.amenityItem {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.amenityIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(218, 165, 32, 0.14);
+  color: #b8860b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.amenityTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.amenityText {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+/* ── CAMPUS LOCATION & MAP ── */
+.locationGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 32px;
+}
+
+.locationCard {
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, rgba(0, 0, 0, 0.08));
+  border-radius: 16px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.locationCardTitle {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.locationCardDesc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.infoRows {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.infoRow {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.infoRowIcon {
+  color: #daa520;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.infoRowLabel {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  margin-bottom: 2px;
+}
+
+.infoRowVal {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.mapBox {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--border-color, rgba(0, 0, 0, 0.08));
+  min-height: 400px;
+}
+
+/* ── FAQ ACCORDION ── */
+.faqList {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faqItem {
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, rgba(0, 0, 0, 0.08));
+  border-radius: 12px;
+  padding: 24px 28px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.faqQuestion {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.faqAnswer {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 991px) {
+  .highlightsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .canadaBanner {
+    grid-template-columns: 1fr;
+  }
+
+  .levelsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .amenitiesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .locationGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .highlightsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .localHero {
+    padding-top: 90px;
+    padding-bottom: 50px;
+  }
+
+  .heroTitle {
+    font-size: 2.2rem;
+  }
+
+  .trustPills {
+    flex-direction: column;
+  }
+}
