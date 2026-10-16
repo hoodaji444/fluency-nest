@@ -24,6 +24,20 @@
     rgba(13, 27, 46, 0.72) 55%,
     rgba(8, 15, 28, 0.5) 100%
   );
+  z-index: 1;
+}
+
+/* Hero Background Slider with Crossfade */
+.heroBgSlide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity;
+}
+
+.heroBgSlideActive {
+  opacity: 1;
 }
 
 .heroContent {
@@ -35,6 +49,106 @@
 
 .heroInner {
   max-width: 680px;
+}
+
+/* Slider Controls: Interactive Pills & Arrows */
+.heroSliderControls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.heroNavPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(10px);
+}
+
+.heroNavPill:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.heroNavPillActive {
+  background: rgba(218, 165, 32, 0.22);
+  border-color: rgba(218, 165, 32, 0.65);
+  color: #ffd978;
+  box-shadow: 0 0 16px rgba(218, 165, 32, 0.25);
+}
+
+.pillDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transition: all 0.25s ease;
+}
+
+.heroNavPillActive .pillDot {
+  background: #daa520;
+  box-shadow: 0 0 8px #daa520;
+}
+
+.heroNavArrows {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 4px;
+}
+
+.heroNavArrowBtn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.heroNavArrowBtn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: scale(1.06);
+}
+
+/* Slide Pane Transitions */
+.heroSlidePane {
+  display: none;
+  animation: heroSlideFade 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.heroSlidePaneActive {
+  display: block;
+}
+
+@keyframes heroSlideFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .heroBadge {
@@ -57,13 +171,54 @@
 .heroLocation {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 24px;
+}
+
+/* Live indicator */
+.liveIndicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  display: inline-block;
+  animation: livePulse 2s infinite ease-in-out;
+}
+
+@keyframes livePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(1.2); }
+}
+
+/* Highlighted offline location badge on Slide 2 */
+.heroLocationOffline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: rgba(13, 27, 46, 0.65);
+  border: 1px solid rgba(218, 165, 32, 0.45);
+  border-radius: 6px;
+  padding: 6px 12px;
+  margin-bottom: 24px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  line-height: 1.4;
+}
+
+.heroLocationOffline svg {
+  color: #daa520;
+  flex-shrink: 0;
 }
 
 .heroTitle {

@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   ArrowRight,
   CheckCircle,
   MapPin,
@@ -153,6 +155,16 @@ export default function HomePage() {
   const [formOpen, setFormOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState("");
   const [activeTab, setActiveTab] = useState<"german" | "french" | "english">("german");
+  const [heroSlide, setHeroSlide] = useState(0);
+  const [isHeroHovered, setIsHeroHovered] = useState(false);
+
+  useEffect(() => {
+    if (isHeroHovered) return;
+    const interval = setInterval(() => {
+      setHeroSlide((prev) => (prev === 0 ? 1 : 0));
+    }, 7000);
+    return () => clearInterval(interval);
+  }, [isHeroHovered]);
 
   useEffect(() => {
     const handleHash = () => {
@@ -194,59 +206,158 @@ export default function HomePage() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className={styles.hero} id="home" aria-label="Hero">
+      <section
+        className={styles.hero}
+        id="home"
+        aria-label="Hero"
+        onMouseEnter={() => setIsHeroHovered(true)}
+        onMouseLeave={() => setIsHeroHovered(false)}
+      >
         <div className={styles.heroBg}>
-          <Image
-            src="/hero-bg.jpg"
-            alt="Berlin Brandenburg Gate — Germany"
-            fill
-            priority
-            quality={90}
-            style={{ objectFit: "cover", objectPosition: "center 60%" }}
-          />
+          <div className={`${styles.heroBgSlide} ${heroSlide === 0 ? styles.heroBgSlideActive : ""}`}>
+            <Image
+              src="/hero-bg.jpg"
+              alt="Berlin Brandenburg Gate — Germany"
+              fill
+              priority
+              quality={90}
+              style={{ objectFit: "cover", objectPosition: "center 60%" }}
+            />
+          </div>
+          <div className={`${styles.heroBgSlide} ${heroSlide === 1 ? styles.heroBgSlideActive : ""}`}>
+            <Image
+              src="/classroom.jpg"
+              alt="Fluency Nest Offline Classroom & Institute"
+              fill
+              priority
+              quality={90}
+              style={{ objectFit: "cover", objectPosition: "center" }}
+            />
+          </div>
           <div className={styles.heroOverlay} />
         </div>
 
         <div className={`container ${styles.heroContent}`}>
           <div className={styles.heroInner}>
-            {/* Established badge & location */}
-            <div className={styles.heroBadge}>
-              <span>✨ Est. 2024 · Premier Language Institute</span>
-            </div>
 
-            <p className={styles.heroLocation}>
-              <MapPin size={13} aria-hidden="true" />
-              Live Interactive Online Nationwide · Offline Institute: SCO-10, Eldeco County, Murthal, Sonipat, Haryana — 131001
-            </p>
-
-            <h1 className={`heading-display heading-xl ${styles.heroTitle}`}>
-              Learn German.<br />
-              <em>Build the future you planned.</em>
-            </h1>
-
-            <p className={`body-lg ${styles.heroSub}`}>
-              Est. 2024. Structured CEFR German, French, and English language programmes.
-              Live interactive online batches across India, plus offline classroom batches if you prefer in-person learning.
-            </p>
-
-            <div className={styles.heroCTAs}>
+            {/* Slider Switcher: Interactive Pills & Next/Prev Controls */}
+            <div className={styles.heroSliderControls}>
               <button
-                className="btn btn-primary btn-lg"
-                onClick={() => openEnquiry()}
-                id="hero-enquire-btn"
+                type="button"
+                className={`${styles.heroNavPill} ${heroSlide === 0 ? styles.heroNavPillActive : ""}`}
+                onClick={() => setHeroSlide(0)}
+                aria-label="Slide 1: Online Academy"
               >
-                Enquire About Courses
-                <ArrowRight size={17} />
+                <span className={styles.pillDot} />
+                01 Online Academy
               </button>
-              <a
-                href="#courses-german"
-                className={`btn btn-outline-light btn-lg`}
+              <button
+                type="button"
+                className={`${styles.heroNavPill} ${heroSlide === 1 ? styles.heroNavPillActive : ""}`}
+                onClick={() => setHeroSlide(1)}
+                aria-label="Slide 2: Offline Centre"
               >
-                View Courses
-              </a>
+                <span className={styles.pillDot} />
+                02 Offline Centre
+              </button>
+              <div className={styles.heroNavArrows}>
+                <button
+                  type="button"
+                  className={styles.heroNavArrowBtn}
+                  onClick={() => setHeroSlide((prev) => (prev === 0 ? 1 : 0))}
+                  aria-label="Previous Slide"
+                >
+                  <ChevronLeft size={16} />
+                </button>
+                <button
+                  type="button"
+                  className={styles.heroNavArrowBtn}
+                  onClick={() => setHeroSlide((prev) => (prev === 0 ? 1 : 0))}
+                  aria-label="Next Slide"
+                >
+                  <ChevronRight size={16} />
+                </button>
+              </div>
             </div>
 
-            {/* Contact strip — no card, just inline text */}
+            {/* SLIDE 1 (Front): Online Academy — NO offline address here */}
+            <div className={`${styles.heroSlidePane} ${heroSlide === 0 ? styles.heroSlidePaneActive : ""}`}>
+              <div className={styles.heroBadge}>
+                <span>✨ Est. 2024 · Premier Language Institute</span>
+              </div>
+
+              <p className={styles.heroLocation}>
+                <span className={styles.liveIndicator} aria-hidden="true" />
+                Live Interactive Online Batches Nationwide
+              </p>
+
+              <h1 className={`heading-display heading-xl ${styles.heroTitle}`}>
+                Learn German.<br />
+                <em>Build the future you planned.</em>
+              </h1>
+
+              <p className={`body-lg ${styles.heroSub}`}>
+                Est. 2024. Structured CEFR German, French, and English language programmes.
+                Live interactive online batches across India with dedicated faculty mentorship.
+              </p>
+
+              <div className={styles.heroCTAs}>
+                <button
+                  className="btn btn-primary btn-lg"
+                  onClick={() => openEnquiry()}
+                  id="hero-enquire-btn"
+                >
+                  Enquire About Courses
+                  <ArrowRight size={17} />
+                </button>
+                <a
+                  href="#courses-german"
+                  className="btn btn-outline-light btn-lg"
+                >
+                  View Courses
+                </a>
+              </div>
+            </div>
+
+            {/* SLIDE 2: Offline Centre — Exact Address from user request */}
+            <div className={`${styles.heroSlidePane} ${heroSlide === 1 ? styles.heroSlidePaneActive : ""}`}>
+              <div className={styles.heroBadge}>
+                <span>🏫 Offline Physical Centre</span>
+              </div>
+
+              <p className={styles.heroLocationOffline}>
+                <MapPin size={14} aria-hidden="true" />
+                SCO-10, ELDECO COUNTY, MURTHAL, SONIPAT · ONLINE & OFFLINE CLASSES
+              </p>
+
+              <h2 className={`heading-display heading-xl ${styles.heroTitle}`}>
+                Prefer In-Person Learning?<br />
+                <em>Join Our Offline Centre.</em>
+              </h2>
+
+              <p className={`body-lg ${styles.heroSub}`}>
+                Experience multimedia smart classrooms, direct faculty mentorship, and interactive round-table speaking sessions at our physical institute in Sonipat, Haryana.
+              </p>
+
+              <div className={styles.heroCTAs}>
+                <button
+                  className="btn btn-primary btn-lg"
+                  onClick={() => openEnquiry()}
+                  id="hero-offline-enquire-btn"
+                >
+                  Enquire Offline Batch
+                  <ArrowRight size={17} />
+                </button>
+                <a
+                  href="#contact"
+                  className="btn btn-outline-light btn-lg"
+                >
+                  View Location on Map
+                </a>
+              </div>
+            </div>
+
+            {/* Contact strip — phone & WhatsApp */}
             <div className={styles.heroContact}>
               <a href={`tel:${SITE_CONFIG.phone}`} className={styles.heroPhone}>
                 {SITE_CONFIG.phone}
@@ -261,6 +372,7 @@ export default function HomePage() {
                 WhatsApp us
               </a>
             </div>
+
           </div>
         </div>
 
