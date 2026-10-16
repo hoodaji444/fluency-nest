@@ -9,6 +9,7 @@ const POPUP_SUBMITTED_KEY = "fluencynest_popup_submitted";
 
 export default function LeadPopup() {
   const [isOpen, setIsOpen] = useState(false);
+  const [botField, setBotField] = useState("");
   const [fullName, setFullName] = useState("");
   const [mobile, setMobile] = useState("");
   const [language, setLanguage] = useState<"german" | "french" | "english">("german");
@@ -97,6 +98,7 @@ export default function LeadPopup() {
           mode: mode,
           source: "Website Welcome Pop-up",
           consent: true,
+          botField,
           submittedAt: new Date().toISOString(),
         }),
       });
@@ -171,6 +173,30 @@ export default function LeadPopup() {
 
             {/* Form */}
             <form onSubmit={handleSubmit} className={styles.modalBody} noValidate>
+              {/* Invisible honeypot field for anti-spambot protection */}
+              <div
+                style={{
+                  display: "none",
+                  position: "absolute",
+                  left: "-9999px",
+                  width: "1px",
+                  height: "1px",
+                  overflow: "hidden",
+                }}
+                aria-hidden="true"
+              >
+                <label htmlFor="popup_hp_website_url">Do not fill this</label>
+                <input
+                  id="popup_hp_website_url"
+                  type="text"
+                  name="website_url"
+                  value={botField}
+                  onChange={(e) => setBotField(e.target.value)}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
+
               {/* Full Name */}
               <div className={styles.formGroup}>
                 <label htmlFor="lead-name" className={styles.label}>

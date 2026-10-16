@@ -1,23 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 // ============================================================
-// ENQUIRY FORM API ROUTE
-// This API handles student enquiry form submissions.
-// 
-// BACKEND OPTIONS:
-// 1. Google Sheets (configured here) — free, recommended for small institutes
-// 2. Email (via nodemailer) — for email notifications  
-// 3. Database (e.g. Vercel Postgres / Supabase) — for larger scale
-//
-// SETUP INSTRUCTIONS for Google Sheets:
-// 1. Create a Google Sheet with columns:
-//    Timestamp | Name | Mobile | Email | Course | Mode | City | Timing | Goal | Message
-// 2. Create a Google Apps Script web app (see DEPLOYMENT.md)
-// 3. Set GOOGLE_SHEET_WEBHOOK_URL in your .env.local
-//
-// SETUP INSTRUCTIONS for Email Notifications:
-// 1. Set EMAIL_USER and EMAIL_PASS in your .env.local
-// 2. Set NOTIFY_EMAIL (where to send notifications)
+// ENQUIRY FORM API ROUTE — HARDENED SECURITY & RATE LIMITING
 // ============================================================
 
 const GOOGLE_SHEET_WEBHOOK_URL = process.env.GOOGLE_SHEET_WEBHOOK_URL || "";
@@ -26,6 +10,93 @@ const EMAIL_PASS = process.env.EMAIL_PASS || process.env.SMTP_PASS || "";
 const SMTP_HOST = process.env.SMTP_HOST || "";
 const SMTP_PORT = process.env.SMTP_PORT ? parseInt(process.env.SMTP_PORT) : 465;
 const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || "info@fluencynest.in";
+
+// ── In-Memory Sliding Window IP Rate Limiter ──
+// Limits each IP to max 5 form submissions per 10 minutes
+interface RateLimitRecord {
+  count: number;
+  resetAt: number;
+}
+const ipRateLimitMap = new Map<string, RateLimitRecord>();
+
+function checkRateLimit(ip: string, limit = 5, windowMs = 10 * 60 * 1000): boolean {
+  const now = Date.now();
+  const record = ipRateLimitMap.get(ip);
+
+  // Periodic cleanup of expired entries
+  if (ipRateLimitMap.size > 2000) {
+    for (const [key, val] of ipRateLimitMap.entries()) {
+      if (val.resetAt < now) ipRateLimitMap.delete(key);
+    }
+  }
+
+  if (!record || record.resetAt < now) {
+    ipRateLimitMap.set(ip, { count: 1, resetAt: now + windowMs });
+    return true;
+  }
+
+  if (record.count >= limit) {
+    return false;
+  }
+
+  record.count += 1;
+  return true;
+}
+
+function getClientIp(req: NextRequest): string {
+  const xff = req.headers.get("x-forwarded-for");
+  if (xff) {
+    return xff.split(",")[0].trim();
+  }
+  return req.headers.get("x-real-ip") || "anonymous";
+}
+
+// ── Cross-Origin Check ──
+function isAllowedOrigin(req: NextRequest): boolean {
+  const origin = req.headers.get("origin");
+  const referer = req.headers.get("referer");
+  const source = origin || referer;
+  if (!source) return true; // Direct/same-site non-browser requests
+
+  try {
+    const url = new URL(source);
+    const host = url.hostname.toLowerCase();
+    return (
+      host === "fluencynest.in" ||
+      host.endsWith(".fluencynest.in") ||
+      host === "localhost" ||
+      host === "127.0.0.1" ||
+      host.endsWith(".vercel.app")
+    );
+  } catch {
+    return false;
+  }
+}
+
+// ── Strict HTML Entity Sanitizer ──
+function escapeHtml(str: unknown, maxLen = 400): string {
+  if (!str) return "";
+  return String(str)
+    .trim()
+    .slice(0, maxLen)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function validateMobile(mobile: string): boolean {
+  const cleaned = String(mobile || "").replace(/[\s-]/g, "");
+  return /^(\+91|91)?[6-9]\d{9}$/.test(cleaned);
+}
+
+function isValidEmail(email: string): boolean {
+  if (!email || email.length > 100) return false;
+  // RFC 5322 regex check and reject any newline/CRLF control characters
+  const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
+  return emailRegex.test(email.trim()) && !/[\r\n]/.test(email);
+}
 
 interface EnquiryData {
   fullName: string;
@@ -40,15 +111,9 @@ interface EnquiryData {
   consent?: boolean;
   submittedAt?: string;
   source?: string;
-}
-
-function sanitize(str: string): string {
-  return String(str || "").replace(/<[^>]*>/g, "").trim().slice(0, 500);
-}
-
-function validateMobile(mobile: string): boolean {
-  const cleaned = mobile.replace(/\s|-/g, "");
-  return /^(\+91|91)?[6-9]\d{9}$/.test(cleaned);
+  // Honeypot field for trapping automated spambots
+  botField?: string;
+  website_url?: string;
 }
 
 // Map course IDs to display names
@@ -79,6 +144,7 @@ const COURSE_LABELS: Record<string, string> = {
   "english-b2": "English B2 — Professional & Business Fluency",
   "english-c1": "English C1 — Advanced & Global Academic",
   "english-c2": "English C2 — Native Mastery & Public Speaking",
+  "english-corporate": "Corporate Communication & Placement",
   // Other
   "not-sure": "Not Sure — Need Guidance",
 };
@@ -100,49 +166,90 @@ const GOAL_LABELS: Record<string, string> = {
 
 export async function POST(req: NextRequest) {
   try {
-    const body = await req.json() as EnquiryData;
-
-    // ── Server-side Validation ──
-    if (!body.fullName || sanitize(body.fullName).length < 2) {
+    // ── 1. Origin / Referer Validation ──
+    if (!isAllowedOrigin(req)) {
       return NextResponse.json(
-        { success: false, message: "Valid name is required." },
+        { success: false, message: "Cross-origin submission rejected." },
+        { status: 403 }
+      );
+    }
+
+    // ── 2. IP Rate Limiting (Anti-DDoS / Anti-Spam Flood) ──
+    const clientIp = getClientIp(req);
+    const allowed = checkRateLimit(clientIp, 5, 10 * 60 * 1000); // Max 5 requests per 10 mins
+    if (!allowed) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: "Too many submission attempts. Please wait 10 minutes before trying again.",
+        },
+        { status: 429 }
+      );
+    }
+
+    const body = (await req.json()) as EnquiryData;
+
+    // ── 3. Honeypot Check (Spambot Trap) ──
+    // If the hidden honeypot field is filled by an automated bot, drop silently
+    if (body.botField || body.website_url) {
+      console.warn(`[SPAMBOT TRAPPED] Dropping submission from IP ${clientIp}`);
+      return NextResponse.json({
+        success: true,
+        message: "Thank you! Your enquiry has been received.",
+        emailSent: false,
+      });
+    }
+
+    // ── 4. Server-Side Input Validation ──
+    const cleanName = escapeHtml(body.fullName, 80);
+    if (!cleanName || cleanName.length < 2) {
+      return NextResponse.json(
+        { success: false, message: "A valid full name (minimum 2 letters) is required." },
         { status: 400 }
       );
     }
 
-    if (!body.mobile || !validateMobile(sanitize(body.mobile))) {
+    const rawMobile = String(body.mobile || "").trim();
+    if (!rawMobile || !validateMobile(rawMobile)) {
       return NextResponse.json(
-        { success: false, message: "Valid Indian mobile number is required." },
+        { success: false, message: "Please provide a valid 10-digit Indian mobile number." },
         { status: 400 }
       );
     }
+
+    const cleanMobileDigits = rawMobile.replace(/\D/g, "").slice(-10);
+    const rawEmail = String(body.email || "").trim();
+    const cleanEmail = isValidEmail(rawEmail) ? rawEmail : "";
 
     // Default for pop-up or quick forms if omitted
     const courseCode = body.course || "quick-callback";
     const modeCode = body.mode || "guidance";
-    const source = body.source || (body.course ? "Website Enquiry Form" : "Website Welcome Pop-up");
+    const source = escapeHtml(
+      body.source || (body.course ? "Website Enquiry Form" : "Website Welcome Pop-up"),
+      60
+    );
 
-    // ── Prepare Clean Data ──
+    // ── 5. Prepare Clean & Escaped Data ──
     const data = {
       timestamp: new Date(body.submittedAt || new Date()).toLocaleString("en-IN", {
         timeZone: "Asia/Kolkata",
       }),
-      name: sanitize(body.fullName),
-      mobile: sanitize(body.mobile),
-      email: sanitize(body.email || ""),
-      course: COURSE_LABELS[courseCode] || sanitize(courseCode),
-      mode: MODE_LABELS[modeCode] || sanitize(modeCode),
-      city: sanitize(body.city || ""),
-      timing: sanitize(body.timing || ""),
-      goal: GOAL_LABELS[body.goal || ""] || sanitize(body.goal || ""),
-      message: sanitize(body.message || ""),
+      name: cleanName,
+      mobile: cleanMobileDigits,
+      email: cleanEmail,
+      course: escapeHtml(COURSE_LABELS[courseCode] || courseCode, 80),
+      mode: escapeHtml(MODE_LABELS[modeCode] || modeCode, 80),
+      city: escapeHtml(body.city || "", 60),
+      timing: escapeHtml(body.timing || "", 60),
+      goal: escapeHtml(GOAL_LABELS[body.goal || ""] || body.goal || "", 80),
+      message: escapeHtml(body.message || "", 500),
       source,
     };
 
     let sheetSuccess = false;
     let emailSuccess = false;
 
-    // ── 1. Google Sheets Webhook ──
+    // ── 6. Google Sheets Webhook (if configured) ──
     if (GOOGLE_SHEET_WEBHOOK_URL) {
       try {
         const sheetRes = await fetch(GOOGLE_SHEET_WEBHOOK_URL, {
@@ -150,19 +257,17 @@ export async function POST(req: NextRequest) {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data),
         });
-
         sheetSuccess = sheetRes.ok;
       } catch (sheetErr) {
         console.error("Google Sheets error:", sheetErr);
       }
     }
 
-    // ── 2. Email Notification ──
+    // ── 7. Email Notification via Hostinger SMTP / Nodemailer ──
     if (EMAIL_USER && EMAIL_PASS && NOTIFY_EMAIL) {
       try {
         const nodemailer = (await import("nodemailer")).default;
 
-        // Auto-detect Hostinger vs Gmail vs custom SMTP
         const isGmail = EMAIL_USER.toLowerCase().endsWith("@gmail.com");
         const host = SMTP_HOST || (isGmail ? undefined : "smtp.hostinger.com");
         const port = SMTP_PORT || 465;
@@ -193,12 +298,10 @@ export async function POST(req: NextRequest) {
           ? `⚡ Quick Pop-up Lead: ${data.name} (${data.mobile}) — Fluency Nest`
           : `🎯 New Student Lead: ${data.name} (${data.course}) — Fluency Nest`;
 
-        const cleanMobile = data.mobile.replace(/\D/g, "").slice(-10);
-
         await transporter.sendMail({
           from: `"Fluency Nest Admissions" <${EMAIL_USER}>`,
           to: NOTIFY_EMAIL,
-          replyTo: data.email || EMAIL_USER,
+          replyTo: cleanEmail || EMAIL_USER,
           subject: emailSubject,
           html: `
             <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 620px; margin: 0 auto; background: #f8fafc; padding: 24px; border-radius: 16px;">
@@ -216,7 +319,7 @@ export async function POST(req: NextRequest) {
                 <a href="tel:${data.mobile}" style="background: #2563eb; color: #ffffff; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; display: inline-block;">
                   📞 Call Student (${data.mobile})
                 </a>
-                <a href="https://wa.me/91${cleanMobile}?text=${encodeURIComponent(`Hello ${data.name}, thank you for contacting Fluency Nest! We received your enquiry for ${data.course}. How can we assist you?`)}" style="background: #22c55e; color: #ffffff; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; display: inline-block;">
+                <a href="https://wa.me/91${data.mobile}?text=${encodeURIComponent(`Hello ${data.name}, thank you for contacting Fluency Nest! We received your enquiry for ${data.course}. How can we assist you?`)}" style="background: #22c55e; color: #ffffff; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; display: inline-block;">
                   💬 WhatsApp Student
                 </a>
               </div>
@@ -257,10 +360,9 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    // ── 3. Fallback Console Log (always) ──
-    console.log("[FLUENT NEST ENQUIRY]", JSON.stringify(data, null, 2));
+    // ── 8. Console Log ──
+    console.log("[FLUENCY NEST ENQUIRY SECURE]", JSON.stringify(data, null, 2));
 
-    // Return success to the prospective student so they know their enquiry was received
     return NextResponse.json({
       success: true,
       message: "Thank you! Your enquiry has been received. Our team will contact you shortly.",

@@ -83,6 +83,7 @@ function validateMobile(mobile: string): boolean {
 }
 
 export default function EnquiryForm({ defaultCourse = "" }: EnquiryFormProps) {
+  const [botField, setBotField] = useState("");
   const [form, setForm] = useState<FormData>({
     fullName: "",
     mobile: "",
@@ -177,8 +178,8 @@ export default function EnquiryForm({ defaultCourse = "" }: EnquiryFormProps) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...form,
+          botField,
           submittedAt: new Date().toISOString(),
-          // Honeypot field value should be empty — we send it as a check
         }),
       });
 
@@ -225,6 +226,7 @@ export default function EnquiryForm({ defaultCourse = "" }: EnquiryFormProps) {
           className={`btn btn-outline btn-sm ${styles.successReset}`}
           onClick={() => {
             setSubmitted(false);
+            setBotField("");
             setForm({
               fullName: "",
               mobile: "",
@@ -253,6 +255,30 @@ export default function EnquiryForm({ defaultCourse = "" }: EnquiryFormProps) {
       aria-label="Student enquiry form"
       id="enquiry-form"
     >
+      {/* Honeypot field for anti-spambot protection (invisible to humans) */}
+      <div
+        style={{
+          display: "none",
+          position: "absolute",
+          left: "-9999px",
+          width: "1px",
+          height: "1px",
+          overflow: "hidden",
+        }}
+        aria-hidden="true"
+      >
+        <label htmlFor="hp_website_url">Do not fill this</label>
+        <input
+          id="hp_website_url"
+          type="text"
+          name="website_url"
+          value={botField}
+          onChange={(e) => setBotField(e.target.value)}
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
       <div className={styles.formHeader}>
         <h3 className={styles.formTitle}>Student Enquiry</h3>
         <p className={styles.formSubtitle}>
