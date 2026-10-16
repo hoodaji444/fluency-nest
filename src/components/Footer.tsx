@@ -78,6 +78,7 @@ export default function Footer() {
             <li><a href="/#enquiry">Enquire Now</a></li>
             <li><Link href="/german-classes-sonipat" style={{ color: "#daa520", fontWeight: 600 }}>German Classes (Sonipat)</Link></li>
             <li><Link href="/french-classes-sonipat" style={{ color: "#daa520", fontWeight: 600 }}>French Classes (Sonipat)</Link></li>
+            <li><Link href="/spoken-english-classes-sonipat" style={{ color: "#daa520", fontWeight: 600 }}>Spoken English (Sonipat)</Link></li>
           </ul>
         </div>
 
