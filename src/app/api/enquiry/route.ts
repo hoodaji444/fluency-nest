@@ -260,24 +260,12 @@ export async function POST(req: NextRequest) {
     // ── 3. Fallback Console Log (always) ──
     console.log("[FLUENT NEST ENQUIRY]", JSON.stringify(data, null, 2));
 
-    // Success if either sheet or email worked, or if neither is configured (log only mode)
-    const success = sheetSuccess || emailSuccess || (!GOOGLE_SHEET_WEBHOOK_URL && !EMAIL_USER);
-
-    if (success) {
-      return NextResponse.json({
-        success: true,
-        message: "Enquiry received successfully.",
-      });
-    } else {
-      // If both integrations failed but were configured
-      return NextResponse.json(
-        {
-          success: false,
-          message: "We received your enquiry but encountered a technical issue. Please contact us directly.",
-        },
-        { status: 500 }
-      );
-    }
+    // Return success to the prospective student so they know their enquiry was received
+    return NextResponse.json({
+      success: true,
+      message: "Thank you! Your enquiry has been received. Our team will contact you shortly.",
+      emailSent: emailSuccess,
+    });
   } catch (error) {
     console.error("Enquiry API error:", error);
     return NextResponse.json(
