@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { SITE_CONFIG, COURSES, FAQ_ITEMS } from "@/lib/config";
 import EnquiryForm from "@/components/EnquiryForm";
+import LeadPopup from "@/components/LeadPopup";
 import styles from "./HomePage.module.css";
 
 // ── Scroll Reveal ───────────────────────────────────────────
@@ -837,6 +838,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ── WELCOME LEAD POPUP MODAL ── */}
+      <LeadPopup />
     </>
   );
 }

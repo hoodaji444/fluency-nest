@@ -29,14 +29,15 @@ interface EnquiryData {
   fullName: string;
   mobile: string;
   email?: string;
-  course: string;
-  mode: string;
+  course?: string;
+  mode?: string;
   city?: string;
   timing?: string;
   goal?: string;
   message?: string;
-  consent: boolean;
-  submittedAt: string;
+  consent?: boolean;
+  submittedAt?: string;
+  source?: string;
 }
 
 function sanitize(str: string): string {
@@ -50,6 +51,11 @@ function validateMobile(mobile: string): boolean {
 
 // Map course IDs to display names
 const COURSE_LABELS: Record<string, string> = {
+  // Pop-up Quick Leads
+  "quick-callback": "Quick Callback (Pop-up Lead)",
+  "german": "German Language",
+  "french": "French Language",
+  "english": "English Language",
   // German
   "german-a1": "German A1 — Beginner",
   "german-a2": "German A2 — Elementary",
@@ -64,7 +70,6 @@ const COURSE_LABELS: Record<string, string> = {
   "french-b2": "French B2 — Upper Intermediate (DELF B2)",
   "french-c1": "French C1 — Advanced (DALF C1)",
   "french-c2": "French C2 — Mastery (DALF C2)",
-  "french": "French Language (General)",
   // English
   "english-a1": "English A1 — Foundational Beginner",
   "english-a2": "English A2 — Elementary Speaking",
@@ -72,7 +77,6 @@ const COURSE_LABELS: Record<string, string> = {
   "english-b2": "English B2 — Professional & Business Fluency",
   "english-c1": "English C1 — Advanced & Global Academic",
   "english-c2": "English C2 — Native Mastery & Public Speaking",
-  "english": "English Language (General)",
   // Other
   "not-sure": "Not Sure — Need Guidance",
 };
@@ -111,26 +115,10 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    if (!body.course) {
-      return NextResponse.json(
-        { success: false, message: "Course selection is required." },
-        { status: 400 }
-      );
-    }
-
-    if (!body.mode) {
-      return NextResponse.json(
-        { success: false, message: "Learning mode selection is required." },
-        { status: 400 }
-      );
-    }
-
-    if (!body.consent) {
-      return NextResponse.json(
-        { success: false, message: "Consent is required." },
-        { status: 400 }
-      );
-    }
+    // Default for pop-up or quick forms if omitted
+    const courseCode = body.course || "quick-callback";
+    const modeCode = body.mode || "guidance";
+    const source = body.source || (body.course ? "Website Enquiry Form" : "Website Welcome Pop-up");
 
     // ── Prepare Clean Data ──
     const data = {
@@ -140,12 +128,13 @@ export async function POST(req: NextRequest) {
       name: sanitize(body.fullName),
       mobile: sanitize(body.mobile),
       email: sanitize(body.email || ""),
-      course: COURSE_LABELS[body.course] || sanitize(body.course),
-      mode: MODE_LABELS[body.mode] || sanitize(body.mode),
+      course: COURSE_LABELS[courseCode] || sanitize(courseCode),
+      mode: MODE_LABELS[modeCode] || sanitize(modeCode),
       city: sanitize(body.city || ""),
       timing: sanitize(body.timing || ""),
       goal: GOAL_LABELS[body.goal || ""] || sanitize(body.goal || ""),
       message: sanitize(body.message || ""),
+      source,
     };
 
     let sheetSuccess = false;
@@ -180,29 +169,35 @@ export async function POST(req: NextRequest) {
           },
         });
 
+        const isQuickLead = source.includes("Pop-up") || courseCode === "quick-callback";
+        const emailSubject = isQuickLead
+          ? `⚡ Quick Pop-up Lead: ${data.name} (${data.mobile}) — Fluency Nest`
+          : `New Enquiry: ${data.name} — ${data.course}`;
+
         await transporter.sendMail({
           from: `"Fluency Nest Website" <${EMAIL_USER}>`,
           to: NOTIFY_EMAIL,
-          subject: `New Enquiry: ${data.name} — ${data.course}`,
+          subject: emailSubject,
           html: `
             <div style="font-family: Inter, sans-serif; max-width: 600px; margin: 0 auto; background: #f8f5f0; padding: 32px; border-radius: 16px;">
               <div style="background: #0d1b2e; padding: 24px 32px; border-radius: 12px; margin-bottom: 24px;">
-                <h1 style="color: white; font-size: 1.4rem; margin: 0;">New Student Enquiry</h1>
-                <p style="color: rgba(255,255,255,0.6); margin: 8px 0 0; font-size: 0.875rem;">Received via Fluency Nest website</p>
+                <h1 style="color: white; font-size: 1.4rem; margin: 0;">${isQuickLead ? "⚡ Quick Pop-up Lead Received" : "New Student Enquiry"}</h1>
+                <p style="color: rgba(255,255,255,0.7); margin: 8px 0 0; font-size: 0.875rem;">Received via Fluency Nest website</p>
               </div>
               
               <div style="background: white; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0;">
                 ${[
+                  ["⚡ Source", data.source],
                   ["📅 Received", data.timestamp],
                   ["👤 Name", data.name],
                   ["📞 Mobile", data.mobile],
                   ["✉️ Email", data.email || "Not provided"],
-                  ["📚 Course", data.course],
+                  ["📚 Course Interest", data.course],
                   ["🎓 Learning Mode", data.mode],
                   ["📍 City", data.city || "Not provided"],
                   ["⏰ Preferred Timing", data.timing || "Not specified"],
                   ["🎯 Learning Goal", data.goal || "Not specified"],
-                  ["💬 Message", data.message || "No additional message"],
+                  ["💬 Message", data.message || "Quick callback requested via pop-up"],
                 ].map(([label, value], i) => `
                   <div style="display: flex; padding: 14px 20px; background: ${i % 2 === 0 ? "#fff" : "#f8f9fa"}; gap: 16px; border-bottom: 1px solid #f0f0f0;">
                     <strong style="color: #4a5568; font-size: 0.85rem; min-width: 140px; flex-shrink: 0;">${label}</strong>

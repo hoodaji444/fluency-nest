@@ -1,0 +1,380 @@
+/* ============================================================
+   LEAD POPUP / MODAL STYLES
+   Fluency Nest — High Conversion Aesthetic
+   ============================================================ */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 27, 46, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal {
+  position: relative;
+  background: #ffffff;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 
+    0 24px 60px -12px rgba(13, 27, 46, 0.35),
+    0 0 0 1px rgba(13, 27, 46, 0.08);
+  animation: modalSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Close Button */
+.closeBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(13, 27, 46, 0.06);
+  color: #4a5568;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.closeBtn:hover {
+  background: rgba(200, 16, 46, 0.1);
+  color: #c8102e;
+  transform: rotate(90deg);
+}
+
+/* Modal Header with rich gradient accent */
+.modalHeader {
+  padding: 28px 28px 20px 28px;
+  background: linear-gradient(135deg, #0d1b2e 0%, #172c47 100%);
+  color: #ffffff;
+  position: relative;
+}
+
+.modalHeader::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #c8102e, #f59e0b, #10b981);
+}
+
+.topPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(200, 16, 46, 0.25);
+  border: 1px solid rgba(200, 16, 46, 0.4);
+  color: #ffadb6;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  margin-bottom: 12px;
+}
+
+.modalTitle {
+  font-family: var(--font-display), "Cinzel", Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0 0 8px 0;
+  color: #ffffff;
+  padding-right: 28px;
+}
+
+.modalSub {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0;
+}
+
+/* Modal Body */
+.modalBody {
+  padding: 24px 28px 28px 28px;
+}
+
+.formGroup {
+  margin-bottom: 16px;
+}
+
+.label {
+  display: block;
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 6px;
+}
+
+.label span {
+  color: #c8102e;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 14px;
+  color: #718096;
+  pointer-events: none;
+}
+
+.input {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px 0 42px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: #1a202c;
+  background: #f8fafc;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.input:focus {
+  background: #ffffff;
+  border-color: #0d1b2e;
+  box-shadow: 0 0 0 3px rgba(13, 27, 46, 0.1);
+}
+
+.inputError {
+  border-color: #c8102e;
+  background: #fff8f8;
+}
+
+.errorText {
+  color: #c8102e;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-top: 4px;
+  display: block;
+}
+
+/* Language Selection Pills */
+.pillsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.pillBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 6px;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #4a5568;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.pillBtn:hover {
+  background: #edf2f7;
+  border-color: #cbd5e1;
+}
+
+.pillBtnActive {
+  background: #0d1b2e;
+  border-color: #0d1b2e;
+  color: #ffffff;
+  box-shadow: 0 4px 10px -2px rgba(13, 27, 46, 0.3);
+}
+
+.pillEmoji {
+  font-size: 1.15rem;
+  margin-bottom: 2px;
+}
+
+/* Learning Mode Toggle */
+.modeToggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.modeBtn {
+  padding: 8px 12px;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #4a5568;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.modeBtnActive {
+  background: rgba(200, 16, 46, 0.08);
+  border-color: #c8102e;
+  color: #c8102e;
+}
+
+/* Submit Button */
+.submitBtn {
+  width: 100%;
+  height: 48px;
+  margin-top: 8px;
+  background: #c8102e;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(200, 16, 46, 0.35);
+  transition: all 0.2s ease;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: #b00d27;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(200, 16, 46, 0.45);
+}
+
+.submitBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.privacyNote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  color: #718096;
+  text-align: center;
+  margin-top: 12px;
+}
+
+/* Success View */
+.successBox {
+  padding: 40px 28px;
+  text-align: center;
+}
+
+.successIconWrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #ecfdf5;
+  color: #10b981;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px auto;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+}
+
+.successTitle {
+  font-family: var(--font-display), "Cinzel", Georgia, serif;
+  font-size: 1.35rem;
+  color: #0d1b2e;
+  margin: 0 0 10px 0;
+}
+
+.successDesc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #4a5568;
+  margin: 0 0 20px 0;
+}
+
+.successCloseBtn {
+  padding: 10px 24px;
+  background: #0d1b2e;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+
+.successCloseBtn:hover {
+  background: #172c47;
+}
+
+@media (max-width: 480px) {
+  .modal {
+    max-width: 100%;
+  }
+  .modalHeader {
+    padding: 24px 20px 16px 20px;
+  }
+  .modalBody {
+    padding: 20px 20px 24px 20px;
+  }
+  .modalTitle {
+    font-size: 1.2rem;
+  }
+}
