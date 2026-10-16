@@ -126,7 +126,7 @@ export default function Footer() {
         <div className="container">
           <div className={styles.footerBottomInner}>
             <p className={styles.copyright}>
-              &copy; {new Date().getFullYear()} {SITE_CONFIG.name}. All rights reserved.
+              &copy; 2023 {SITE_CONFIG.name}. All rights reserved.
             </p>
             <div className={styles.footerLegal}>
               <Link href="/privacy-policy">Privacy Policy</Link>
