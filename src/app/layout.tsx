@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Toaster } from "react-hot-toast";
 import "@/app/globals.css";
-import { SITE_CONFIG } from "@/lib/config";
+import { SITE_CONFIG, FAQ_ITEMS } from "@/lib/config";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -107,46 +107,127 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": ["EducationalOrganization", "LanguageSchool", "LocalBusiness"],
-              "name": SITE_CONFIG.name,
-              "alternateName": "Fluency Nest German Language Institute",
-              "url": SITE_CONFIG.siteUrl,
-              "logo": `${SITE_CONFIG.siteUrl}/logo.png`,
-              "image": `${SITE_CONFIG.siteUrl}/og-image.png`,
-              "description": SITE_CONFIG.description,
-              "telephone": SITE_CONFIG.phone,
-              "email": SITE_CONFIG.email,
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": SITE_CONFIG.address.line1,
-                "addressLocality": SITE_CONFIG.address.city,
-                "addressRegion": SITE_CONFIG.address.state,
-                "postalCode": SITE_CONFIG.address.pin,
-                "addressCountry": "IN",
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 29.009771,
-                "longitude": 77.077504,
-              },
-              "sameAs": [
-                SITE_CONFIG.social.instagram,
-                SITE_CONFIG.social.facebook,
-              ],
-              "priceRange": "₹₹",
-              "openingHoursSpecification": [
+              "@graph": [
                 {
-                  "@type": "OpeningHoursSpecification",
-                  "dayOfWeek": [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday",
+                  "@type": ["EducationalOrganization", "LanguageSchool", "LocalBusiness"],
+                  "@id": `${SITE_CONFIG.siteUrl}/#organization`,
+                  "name": SITE_CONFIG.name,
+                  "alternateName": "Fluency Nest German, French & English Language Institute",
+                  "url": SITE_CONFIG.siteUrl,
+                  "logo": `${SITE_CONFIG.siteUrl}/logo.png`,
+                  "image": `${SITE_CONFIG.siteUrl}/og-image.png`,
+                  "description": SITE_CONFIG.description,
+                  "telephone": SITE_CONFIG.phone,
+                  "email": SITE_CONFIG.email,
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": SITE_CONFIG.address.line1,
+                    "addressLocality": SITE_CONFIG.address.city,
+                    "addressRegion": SITE_CONFIG.address.state,
+                    "postalCode": SITE_CONFIG.address.pin,
+                    "addressCountry": "IN",
+                  },
+                  "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 29.009771,
+                    "longitude": 77.077504,
+                  },
+                  "sameAs": [
+                    SITE_CONFIG.social.instagram,
+                    SITE_CONFIG.social.facebook,
                   ],
-                  "opens": "09:00",
-                  "closes": "19:00",
+                  "priceRange": "₹₹",
+                  "openingHoursSpecification": [
+                    {
+                      "@type": "OpeningHoursSpecification",
+                      "dayOfWeek": [
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday",
+                        "Saturday",
+                      ],
+                      "opens": "09:00",
+                      "closes": "19:00",
+                    },
+                  ],
+                },
+                {
+                  "@type": "FAQPage",
+                  "@id": `${SITE_CONFIG.siteUrl}/#faq`,
+                  "mainEntity": FAQ_ITEMS.map((item) => ({
+                    "@type": "Question",
+                    "name": item.question,
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": item.answer,
+                    },
+                  })),
+                },
+                {
+                  "@type": "Course",
+                  "@id": `${SITE_CONFIG.siteUrl}/#course-german-a1`,
+                  "name": "German A1 Language Course (Beginner to CEFR A1)",
+                  "description": "Start German language from absolute zero. Learn foundational vocabulary, everyday conversations, pronunciation, and Goethe-Zertifikat / Telc A1 preparation.",
+                  "provider": {
+                    "@type": "EducationalOrganization",
+                    "name": SITE_CONFIG.name,
+                    "sameAs": SITE_CONFIG.siteUrl,
+                  },
+                  "hasCourseInstance": {
+                    "@type": "CourseInstance",
+                    "courseMode": ["ONLINE", "OFFLINE"],
+                    "courseWorkload": "PT60H",
+                  },
+                },
+                {
+                  "@type": "Course",
+                  "@id": `${SITE_CONFIG.siteUrl}/#course-german-b1`,
+                  "name": "German B1 Course (Intermediate & Visa/Study Preparation)",
+                  "description": "Independent communication, professional vocabulary, and targeted preparation for Goethe-Zertifikat B1 / Telc Deutsch B1 exams.",
+                  "provider": {
+                    "@type": "EducationalOrganization",
+                    "name": SITE_CONFIG.name,
+                    "sameAs": SITE_CONFIG.siteUrl,
+                  },
+                  "hasCourseInstance": {
+                    "@type": "CourseInstance",
+                    "courseMode": ["ONLINE", "OFFLINE"],
+                    "courseWorkload": "PT80H",
+                  },
+                },
+                {
+                  "@type": "Course",
+                  "@id": `${SITE_CONFIG.siteUrl}/#course-french-a1`,
+                  "name": "French A1 Language Course (Beginner & DELF A1)",
+                  "description": "Foundational French training covering phonetics, daily conversations, basic grammar, and DELF A1 exam preparation.",
+                  "provider": {
+                    "@type": "EducationalOrganization",
+                    "name": SITE_CONFIG.name,
+                    "sameAs": SITE_CONFIG.siteUrl,
+                  },
+                  "hasCourseInstance": {
+                    "@type": "CourseInstance",
+                    "courseMode": ["ONLINE", "OFFLINE"],
+                    "courseWorkload": "PT60H",
+                  },
+                },
+                {
+                  "@type": "Course",
+                  "@id": `${SITE_CONFIG.siteUrl}/#course-english-speaking`,
+                  "name": "Spoken English & Corporate Communication Course",
+                  "description": "Master English fluency without hesitation. Covers conversational ease, professional email drafting, interview skills, and IELTS foundation.",
+                  "provider": {
+                    "@type": "EducationalOrganization",
+                    "name": SITE_CONFIG.name,
+                    "sameAs": SITE_CONFIG.siteUrl,
+                  },
+                  "hasCourseInstance": {
+                    "@type": "CourseInstance",
+                    "courseMode": ["ONLINE", "OFFLINE"],
+                    "courseWorkload": "PT50H",
+                  },
                 },
               ],
             }),

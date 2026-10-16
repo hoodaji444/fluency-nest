@@ -77,6 +77,7 @@ export default function Footer() {
             <li><a href="/#faq">FAQ</a></li>
             <li><a href="/#enquiry">Enquire Now</a></li>
             <li><a href="/#contact">Contact</a></li>
+            <li><Link href="/german-classes-sonipat" style={{ color: "#daa520", fontWeight: 600 }}>Sonipat Classroom Centre</Link></li>
           </ul>
         </div>
 
