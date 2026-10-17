@@ -76,9 +76,9 @@ export default function Footer() {
             <li><a href="/#why-us">Why Choose Us</a></li>
             <li><a href="/#faq">FAQ</a></li>
             <li><a href="/#enquiry">Enquire Now</a></li>
-            <li><Link href="/german-classes-sonipat" style={{ color: "#daa520", fontWeight: 600 }}>German Classes (Sonipat)</Link></li>
-            <li><Link href="/french-classes-sonipat" style={{ color: "#daa520", fontWeight: 600 }}>French Classes (Sonipat)</Link></li>
-            <li><Link href="/spoken-english-classes-sonipat" style={{ color: "#daa520", fontWeight: 600 }}>Spoken English (Sonipat)</Link></li>
+            <li><Link href="/german-classes-sonipat" style={{ color: "#daa520", fontWeight: 600 }}>German Language Institute in Sonipat</Link></li>
+            <li><Link href="/french-classes-sonipat" style={{ color: "#daa520", fontWeight: 600 }}>French Classes in Sonipat</Link></li>
+            <li><Link href="/spoken-english-classes-sonipat" style={{ color: "#daa520", fontWeight: 600 }}>Spoken English in Sonipat</Link></li>
           </ul>
         </div>
 

@@ -352,7 +352,7 @@ export default function HomePage() {
 
               <div className={styles.heroSonipatChips}>
                 <Link href="/german-classes-sonipat" className={styles.heroSonipatChip}>
-                  🇩🇪 German Classes
+                  🇩🇪 German Language Institute
                 </Link>
                 <Link href="/french-classes-sonipat" className={styles.heroSonipatChip}>
                   🇫🇷 French Classes
@@ -940,7 +940,7 @@ export default function HomePage() {
                 <span className={styles.programFlag}>🇩🇪</span>
                 <span className={styles.programBadge}>Popular in Sonipat</span>
               </div>
-              <h4 className={styles.programTitle}>German Classes in Sonipat</h4>
+              <h4 className={styles.programTitle}>German Language Institute in Sonipat</h4>
               <p className={styles.programLevel}>Beginner to Advanced (A1, A2, B1, B2, C1)</p>
               <p className={styles.programDesc}>
                 Official Goethe &amp; Telc exam preparation. Essential for Germany Master&apos;s degrees, public university free tuition, Ausbildung, and nursing visas.
@@ -951,7 +951,7 @@ export default function HomePage() {
                 <li><CheckCircle size={14} /> Offline Batches + Online Backup</li>
               </ul>
               <Link href="/german-classes-sonipat" className={`btn btn-primary ${styles.programBtn}`}>
-                View German Batches
+                Explore German Institute
                 <ArrowRight size={15} />
               </Link>
             </div>

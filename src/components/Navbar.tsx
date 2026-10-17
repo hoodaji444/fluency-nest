@@ -34,7 +34,7 @@ const NAV_LINKS: NavLinkItem[] = [
     isSpecial: true,
     dropdown: [
       { href: "/#classroom", label: "📍 Campus Tour & Facilities (SCO-10)", highlight: true },
-      { href: "/german-classes-sonipat", label: "🇩🇪 German Classes in Sonipat" },
+      { href: "/german-classes-sonipat", label: "🇩🇪 German Language Institute (Sonipat)" },
       { href: "/french-classes-sonipat", label: "🇫🇷 French Classes in Sonipat" },
       { href: "/spoken-english-classes-sonipat", label: "🇬🇧 Spoken English in Sonipat" },
     ],
