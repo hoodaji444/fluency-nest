@@ -221,6 +221,56 @@
   flex-shrink: 0;
 }
 
+.heroLocationOfflineBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #ffd700;
+  background: rgba(218, 165, 32, 0.16);
+  border: 1px solid rgba(218, 165, 32, 0.4);
+  border-radius: 9999px;
+  padding: 4px 12px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  line-height: 1.3;
+}
+
+.heroLocationOfflineBadge:hover {
+  background: rgba(218, 165, 32, 0.28);
+  border-color: rgba(218, 165, 32, 0.7);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.heroSonipatChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.heroSonipatChip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.heroSonipatChip:hover {
+  background: rgba(218, 165, 32, 0.25);
+  border-color: #daa520;
+  color: #ffd700;
+}
+
 .heroTitle {
   color: #ffffff;
   margin-bottom: 20px;
@@ -909,44 +959,383 @@
   line-height: 1.6;
 }
 
-/* ── CLASSROOM ── */
+/* ── CLASSROOM / SONIPAT HUB ── */
 .classroomSection {
-  background: var(--off-white);
+  background: #fdfbf7;
+  padding: 100px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
 }
 
+.classroomHeader {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 40px;
+}
+
+.classroomBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #b8860b;
+  background: rgba(218, 165, 32, 0.12);
+  border: 1px solid rgba(218, 165, 32, 0.3);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  margin-bottom: 16px;
+}
+
+.classroomBadge svg {
+  color: #daa520;
+}
+
+.classroomMainTitle {
+  color: var(--navy);
+  margin-bottom: 14px;
+  line-height: 1.25;
+}
+
+.classroomMainTitle em {
+  font-style: italic;
+  color: #c8102e;
+}
+
+.classroomMainSub {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ── Proximity Bar ── */
+.classroomProximityBar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 56px;
+}
+
+.proximityItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #ffffff;
+  padding: 16px 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(13, 27, 46, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.proximityItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(13, 27, 46, 0.08);
+}
+
+.proximityIcon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.proximityDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.proximityDetails strong {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.2;
+}
+
+.proximityDetails span {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+/* ── Campus Grid ── */
 .classroomGrid {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 64px;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 56px;
   align-items: center;
+  margin-bottom: 64px;
 }
 
-.classroomImage {
+.classroomImageWrap {
+  position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 16px 48px rgba(13, 27, 46, 0.14);
 }
 
 .classroomImg {
   width: 100%;
-  height: 400px;
+  height: 440px;
+  display: block;
   transition: transform 0.4s ease;
 }
 
-.classroomImage:hover .classroomImg {
+.classroomImageWrap:hover .classroomImg {
   transform: scale(1.03);
 }
 
-.classroomTitle {
-  color: var(--navy);
-  margin-bottom: 8px;
+.classroomImgOverlay {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
-.classroomText {
-  font-size: 0.975rem;
+.imgBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(13, 27, 46, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  padding: 8px 14px;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.imgBadge svg {
+  color: #daa520;
+}
+
+.imgSubBadge {
+  background: rgba(200, 16, 46, 0.9);
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.classroomSubTitle {
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+
+.classroomIntroText {
+  font-size: 0.95rem;
   color: var(--text-secondary);
-  line-height: 1.75;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.campusFeatureList {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.campusFeature {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.campusFeatureIcon {
+  font-size: 1.35rem;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.campusFeatureHeading {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.campusFeatureDesc {
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ── Sonipat Course Cards ── */
+.sonipatProgramsHeader {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.sonipatProgramsTitle {
+  color: var(--navy);
+}
+
+.sonipatProgramsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 56px;
+}
+
+.sonipatProgramCard {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0 6px 24px rgba(13, 27, 46, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sonipatProgramCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(13, 27, 46, 0.1);
+  border-color: rgba(218, 165, 32, 0.4);
+}
+
+.programCardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 16px;
+}
+
+.programFlag {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.programBadge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--navy);
+  background: rgba(13, 27, 46, 0.06);
+  padding: 4px 10px;
+  border-radius: 9999px;
+}
+
+.programTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.programLevel {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #c8102e;
+  margin-bottom: 12px;
+}
+
+.programDesc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.programBullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.programBullets li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--navy);
+}
+
+.programBullets li svg {
+  color: #10b981;
+  flex-shrink: 0;
+}
+
+.programBtn {
+  width: 100%;
+  justify-content: center;
+}
+
+/* ── Campus CTA Card ── */
+.classroomCtaCard {
+  background: linear-gradient(135deg, #0d1b2e 0%, #15253b 100%);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  color: #ffffff;
+  box-shadow: 0 16px 48px rgba(13, 27, 46, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.classroomCtaLeft {
+  max-width: 620px;
+}
+
+.classroomCtaHeading {
+  font-family: "Playfair Display", serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.classroomCtaText {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+
+.classroomCtaText strong {
+  color: #ffd700;
+}
+
+.classroomCtaMeta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.6);
+  flex-wrap: wrap;
+}
+
+.classroomCtaRight {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-shrink: 0;
 }
 
 /* ── FAQ ── */
@@ -1228,7 +1617,26 @@
     gap: 40px;
   }
   .aboutImg    { height: 380px; }
-  .classroomImg { height: 300px; }
+  .classroomImg { height: 320px; }
+  .classroomProximityBar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .sonipatProgramsGrid {
+    grid-template-columns: 1fr;
+  }
+  .classroomCtaCard {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px;
+  }
+  .classroomCtaRight {
+    width: 100%;
+  }
+  .classroomCtaRight button,
+  .classroomCtaRight a {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1240,4 +1648,14 @@
   .coursesGrid { grid-template-columns: 1fr; }
   .courseTabs { flex-direction: column; width: 100%; }
   .germanySection { padding: 80px 0; }
+  .classroomProximityBar {
+    grid-template-columns: 1fr;
+  }
+  .classroomImgOverlay {
+    position: static;
+    margin-top: 12px;
+    background: var(--navy);
+    padding: 12px;
+    border-radius: 12px;
+  }
 }

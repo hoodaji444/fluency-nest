@@ -7,15 +7,36 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import styles from "./Navbar.module.css";
 import { SITE_CONFIG } from "@/lib/config";
 
-const NAV_LINKS = [
+interface NavLinkItem {
+  href?: string;
+  label: string;
+  isSpecial?: boolean;
+  dropdown?: Array<{
+    href: string;
+    label: string;
+    highlight?: boolean;
+  }>;
+}
+
+const NAV_LINKS: NavLinkItem[] = [
   { href: "/", label: "Home" },
   { href: "/#about", label: "About Us" },
   {
     label: "Courses",
     dropdown: [
-      { href: "/#courses-german", label: "German Courses" },
-      { href: "/#courses-french", label: "French Courses" },
-      { href: "/#courses-english", label: "English Courses" },
+      { href: "/#courses-german", label: "German Courses (A1–C2)" },
+      { href: "/#courses-french", label: "French Courses (A1–C2)" },
+      { href: "/#courses-english", label: "English Courses (Fluency)" },
+    ],
+  },
+  {
+    label: "Sonipat Centre (SCO-10)",
+    isSpecial: true,
+    dropdown: [
+      { href: "/#classroom", label: "📍 Campus Tour & Facilities (SCO-10)", highlight: true },
+      { href: "/german-classes-sonipat", label: "🇩🇪 German Classes in Sonipat" },
+      { href: "/french-classes-sonipat", label: "🇫🇷 French Classes in Sonipat" },
+      { href: "/spoken-english-classes-sonipat", label: "🇬🇧 Spoken English in Sonipat" },
     ],
   },
   { href: "/#why-us", label: "Why Choose Us" },
@@ -93,13 +114,22 @@ export default function Navbar() {
                   onMouseEnter={() => setActiveDropdown(link.label)}
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
-                  <button className={styles.navLink} aria-expanded={activeDropdown === link.label}>
+                  <button
+                    className={`${styles.navLink} ${link.isSpecial ? styles.specialNavLink : ""}`}
+                    aria-expanded={activeDropdown === link.label}
+                  >
+                    {link.isSpecial && <span className={styles.navLocationDot} aria-hidden="true" />}
                     {link.label}
                     <ChevronDown size={14} className={activeDropdown === link.label ? styles.chevronOpen : ""} />
                   </button>
                   <div className={`${styles.dropdown} ${activeDropdown === link.label ? styles.dropdownOpen : ""}`}>
                     {link.dropdown.map((item) => (
-                      <Link key={item.href} href={item.href} className={styles.dropdownItem}>
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className={`${styles.dropdownItem} ${item.highlight ? styles.highlightDropdownItem : ""}`}
+                        onClick={closeMenu}
+                      >
                         {item.label}
                       </Link>
                     ))}
@@ -149,12 +179,15 @@ export default function Navbar() {
           {NAV_LINKS.map((link) =>
             link.dropdown ? (
               <div key={link.label} className={styles.mobileGroup}>
-                <div className={styles.mobileGroupLabel}>{link.label}</div>
+                <div className={`${styles.mobileGroupLabel} ${link.isSpecial ? styles.mobileSpecialLabel : ""}`}>
+                  {link.isSpecial && <span className={styles.navLocationDot} aria-hidden="true" />}
+                  {link.label}
+                </div>
                 {link.dropdown.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={styles.mobileSub}
+                    className={`${styles.mobileSub} ${item.highlight ? styles.mobileHighlightSub : ""}`}
                     onClick={closeMenu}
                   >
                     {item.label}

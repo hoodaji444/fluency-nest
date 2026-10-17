@@ -10,6 +10,10 @@ import {
   ArrowRight,
   CheckCircle,
   MapPin,
+  Sparkles,
+  Navigation,
+  Phone,
+  Compass,
 } from "lucide-react";
 import { SITE_CONFIG, COURSES, FAQ_ITEMS } from "@/lib/config";
 import EnquiryForm from "@/components/EnquiryForm";
@@ -280,16 +284,23 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* SLIDE 1 (Front): Online Academy — NO offline address here */}
+            {/* SLIDE 1 (Front): Online Academy */}
             <div className={`${styles.heroSlidePane} ${heroSlide === 0 ? styles.heroSlidePaneActive : ""}`}>
               <div className={styles.heroBadge}>
                 <span>✨ Est. 2024 · Premier Language Institute</span>
               </div>
 
-              <p className={styles.heroLocation}>
-                <span className={styles.liveIndicator} aria-hidden="true" />
-                Live Interactive Online Batches Nationwide
-              </p>
+              <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "12px", marginBottom: "20px" }}>
+                <p className={styles.heroLocation} style={{ marginBottom: 0 }}>
+                  <span className={styles.liveIndicator} aria-hidden="true" />
+                  Live Interactive Online Batches Nationwide
+                </p>
+                <a href="#classroom" className={styles.heroLocationOfflineBadge}>
+                  <MapPin size={12} aria-hidden="true" />
+                  Flagship Campus: SCO-10, Eldeco County, Sonipat
+                  <ChevronRight size={12} aria-hidden="true" />
+                </a>
+              </div>
 
               <h1 className={`heading-display heading-xl ${styles.heroTitle}`}>
                 Learn German.<br />
@@ -322,37 +333,49 @@ export default function HomePage() {
             {/* SLIDE 2: Offline Centre — Exact Address from user request */}
             <div className={`${styles.heroSlidePane} ${heroSlide === 1 ? styles.heroSlidePaneActive : ""}`}>
               <div className={styles.heroBadge}>
-                <span>🏫 Offline Physical Centre</span>
+                <span>🏫 Sonipat Flagship Campus</span>
               </div>
 
               <p className={styles.heroLocationOffline}>
                 <MapPin size={14} aria-hidden="true" />
-                SCO-10, ELDECO COUNTY, MURTHAL, SONIPAT · ONLINE & OFFLINE CLASSES
+                SCO-10, ELDECO COUNTY, MURTHAL, SONIPAT · OFFLINE CLASSROOM BATCHES
               </p>
 
               <h2 className={`heading-display heading-xl ${styles.heroTitle}`}>
-                Prefer In-Person Learning?<br />
-                <em>Join Our Offline Centre.</em>
+                Sonipat&apos;s Premier<br />
+                <em>Offline Language Institute.</em>
               </h2>
 
               <p className={`body-lg ${styles.heroSub}`}>
-                Experience multimedia smart classrooms, direct faculty mentorship, and interactive round-table speaking sessions at our physical institute in Sonipat, Haryana.
+                Learn at SCO-10, Eldeco County. Multimedia smart classrooms, direct faculty mentorship, and Goethe/DELF exam preparation 5 mins from DCRUST Murthal &amp; 12 mins from Rajiv Gandhi Education City.
               </p>
+
+              <div className={styles.heroSonipatChips}>
+                <Link href="/german-classes-sonipat" className={styles.heroSonipatChip}>
+                  🇩🇪 German Classes
+                </Link>
+                <Link href="/french-classes-sonipat" className={styles.heroSonipatChip}>
+                  🇫🇷 French Classes
+                </Link>
+                <Link href="/spoken-english-classes-sonipat" className={styles.heroSonipatChip}>
+                  🇬🇧 Spoken English
+                </Link>
+              </div>
 
               <div className={styles.heroCTAs}>
                 <button
                   className="btn btn-primary btn-lg"
-                  onClick={() => openEnquiry()}
+                  onClick={() => openEnquiry("Sonipat Offline Classroom Batch")}
                   id="hero-offline-enquire-btn"
                 >
                   Enquire Offline Batch
                   <ArrowRight size={17} />
                 </button>
                 <a
-                  href="#contact"
+                  href="#classroom"
                   className="btn btn-outline-light btn-lg"
                 >
-                  View Location on Map
+                  Explore SCO-10 Campus
                 </a>
               </div>
             </div>
@@ -777,40 +800,239 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── CLASSROOM ── */}
-      <section className={`section ${styles.classroomSection}`}>
+      {/* ── CLASSROOM / SONIPAT OFFLINE HUB ── */}
+      <section className={`section ${styles.classroomSection}`} id="classroom">
         <div className="container">
+          {/* Section Header */}
+          <div className={`${styles.classroomHeader} reveal`}>
+            <div className={styles.classroomBadge}>
+              <MapPin size={14} aria-hidden="true" />
+              <span>FLAGSHIP OFFLINE CAMPUS · SCO-10, ELDECO COUNTY, SONIPAT</span>
+            </div>
+            <h2 className={`heading-display heading-lg ${styles.classroomMainTitle}`}>
+              Prefer in-person learning?<br />
+              <em>Step inside our Sonipat institute.</em>
+            </h2>
+            <p className={styles.classroomMainSub}>
+              Located in Eldeco County right off GT Karnal Road (NH 44), our flagship institute features multimedia smart classrooms, direct faculty mentorship, and Goethe/DELF exam preparation for students across Sonipat and Delhi-NCR.
+            </p>
+          </div>
+
+          {/* Landmark Proximity Bar */}
+          <div className={`${styles.classroomProximityBar} reveal reveal-delay-1`}>
+            <div className={styles.proximityItem}>
+              <span className={styles.proximityIcon}>🚗</span>
+              <div className={styles.proximityDetails}>
+                <strong>5 Mins</strong>
+                <span>DCRUST Murthal &amp; NH 44</span>
+              </div>
+            </div>
+            <div className={styles.proximityItem}>
+              <span className={styles.proximityIcon}>🎓</span>
+              <div className={styles.proximityDetails}>
+                <strong>12 Mins</strong>
+                <span>Education City (Ashoka &amp; SRM)</span>
+              </div>
+            </div>
+            <div className={styles.proximityItem}>
+              <span className={styles.proximityIcon}>🏙️</span>
+              <div className={styles.proximityDetails}>
+                <strong>8 Mins</strong>
+                <span>Sonipat City (Model Town / Sec 14)</span>
+              </div>
+            </div>
+            <div className={styles.proximityItem}>
+              <span className={styles.proximityIcon}>🅿️</span>
+              <div className={styles.proximityDetails}>
+                <strong>Free Parking</strong>
+                <span>Eldeco County Gated Security</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Main Grid: Campus Image + Infrastructure */}
           <div className={styles.classroomGrid}>
-            <div className={styles.classroomImage}>
+            <div className={`${styles.classroomImageWrap} reveal`}>
               <Image
                 src="/classroom.jpg"
-                alt="Interactive language classroom at Fluency Nest"
-                width={600}
-                height={440}
+                alt="Interactive language classroom at Fluency Nest SCO-10 Sonipat"
+                width={650}
+                height={460}
                 className={styles.classroomImg}
                 style={{ objectFit: "cover" }}
               />
+              <div className={styles.classroomImgOverlay}>
+                <div className={styles.imgBadge}>
+                  <MapPin size={14} />
+                  <span>SCO-10, Eldeco County, Murthal, Sonipat</span>
+                </div>
+                <div className={styles.imgSubBadge}>
+                  <span>Mon–Sat: 9:00 AM – 7:00 PM</span>
+                </div>
+              </div>
             </div>
-            <div className={styles.classroomContent}>
-              <div className="reveal">
-                <div className="section-label">Our Physical Institute</div>
-                <h2 className={`heading-display heading-md ${styles.classroomTitle}`}>
-                  Prefer in-person classes?<br />Visit our offline institute
-                </h2>
-                <div className="divider" />
+
+            <div className={`${styles.classroomContent} reveal reveal-delay-2`}>
+              <div className="section-label">Campus Amenities &amp; Standards</div>
+              <h3 className={`heading-display heading-sm ${styles.classroomSubTitle}`}>
+                Designed for rapid fluency &amp; exam readiness
+              </h3>
+              <p className={styles.classroomIntroText}>
+                Whether you are aiming for higher studies in Germany, Canada PR via French, or cracking MNC interviews, our Sonipat centre is purpose-built for intensive language mastery:
+              </p>
+
+              <div className={styles.campusFeatureList}>
+                <div className={styles.campusFeature}>
+                  <div className={styles.campusFeatureIcon}>🎯</div>
+                  <div>
+                    <h4 className={styles.campusFeatureHeading}>Exam Simulation &amp; Audio Lab</h4>
+                    <p className={styles.campusFeatureDesc}>
+                      Timed mock tests and authentic listening exercises replicating official Goethe-Zertifikat, Telc, and DELF testing environments.
+                    </p>
+                  </div>
+                </div>
+
+                <div className={styles.campusFeature}>
+                  <div className={styles.campusFeatureIcon}>🗣️</div>
+                  <div>
+                    <h4 className={styles.campusFeatureHeading}>Round-Table Speaking Pods</h4>
+                    <p className={styles.campusFeatureDesc}>
+                      Small batches capped at 8–12 students. Every learner gets daily active speaking time and personalized pronunciation feedback.
+                    </p>
+                  </div>
+                </div>
+
+                <div className={styles.campusFeature}>
+                  <div className={styles.campusFeatureIcon}>📚</div>
+                  <div>
+                    <h4 className={styles.campusFeatureHeading}>Physical Study Library &amp; Materials</h4>
+                    <p className={styles.campusFeatureDesc}>
+                      Access authentic Hueber, Klett, and Didier books, vocabulary flashcards, and grammar drill sheets at no extra cost.
+                    </p>
+                  </div>
+                </div>
+
+                <div className={styles.campusFeature}>
+                  <div className={styles.campusFeatureIcon}>🕒</div>
+                  <div>
+                    <h4 className={styles.campusFeatureHeading}>Flexible Student &amp; Professional Batches</h4>
+                    <p className={styles.campusFeatureDesc}>
+                      Morning, afternoon, and evening batches specifically scheduled for DCRUST/Ashoka students and working commuters.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div className="reveal reveal-delay-2">
-                <p className={styles.classroomText}>
-                  If you want offline classes, we welcome you to our dedicated physical institute located at:
-                  <br />
-                  <strong style={{ display: "inline-block", marginTop: "8px", color: "var(--navy)" }}>
-                    SCO-10, Eldeco County, Murthal, Sonipat, Haryana — 131001
-                  </strong>
-                </p>
-                <p className={styles.classroomText}>
-                  Equipped with modern multimedia learning tools, dedicated round-table speaking setups, and direct faculty mentorship. Whether you join our live interactive online batches from anywhere or attend offline in person, every session follows the official CEFR framework.
-                </p>
+            </div>
+          </div>
+
+          {/* 3 Dedicated Sonipat Program Cards */}
+          <div className={`${styles.sonipatProgramsHeader} reveal`}>
+            <div className="section-label">Offline Batches in Sonipat</div>
+            <h3 className={`heading-display heading-sm ${styles.sonipatProgramsTitle}`}>
+              Choose Your Course at Our Sonipat Campus
+            </h3>
+          </div>
+
+          <div className={styles.sonipatProgramsGrid}>
+            {/* German Card */}
+            <div className={`${styles.sonipatProgramCard} card reveal`}>
+              <div className={styles.programCardTop}>
+                <span className={styles.programFlag}>🇩🇪</span>
+                <span className={styles.programBadge}>Popular in Sonipat</span>
               </div>
+              <h4 className={styles.programTitle}>German Classes in Sonipat</h4>
+              <p className={styles.programLevel}>Beginner to Advanced (A1, A2, B1, B2, C1)</p>
+              <p className={styles.programDesc}>
+                Official Goethe &amp; Telc exam preparation. Essential for Germany Master&apos;s degrees, public university free tuition, Ausbildung, and nursing visas.
+              </p>
+              <ul className={styles.programBullets}>
+                <li><CheckCircle size={14} /> 5 Mins from DCRUST Murthal</li>
+                <li><CheckCircle size={14} /> 100% Goethe Exam Pass Record</li>
+                <li><CheckCircle size={14} /> Offline Batches + Online Backup</li>
+              </ul>
+              <Link href="/german-classes-sonipat" className={`btn btn-primary ${styles.programBtn}`}>
+                View German Batches
+                <ArrowRight size={15} />
+              </Link>
+            </div>
+
+            {/* French Card */}
+            <div className={`${styles.sonipatProgramCard} card reveal reveal-delay-1`}>
+              <div className={styles.programCardTop}>
+                <span className={styles.programFlag}>🇫🇷</span>
+                <span className={styles.programBadge}>Canada PR Booster</span>
+              </div>
+              <h4 className={styles.programTitle}>French Classes in Sonipat</h4>
+              <p className={styles.programLevel}>DELF A1–B2 &amp; TEF / TCF Canada</p>
+              <p className={styles.programDesc}>
+                Targeted coaching for Canada Express Entry PR (+50 CRS bonus points), Alliance Française DELF exams, and French university admissions.
+              </p>
+              <ul className={styles.programBullets}>
+                <li><CheckCircle size={14} /> TEF / TCF Canada Strategy</li>
+                <li><CheckCircle size={14} /> Native Accent &amp; Grammar Drills</li>
+                <li><CheckCircle size={14} /> Weekend &amp; Weekday Options</li>
+              </ul>
+              <Link href="/french-classes-sonipat" className={`btn btn-primary ${styles.programBtn}`}>
+                View French Batches
+                <ArrowRight size={15} />
+              </Link>
+            </div>
+
+            {/* Spoken English Card */}
+            <div className={`${styles.sonipatProgramCard} card reveal reveal-delay-2`}>
+              <div className={styles.programCardTop}>
+                <span className={styles.programFlag}>🇬🇧</span>
+                <span className={styles.programBadge}>Career Fluency</span>
+              </div>
+              <h4 className={styles.programTitle}>Spoken English &amp; Public Speaking</h4>
+              <p className={styles.programLevel}>Hesitation Removal &amp; MNC Placements</p>
+              <p className={styles.programDesc}>
+                Eliminate mother-tongue influence, build spontaneous conversational fluency, and master interview skills for top corporate and campus placements.
+              </p>
+              <ul className={styles.programBullets}>
+                <li><CheckCircle size={14} /> Extempore &amp; Group Discussions</li>
+                <li><CheckCircle size={14} /> Corporate Email &amp; Presentation Skills</li>
+                <li><CheckCircle size={14} /> IELTS / PTE Speaking Foundation</li>
+              </ul>
+              <Link href="/spoken-english-classes-sonipat" className={`btn btn-primary ${styles.programBtn}`}>
+                View English Batches
+                <ArrowRight size={15} />
+              </Link>
+            </div>
+          </div>
+
+          {/* Action Callout Bar */}
+          <div className={`${styles.classroomCtaCard} reveal`}>
+            <div className={styles.classroomCtaLeft}>
+              <h3 className={styles.classroomCtaHeading}>
+                Want to see the classrooms before enrolling?
+              </h3>
+              <p className={styles.classroomCtaText}>
+                Book a free campus visit at <strong>SCO-10, Eldeco County, Murthal, Sonipat</strong>. Meet our certified trainers and attend a 30-minute free trial class.
+              </p>
+              <div className={styles.classroomCtaMeta}>
+                <span>📍 SCO-10, Eldeco County, Murthal, Sonipat (131001)</span>
+                <span>·</span>
+                <span>🕒 Mon–Sat: 9 AM – 7 PM</span>
+              </div>
+            </div>
+            <div className={styles.classroomCtaRight}>
+              <button
+                className="btn btn-primary btn-lg"
+                onClick={() => openEnquiry("Sonipat Campus Visit & Demo Class")}
+              >
+                Book Free SCO-10 Demo
+                <ArrowRight size={16} />
+              </button>
+              <a
+                href="https://www.google.com/maps?q=29.009771,77.077504"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-outline-light btn-lg"
+              >
+                <MapPin size={16} />
+                Get Directions on Maps
+              </a>
             </div>
           </div>
         </div>
