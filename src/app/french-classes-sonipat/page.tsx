@@ -22,7 +22,7 @@ import styles from "./page.module.css";
 export const metadata: Metadata = {
   title: "Best French Classes in Sonipat & Murthal | Fluency Nest Institute",
   description:
-    "Join top French language classes in Sonipat at SCO-10, Eldeco County. Certified faculty, DELF exam preparation (A1–B2) & French for Canada PR (TEF/TCF Canada). In-person & online batches.",
+    "Join top French language classes in Sonipat at Eldeco County. Certified faculty, DELF exam preparation (A1–B2) & French for Canada PR (TEF/TCF Canada). In-person & online batches.",
   keywords: [
     "French classes in Sonipat",
     "French language institute in Sonipat",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Best French Classes in Sonipat & Murthal | Fluency Nest Institute",
     description:
-      "Premier French, German & English language institute at SCO-10, Eldeco County, Murthal, Sonipat. Certified faculty, DELF exam prep, TEF Canada immigration training, and interactive batches.",
+      "Premier French, German & English language institute at Eldeco County, Murthal, Sonipat. Certified faculty, DELF exam prep, TEF Canada immigration training, and interactive batches.",
     url: "https://www.fluencynest.in/french-classes-sonipat",
     siteName: "Fluency Nest",
     locale: "en_IN",
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Best French Classes in Sonipat & Murthal | Fluency Nest Institute",
     description:
-      "Join offline & online French language classes in Sonipat at SCO-10, Eldeco County. CEFR A1 to B2 DELF certification & TEF Canada PR preparation.",
+      "Join offline & online French language classes in Sonipat at Eldeco County. CEFR A1 to B2 DELF certification & TEF Canada PR preparation.",
     images: ["/classroom.jpg"],
   },
 };
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
 const LOCAL_FAQS = [
   {
     q: "Where is Fluency Nest located in Sonipat for French classes?",
-    a: "Our physical institute is located at SCO-10, Eldeco County, Murthal, Sonipat, Haryana — 131001. We are situated directly off the GT Karnal Road (NH 44), making it easily accessible for students from Sonipat city, Murthal, Panipat, Rai, and Kundli.",
+    a: "Our physical institute is located at Eldeco County, Murthal, Sonipat, Haryana — 131001. We are situated directly off the GT Karnal Road (NH 44), making it easily accessible for students from Sonipat city, Murthal, Panipat, Rai, and Kundli.",
   },
   {
     q: "Can I learn French from scratch (zero level) at your Sonipat centre?",
@@ -111,12 +111,12 @@ export default function FrenchClassesSonipatPage() {
         "logo": "https://www.fluencynest.in/logo.png",
         "image": "https://www.fluencynest.in/classroom.jpg",
         "description":
-          "Premier French language classes in Sonipat at SCO-10, Eldeco County, Murthal. Complete CEFR A1–B2, DELF examinations, and TEF / TCF Canada PR preparation.",
+          "Premier French language classes in Sonipat at Eldeco County, Murthal. Complete CEFR A1–B2, DELF examinations, and TEF / TCF Canada PR preparation.",
         "telephone": SITE_CONFIG.phone,
         "email": "info@fluencynest.in",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "SCO-10, Eldeco County",
+          "streetAddress": "Eldeco County",
           "addressLocality": "Murthal, Sonipat",
           "addressRegion": "Haryana",
           "postalCode": "131001",
@@ -253,7 +253,7 @@ export default function FrenchClassesSonipatPage() {
 
           <div className={styles.locationBadge}>
             <MapPin size={14} aria-hidden="true" />
-            SCO-10, Eldeco County, Murthal, Sonipat · In-Person &amp; Online Batches
+            Eldeco County, Murthal, Sonipat · In-Person &amp; Online Batches
           </div>
 
           <h1 className={`heading-display heading-xl ${styles.heroTitle}`}>
@@ -351,7 +351,7 @@ export default function FrenchClassesSonipatPage() {
               </div>
               <h3 className={styles.highlightCardTitle}>Prime Highway Location</h3>
               <p className={styles.highlightCardDesc}>
-                Located at SCO-10, Eldeco County, Murthal with easy access from GT Karnal Road (NH 44). Ample parking, calm academic environment, and zero city traffic jams.
+                Located at Eldeco County, Murthal with easy access from GT Karnal Road (NH 44). Ample parking, calm academic environment, and zero city traffic jams.
               </p>
             </div>
 
@@ -437,7 +437,7 @@ export default function FrenchClassesSonipatPage() {
                 </div>
               </div>
               <div className={styles.levelFooter}>
-                <span className={styles.levelMode}>Offline at SCO-10 &amp; Online</span>
+                <span className={styles.levelMode}>Offline &amp; Online Batches</span>
                 <a href="#enquiry-section" className="btn btn-outline-primary btn-sm">
                   Enquire Batch
                 </a>
@@ -459,7 +459,7 @@ export default function FrenchClassesSonipatPage() {
                 </div>
               </div>
               <div className={styles.levelFooter}>
-                <span className={styles.levelMode}>Offline at SCO-10 &amp; Online</span>
+                <span className={styles.levelMode}>Offline &amp; Online Batches</span>
                 <a href="#enquiry-section" className="btn btn-outline-primary btn-sm">
                   Enquire Batch
                 </a>
@@ -481,7 +481,7 @@ export default function FrenchClassesSonipatPage() {
                 </div>
               </div>
               <div className={styles.levelFooter}>
-                <span className={styles.levelMode}>Offline at SCO-10 &amp; Online</span>
+                <span className={styles.levelMode}>Offline &amp; Online Batches</span>
                 <a href="#enquiry-section" className="btn btn-outline-primary btn-sm">
                   Enquire Batch
                 </a>
@@ -503,7 +503,7 @@ export default function FrenchClassesSonipatPage() {
                 </div>
               </div>
               <div className={styles.levelFooter}>
-                <span className={styles.levelMode}>Offline at SCO-10 &amp; Online</span>
+                <span className={styles.levelMode}>Offline &amp; Online Batches</span>
                 <a href="#enquiry-section" className="btn btn-outline-primary btn-sm">
                   Enquire Batch
                 </a>
@@ -616,7 +616,7 @@ export default function FrenchClassesSonipatPage() {
                     <div>
                       <span className={styles.infoRowLabel}>Physical Address</span>
                       <span className={styles.infoRowVal}>
-                        SCO-10, Eldeco County, Murthal, Sonipat, Haryana — 131001
+                        Eldeco County, Murthal, Sonipat, Haryana — 131001
                       </span>
                     </div>
                   </div>
@@ -645,7 +645,7 @@ export default function FrenchClassesSonipatPage() {
 
               <div>
                 <a
-                  href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent("Hello! I want to enquire about French classes at Fluency Nest (SCO-10, Eldeco County, Sonipat). Please share upcoming batch timings.")}`}
+                  href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent("Hello! I want to enquire about French classes at Fluency Nest (Eldeco County, Sonipat). Please share upcoming batch timings.")}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-primary"
@@ -665,7 +665,7 @@ export default function FrenchClassesSonipatPage() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Fluency Nest French Language Institute — SCO-10, Eldeco County, Murthal, Sonipat"
+                title="Fluency Nest French Language Institute — Eldeco County, Murthal, Sonipat"
               />
             </div>
           </div>

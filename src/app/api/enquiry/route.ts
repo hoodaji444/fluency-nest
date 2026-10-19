@@ -150,7 +150,7 @@ const COURSE_LABELS: Record<string, string> = {
 };
 
 const MODE_LABELS: Record<string, string> = {
-  "offline": "Offline In-Person (SCO-10, Eldeco County, Murthal, Sonipat)",
+  "offline": "Offline In-Person (Eldeco County, Murthal, Sonipat)",
   "online": "Online Classes (Live Interactive)",
   "guidance": "Need Guidance",
 };

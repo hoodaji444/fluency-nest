@@ -22,7 +22,7 @@ import styles from "./page.module.css";
 export const metadata: Metadata = {
   title: "Sonipat German Language Institute | Best German Classes in Sonipat | Fluency Nest",
   description:
-    "Looking for the best Sonipat German language institute? Fluency Nest offers certified Goethe & Telc exam coaching (A1–C2) at SCO-10, Eldeco County, Murthal. Small batches & free trial classes.",
+    "Looking for the best Sonipat German language institute? Fluency Nest offers certified Goethe & Telc exam coaching (A1–C2) at Eldeco County, Murthal. Small batches & free trial classes.",
   keywords: [
     "sonipat german language institute",
     "german language institute in sonipat",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Sonipat German Language Institute | Best German Classes in Sonipat | Fluency Nest",
     description:
-      "Fluency Nest is Sonipat's premier German language institute located at SCO-10, Eldeco County, Murthal. Goethe & Telc exam prep (A1–C2), smart classrooms, and native faculty mentorship.",
+      "Fluency Nest is Sonipat's premier German language institute located at Eldeco County, Murthal. Goethe & Telc exam prep (A1–C2), smart classrooms, and native faculty mentorship.",
     url: "https://www.fluencynest.in/german-classes-sonipat",
     siteName: "Fluency Nest",
     locale: "en_IN",
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Sonipat German Language Institute | Fluency Nest",
     description:
-      "Premier German language institute in Sonipat at SCO-10, Eldeco County. A1 to C2 CEFR certification.",
+      "Premier German language institute in Sonipat at Eldeco County. A1 to C2 CEFR certification.",
     images: ["/classroom.jpg"],
   },
 };
@@ -73,11 +73,11 @@ export const metadata: Metadata = {
 const LOCAL_FAQS = [
   {
     q: "Which is the best German language institute in Sonipat?",
-    a: "Fluency Nest is recognized as the best German language institute in Sonipat, located at SCO-10, Eldeco County, Murthal (Haryana — 131001). We specialize exclusively in CEFR-aligned German courses from A1 to C2, offering official Goethe-Zertifikat and Telc exam preparation, interactive smart classrooms, small batches (8-10 students), and direct mentorship.",
+    a: "Fluency Nest is recognized as the best German language institute in Sonipat, located at Eldeco County, Murthal (Haryana — 131001). We specialize exclusively in CEFR-aligned German courses from A1 to C2, offering official Goethe-Zertifikat and Telc exam preparation, interactive smart classrooms, small batches (8-10 students), and direct mentorship.",
   },
   {
     q: "Where is Fluency Nest located in Sonipat?",
-    a: "Our physical institute is located at SCO-10, Eldeco County, Murthal, Sonipat, Haryana — 131001. We are conveniently accessible right off the GT Karnal Road / NH 44 highway, offering peaceful surroundings and dedicated parking for students.",
+    a: "Our physical institute is located at Eldeco County, Murthal, Sonipat, Haryana — 131001. We are conveniently accessible right off the GT Karnal Road / NH 44 highway, offering peaceful surroundings and dedicated parking for students.",
   },
   {
     q: "Can complete beginners join German classes at your Sonipat centre?",
@@ -119,12 +119,12 @@ export default function GermanClassesSonipatPage() {
         "logo": "https://www.fluencynest.in/logo.png",
         "image": "https://www.fluencynest.in/classroom.jpg",
         "description":
-          "Leading German language institute in Sonipat located at SCO-10, Eldeco County, Murthal. Complete CEFR A1–C2, Goethe-Zertifikat and Telc exam preparation.",
+          "Leading German language institute in Sonipat located at Eldeco County, Murthal. Complete CEFR A1–C2, Goethe-Zertifikat and Telc exam preparation.",
         "telephone": SITE_CONFIG.phone,
         "email": "info@fluencynest.in",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "SCO-10, Eldeco County",
+          "streetAddress": "Eldeco County",
           "addressLocality": "Murthal, Sonipat",
           "addressRegion": "Haryana",
           "postalCode": "131001",
@@ -204,7 +204,7 @@ export default function GermanClassesSonipatPage() {
 
           <div className={styles.locationBadge}>
             <MapPin size={14} aria-hidden="true" />
-            Sonipat German Language Institute · SCO-10, Eldeco County, Murthal
+            Sonipat German Language Institute · Eldeco County, Murthal
           </div>
 
           <h1 className={`heading-display heading-xl ${styles.heroTitle}`}>
@@ -349,7 +349,7 @@ export default function GermanClassesSonipatPage() {
                 </div>
               </div>
               <div className={styles.levelFooter}>
-                <span className={styles.levelMode}>Offline at SCO-10 &amp; Online</span>
+                <span className={styles.levelMode}>Offline &amp; Online Batches</span>
                 <a href="#enquiry-section" className="btn btn-outline-primary btn-sm">
                   Enquire Batch
                 </a>
@@ -371,7 +371,7 @@ export default function GermanClassesSonipatPage() {
                 </div>
               </div>
               <div className={styles.levelFooter}>
-                <span className={styles.levelMode}>Offline at SCO-10 &amp; Online</span>
+                <span className={styles.levelMode}>Offline &amp; Online Batches</span>
                 <a href="#enquiry-section" className="btn btn-outline-primary btn-sm">
                   Enquire Batch
                 </a>
@@ -393,7 +393,7 @@ export default function GermanClassesSonipatPage() {
                 </div>
               </div>
               <div className={styles.levelFooter}>
-                <span className={styles.levelMode}>Offline at SCO-10 &amp; Online</span>
+                <span className={styles.levelMode}>Offline &amp; Online Batches</span>
                 <a href="#enquiry-section" className="btn btn-outline-primary btn-sm">
                   Enquire Batch
                 </a>
@@ -415,7 +415,7 @@ export default function GermanClassesSonipatPage() {
                 </div>
               </div>
               <div className={styles.levelFooter}>
-                <span className={styles.levelMode}>Offline at SCO-10 &amp; Online</span>
+                <span className={styles.levelMode}>Offline &amp; Online Batches</span>
                 <a href="#enquiry-section" className="btn btn-outline-primary btn-sm">
                   Enquire Batch
                 </a>
@@ -528,7 +528,7 @@ export default function GermanClassesSonipatPage() {
                     <div>
                       <span className={styles.infoRowLabel}>Physical Address</span>
                       <span className={styles.infoRowVal}>
-                        SCO-10, Eldeco County, Murthal, Sonipat, Haryana — 131001
+                        Eldeco County, Murthal, Sonipat, Haryana — 131001
                       </span>
                     </div>
                   </div>
@@ -557,7 +557,7 @@ export default function GermanClassesSonipatPage() {
 
               <div>
                 <a
-                  href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent("Hello! I want to visit Fluency Nest at SCO-10, Eldeco County, Sonipat. Please share timing and batch details.")}`}
+                  href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent("Hello! I want to visit Fluency Nest at Eldeco County, Sonipat. Please share timing and batch details.")}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-primary"
@@ -577,7 +577,7 @@ export default function GermanClassesSonipatPage() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Fluency Nest Language Institute — SCO-10, Eldeco County, Murthal, Sonipat"
+                title="Fluency Nest Language Institute — Eldeco County, Murthal, Sonipat"
               />
             </div>
           </div>

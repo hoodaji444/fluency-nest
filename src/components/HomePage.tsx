@@ -297,7 +297,7 @@ export default function HomePage() {
                 </p>
                 <a href="#classroom" className={styles.heroLocationOfflineBadge}>
                   <MapPin size={12} aria-hidden="true" />
-                  Flagship Campus: SCO-10, Eldeco County, Sonipat
+                  Flagship Campus: Eldeco County, Sonipat
                   <ChevronRight size={12} aria-hidden="true" />
                 </a>
               </div>
@@ -338,7 +338,7 @@ export default function HomePage() {
 
               <p className={styles.heroLocationOffline}>
                 <MapPin size={14} aria-hidden="true" />
-                SCO-10, ELDECO COUNTY, MURTHAL, SONIPAT · OFFLINE CLASSROOM BATCHES
+                ELDECO COUNTY, MURTHAL, SONIPAT · OFFLINE CLASSROOM BATCHES
               </p>
 
               <h2 className={`heading-display heading-xl ${styles.heroTitle}`}>
@@ -347,7 +347,7 @@ export default function HomePage() {
               </h2>
 
               <p className={`body-lg ${styles.heroSub}`}>
-                Learn at SCO-10, Eldeco County. Multimedia smart classrooms, direct faculty mentorship, and Goethe/DELF exam preparation 5 mins from DCRUST Murthal &amp; 12 mins from Rajiv Gandhi Education City.
+                Learn at Eldeco County. Multimedia smart classrooms, direct faculty mentorship, and Goethe/DELF exam preparation 5 mins from DCRUST Murthal &amp; 12 mins from Rajiv Gandhi Education City.
               </p>
 
               <div className={styles.heroSonipatChips}>
@@ -375,7 +375,7 @@ export default function HomePage() {
                   href="#classroom"
                   className="btn btn-outline-light btn-lg"
                 >
-                  Explore SCO-10 Campus
+                  Explore Sonipat Campus
                 </a>
               </div>
             </div>
@@ -807,7 +807,7 @@ export default function HomePage() {
           <div className={`${styles.classroomHeader} reveal`}>
             <div className={styles.classroomBadge}>
               <MapPin size={14} aria-hidden="true" />
-              <span>FLAGSHIP OFFLINE CAMPUS · SCO-10, ELDECO COUNTY, SONIPAT</span>
+              <span>FLAGSHIP OFFLINE CAMPUS · ELDECO COUNTY, SONIPAT</span>
             </div>
             <h2 className={`heading-display heading-lg ${styles.classroomMainTitle}`}>
               Prefer in-person learning?<br />
@@ -855,7 +855,7 @@ export default function HomePage() {
             <div className={`${styles.classroomImageWrap} reveal`}>
               <Image
                 src="/classroom.jpg"
-                alt="Interactive language classroom at Fluency Nest SCO-10 Sonipat"
+                alt="Interactive language classroom at Fluency Nest Sonipat"
                 width={650}
                 height={460}
                 className={styles.classroomImg}
@@ -864,7 +864,7 @@ export default function HomePage() {
               <div className={styles.classroomImgOverlay}>
                 <div className={styles.imgBadge}>
                   <MapPin size={14} />
-                  <span>SCO-10, Eldeco County, Murthal, Sonipat</span>
+                  <span>Eldeco County, Murthal, Sonipat</span>
                 </div>
                 <div className={styles.imgSubBadge}>
                   <span>Mon–Sat: 9:00 AM – 7:00 PM</span>
@@ -1008,10 +1008,10 @@ export default function HomePage() {
                 Want to see the classrooms before enrolling?
               </h3>
               <p className={styles.classroomCtaText}>
-                Book a free campus visit at <strong>SCO-10, Eldeco County, Murthal, Sonipat</strong>. Meet our certified trainers and attend a 30-minute free trial class.
+                Book a free campus visit at <strong>Eldeco County, Murthal, Sonipat</strong>. Meet our certified trainers and attend a 30-minute free trial class.
               </p>
               <div className={styles.classroomCtaMeta}>
-                <span>📍 SCO-10, Eldeco County, Murthal, Sonipat (131001)</span>
+                <span>📍 Eldeco County, Murthal, Sonipat (131001)</span>
                 <span>·</span>
                 <span>🕒 Mon–Sat: 9 AM – 7 PM</span>
               </div>
@@ -1021,7 +1021,7 @@ export default function HomePage() {
                 className="btn btn-primary btn-lg"
                 onClick={() => openEnquiry("Sonipat Campus Visit & Demo Class")}
               >
-                Book Free SCO-10 Demo
+                Book Free Campus Demo
                 <ArrowRight size={16} />
               </button>
               <a
@@ -1166,7 +1166,7 @@ export default function HomePage() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Fluency Nest — SCO-10, Eldeco County, Murthal, Sonipat"
+                title="Fluency Nest — Eldeco County, Murthal, Sonipat"
               />
             </div>
           </div>

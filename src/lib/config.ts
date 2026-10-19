@@ -19,13 +19,13 @@ export const SITE_CONFIG = {
 
   // Address
   address: {
-    line1: "SCO-10, Eldeco County",
+    line1: "Eldeco County",
     line2: "Murthal, Sonipat",
     city: "Sonipat",
     state: "Haryana",
     pin: "131001",
     country: "India",
-    full: "SCO-10, Eldeco County, Murthal, Sonipat, Haryana — 131001",
+    full: "Eldeco County, Murthal, Sonipat, Haryana — 131001",
   },
 
   // Social Media — UPDATE THESE
@@ -374,7 +374,7 @@ export const FAQ_ITEMS = [
   {
     question: "Do you offer offline in-person classes?",
     answer:
-      "Yes! If you want offline classes, we welcome you to our dedicated physical institute located at SCO-10, Eldeco County, Murthal, Sonipat, Haryana — 131001. We provide multimedia classrooms with round-table speaking sessions, or you can join our live interactive online batches from anywhere.",
+      "Yes! If you want offline classes, we welcome you to our dedicated physical institute located at Eldeco County, Murthal, Sonipat, Haryana — 131001. We provide multimedia classrooms with round-table speaking sessions, or you can join our live interactive online batches from anywhere.",
   },
   {
     question: "How can I enquire about course fees?",

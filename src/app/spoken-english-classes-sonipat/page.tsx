@@ -23,7 +23,7 @@ import styles from "./page.module.css";
 export const metadata: Metadata = {
   title: "Best Spoken English & Corporate Communication Classes in Sonipat | Fluency Nest",
   description:
-    "Master English fluency, eliminate hesitation, and excel in MNC job interviews. Interactive speaking batches at SCO-10, Eldeco County, Sonipat. In-person & online options.",
+    "Master English fluency, eliminate hesitation, and excel in MNC job interviews. Interactive speaking batches at Eldeco County, Sonipat. In-person & online options.",
   keywords: [
     "Spoken English classes in Sonipat",
     "English speaking institute in Sonipat",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Best Spoken English & Corporate Communication Classes in Sonipat | Fluency Nest",
     description:
-      "Premier English speaking & corporate communication institute at SCO-10, Eldeco County, Murthal, Sonipat. Small batches, mock interviews, public speaking, and neutral accent training.",
+      "Premier English speaking & corporate communication institute at Eldeco County, Murthal, Sonipat. Small batches, mock interviews, public speaking, and neutral accent training.",
     url: "https://www.fluencynest.in/spoken-english-classes-sonipat",
     siteName: "Fluency Nest",
     locale: "en_IN",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Best Spoken English & Corporate Communication Classes in Sonipat | Fluency Nest",
     description:
-      "Join offline & online Spoken English classes in Sonipat at SCO-10, Eldeco County. Speak fluently without hesitation.",
+      "Join offline & online Spoken English classes in Sonipat at Eldeco County. Speak fluently without hesitation.",
     images: ["/classroom.jpg"],
   },
 };
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
 const LOCAL_FAQS = [
   {
     q: "Where is Fluency Nest located in Sonipat for English classes?",
-    a: "Our physical institute is located at SCO-10, Eldeco County, Murthal, Sonipat, Haryana — 131001. We are situated right along the GT Karnal Road (NH 44), providing rapid access for learners from Sonipat city, Murthal, Rai, Kundli, and Panipat.",
+    a: "Our physical institute is located at Eldeco County, Murthal, Sonipat, Haryana — 131001. We are situated right along the GT Karnal Road (NH 44), providing rapid access for learners from Sonipat city, Murthal, Rai, Kundli, and Panipat.",
   },
   {
     q: "I know English grammar in writing, but I freeze when speaking. Can you help?",
@@ -110,12 +110,12 @@ export default function SpokenEnglishClassesSonipatPage() {
         "logo": "https://www.fluencynest.in/logo.png",
         "image": "https://www.fluencynest.in/classroom.jpg",
         "description":
-          "Premier Spoken English, public speaking, and corporate communication classes in Sonipat at SCO-10, Eldeco County, Murthal. Small batches, mock interviews, and confidence building.",
+          "Premier Spoken English, public speaking, and corporate communication classes in Sonipat at Eldeco County, Murthal. Small batches, mock interviews, and confidence building.",
         "telephone": SITE_CONFIG.phone,
         "email": "info@fluencynest.in",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "SCO-10, Eldeco County",
+          "streetAddress": "Eldeco County",
           "addressLocality": "Murthal, Sonipat",
           "addressRegion": "Haryana",
           "postalCode": "131001",
@@ -252,7 +252,7 @@ export default function SpokenEnglishClassesSonipatPage() {
 
           <div className={styles.locationBadge}>
             <MapPin size={14} aria-hidden="true" />
-            SCO-10, Eldeco County, Murthal, Sonipat · In-Person &amp; Online Batches
+            Eldeco County, Murthal, Sonipat · In-Person &amp; Online Batches
           </div>
 
           <h1 className={`heading-display heading-xl ${styles.heroTitle}`}>
@@ -436,7 +436,7 @@ export default function SpokenEnglishClassesSonipatPage() {
                 </div>
               </div>
               <div className={styles.levelFooter}>
-                <span className={styles.levelMode}>Offline at SCO-10 &amp; Online</span>
+                <span className={styles.levelMode}>Offline &amp; Online Batches</span>
                 <a href="#enquiry-section" className="btn btn-outline-primary btn-sm">
                   Enquire Batch
                 </a>
@@ -458,7 +458,7 @@ export default function SpokenEnglishClassesSonipatPage() {
                 </div>
               </div>
               <div className={styles.levelFooter}>
-                <span className={styles.levelMode}>Offline at SCO-10 &amp; Online</span>
+                <span className={styles.levelMode}>Offline &amp; Online Batches</span>
                 <a href="#enquiry-section" className="btn btn-outline-primary btn-sm">
                   Enquire Batch
                 </a>
@@ -480,7 +480,7 @@ export default function SpokenEnglishClassesSonipatPage() {
                 </div>
               </div>
               <div className={styles.levelFooter}>
-                <span className={styles.levelMode}>Offline at SCO-10 &amp; Online</span>
+                <span className={styles.levelMode}>Offline &amp; Online Batches</span>
                 <a href="#enquiry-section" className="btn btn-outline-primary btn-sm">
                   Enquire Batch
                 </a>
@@ -593,7 +593,7 @@ export default function SpokenEnglishClassesSonipatPage() {
                     <div>
                       <span className={styles.infoRowLabel}>Physical Address</span>
                       <span className={styles.infoRowVal}>
-                        SCO-10, Eldeco County, Murthal, Sonipat, Haryana — 131001
+                        Eldeco County, Murthal, Sonipat, Haryana — 131001
                       </span>
                     </div>
                   </div>
@@ -622,7 +622,7 @@ export default function SpokenEnglishClassesSonipatPage() {
 
               <div>
                 <a
-                  href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent("Hello! I want to enquire about Spoken English & Corporate Communication classes at Fluency Nest (SCO-10, Eldeco County, Sonipat). Please share upcoming batch details.")}`}
+                  href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent("Hello! I want to enquire about Spoken English & Corporate Communication classes at Fluency Nest (Eldeco County, Sonipat). Please share upcoming batch details.")}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-primary"
@@ -642,7 +642,7 @@ export default function SpokenEnglishClassesSonipatPage() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Fluency Nest Spoken English Institute — SCO-10, Eldeco County, Murthal, Sonipat"
+                title="Fluency Nest Spoken English Institute — Eldeco County, Murthal, Sonipat"
               />
             </div>
           </div>
