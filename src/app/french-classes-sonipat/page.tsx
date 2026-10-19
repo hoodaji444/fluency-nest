@@ -112,7 +112,7 @@ export default function FrenchClassesSonipatPage() {
         "image": "https://www.fluencynest.in/classroom.jpg",
         "description":
           "Premier French language classes in Sonipat at SCO-10, Eldeco County, Murthal. Complete CEFR A1–B2, DELF examinations, and TEF / TCF Canada PR preparation.",
-        "telephone": "+91 90509 06044",
+        "telephone": SITE_CONFIG.phone,
         "email": "info@fluencynest.in",
         "address": {
           "@type": "PostalAddress",

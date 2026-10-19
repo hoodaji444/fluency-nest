@@ -120,7 +120,7 @@ export default function GermanClassesSonipatPage() {
         "image": "https://www.fluencynest.in/classroom.jpg",
         "description":
           "Leading German language institute in Sonipat located at SCO-10, Eldeco County, Murthal. Complete CEFR A1–C2, Goethe-Zertifikat and Telc exam preparation.",
-        "telephone": "+91 90509 06044",
+        "telephone": SITE_CONFIG.phone,
         "email": "info@fluencynest.in",
         "address": {
           "@type": "PostalAddress",

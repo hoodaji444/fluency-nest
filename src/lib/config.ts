@@ -11,8 +11,8 @@ export const SITE_CONFIG = {
     "Est. 2024. Premier German, French & English language institute offering live interactive online classes nationwide, with dedicated offline classroom batches for in-person learners.",
 
   // Contact Details — UPDATE THESE
-  phone: "+91 90509 06044",
-  whatsapp: "+919050906044", // No spaces or dashes — used in WhatsApp links
+  phone: "+91 93507 76044",
+  whatsapp: "+919350776044", // No spaces or dashes — used in WhatsApp links
   whatsappMessage:
     "Hello, I am interested in your German language courses. Please share the course details and fees.",
   email: "info@fluencynest.in",

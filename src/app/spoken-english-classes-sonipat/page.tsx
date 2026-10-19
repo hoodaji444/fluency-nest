@@ -111,7 +111,7 @@ export default function SpokenEnglishClassesSonipatPage() {
         "image": "https://www.fluencynest.in/classroom.jpg",
         "description":
           "Premier Spoken English, public speaking, and corporate communication classes in Sonipat at SCO-10, Eldeco County, Murthal. Small batches, mock interviews, and confidence building.",
-        "telephone": "+91 90509 06044",
+        "telephone": SITE_CONFIG.phone,
         "email": "info@fluencynest.in",
         "address": {
           "@type": "PostalAddress",
