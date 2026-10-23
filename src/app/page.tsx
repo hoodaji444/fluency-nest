@@ -6,6 +6,8 @@ export const metadata: Metadata = {
   description:
     "Fluency Nest is Sonipat's premier German language institute located at Eldeco County, Murthal. Certified Goethe & Telc exam coaching (A1–C2), air-conditioned smart classrooms, and live online batches nationwide.",
   keywords: [
+    "german language course in sonipat",
+    "german language course sonipat",
     "sonipat german language institute",
     "german language institute in sonipat",
     "german language institute sonipat",
