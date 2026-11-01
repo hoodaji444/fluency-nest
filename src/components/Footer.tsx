@@ -74,6 +74,7 @@ export default function Footer() {
             <li><a href="/#about">About Us</a></li>
             <li><a href="/#accreditations">Accreditations</a></li>
             <li><a href="/#why-us">Why Choose Us</a></li>
+            <li><a href="/#testimonials">Student &amp; Parent Reviews</a></li>
             <li><a href="/#faq">FAQ</a></li>
             <li><a href="/#enquiry">Enquire Now</a></li>
             <li><Link href="/german-classes-sonipat" style={{ color: "#daa520", fontWeight: 600 }}>German Language Course in Sonipat</Link></li>

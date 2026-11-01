@@ -18,6 +18,7 @@ import {
 import { SITE_CONFIG, COURSES, FAQ_ITEMS } from "@/lib/config";
 import EnquiryForm from "@/components/EnquiryForm";
 import LeadPopup from "@/components/LeadPopup";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import styles from "./HomePage.module.css";
 
 // ── Scroll Reveal ───────────────────────────────────────────
@@ -1037,6 +1038,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ── TESTIMONIALS & FEEDBACK ── */}
+      <TestimonialsSection />
 
       {/* ── FAQ ── */}
       <section className={`section ${styles.faq}`} id="faq">

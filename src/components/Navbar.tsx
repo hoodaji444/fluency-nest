@@ -40,6 +40,7 @@ const NAV_LINKS: NavLinkItem[] = [
     ],
   },
   { href: "/#why-us", label: "Why Choose Us" },
+  { href: "/#testimonials", label: "Reviews" },
   { href: "/#contact", label: "Contact" },
 ];
 

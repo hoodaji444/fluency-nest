@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/config";
 import EnquiryForm from "@/components/EnquiryForm";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -671,6 +672,13 @@ export default function FrenchClassesSonipatPage() {
           </div>
         </div>
       </section>
+
+      {/* ── STUDENT & PARENT REVIEWS ── */}
+      <TestimonialsSection
+        filterCourse="French"
+        title="Student & Parent Reviews for French"
+        subtitle="Feedback from school learners and parents mastering French pronunciation, grammar, and DELF readiness."
+      />
 
       {/* ── ENQUIRY & TRIAL CLASS FORM ── */}
       <section className={styles.sectionLocal} id="enquiry-section">

@@ -392,3 +392,94 @@ export const FAQ_ITEMS = [
       "Our courses are structured according to CEFR levels (A1, A2, B1, B2, C1, C2), which align with the content tested in official German language examinations. However, Fluency Nest is not an official examination centre. Examinations such as Goethe-Zertifikat are conducted by the Goethe-Institut and other authorised centres. We can help you prepare for such examinations through our courses, but registration for the examinations must be done directly with the respective examination body.",
   },
 ];
+
+// ============================================================
+// TESTIMONIALS & REVIEWS
+// ============================================================
+
+export interface Testimonial {
+  id: string;
+  name: string;
+  role: string;
+  location: string;
+  course: "English" | "French" | "German";
+  courseBadge: string;
+  quote: string;
+  rating: number;
+  type: "parent" | "student";
+}
+
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    id: "aarav-sharma",
+    name: "Sunita Sharma",
+    role: "Mother of Aarav (Class 5)",
+    location: "Sonipat",
+    course: "English",
+    courseBadge: "Offline Batches — Sonipat",
+    quote:
+      "Before joining Fluency Nest, Aarav was very shy and hesitated to speak English during school assemblies. Within just three months of attending offline classes at the Eldeco County center, his hesitation vanished and his vocabulary improved remarkably.",
+    rating: 5,
+    type: "parent",
+  },
+  {
+    id: "ananya-verma",
+    name: "Ananya Verma",
+    role: "Class 9 Student",
+    location: "Delhi NCR",
+    course: "French",
+    courseBadge: "School French & DELF A1",
+    quote:
+      "French grammar and accents always felt confusing in school until I started classes at Fluency Nest. The interactive speaking activities made learning fun, and I scored an A+ in my school French term exams.",
+    rating: 5,
+    type: "student",
+  },
+  {
+    id: "reyansh-malik",
+    name: "Rajesh Malik",
+    role: "Father of Reyansh (Age 7)",
+    location: "Gurugram",
+    course: "English",
+    courseBadge: "Foundational English — Online",
+    quote:
+      "Finding educators who have the patience and energy to keep a 7-year-old engaged online is rare. The trainers use fun storytelling and dialogue exercises, and Reyansh genuinely looks forward to his class every evening.",
+    rating: 5,
+    type: "parent",
+  },
+  {
+    id: "diya-hooda",
+    name: "Dr. Meenakshi Hooda",
+    role: "Mother of Diya (Class 11)",
+    location: "Sonipat",
+    course: "German",
+    courseBadge: "German A1 — Sonipat Campus",
+    quote:
+      "We enrolled our daughter in the German A1 batch to build an early foundation for her higher education goals in Europe. The structured CEFR curriculum and personalized attention in small batches have given her great confidence right from day one.",
+    rating: 5,
+    type: "parent",
+  },
+  {
+    id: "kabir-singhal",
+    name: "Kabir Singhal",
+    role: "Class 7 Student",
+    location: "Sonipat",
+    course: "English",
+    courseBadge: "Public Speaking & GD Lab",
+    quote:
+      "I used to get very nervous talking in front of people, but the round-table group discussions at the institute helped me overcome my stage fear. Now I can speak fluently and even represented my school in the inter-school debate.",
+    rating: 5,
+    type: "student",
+  },
+  {
+    id: "rohan-riya-nanda",
+    name: "Pooja Nanda",
+    role: "Mother of Rohan & Riya (Class 6)",
+    location: "Chandigarh",
+    course: "French",
+    courseBadge: "French Middle School — Online",
+    quote:
+      "Both my children picked French as their third language in school and were struggling with pronunciation and reading. The teachers at Fluency Nest broke everything down with clear phonetics and constant practice, making learning smooth and enjoyable for them.",
+    rating: 5,
+    type: "parent",
+  },
+];
