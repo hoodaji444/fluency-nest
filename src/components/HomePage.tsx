@@ -298,7 +298,7 @@ export default function HomePage() {
                 </p>
                 <a href="#classroom" className={styles.heroLocationOfflineBadge}>
                   <MapPin size={12} aria-hidden="true" />
-                  Flagship Campus: Eldeco County, Sonipat
+                  Offline in Sonipat (Coming Soon)
                   <ChevronRight size={12} aria-hidden="true" />
                 </a>
               </div>
@@ -331,24 +331,24 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* SLIDE 2: Offline Centre — Exact Address from user request */}
+            {/* SLIDE 2: Offline Centre — Sonipat (Coming Soon) */}
             <div className={`${styles.heroSlidePane} ${heroSlide === 1 ? styles.heroSlidePaneActive : ""}`}>
               <div className={styles.heroBadge}>
-                <span>🏫 Sonipat Flagship Campus</span>
+                <span>🏫 Sonipat Offline Centre (Coming Soon)</span>
               </div>
 
               <p className={styles.heroLocationOffline}>
                 <MapPin size={14} aria-hidden="true" />
-                ELDECO COUNTY, MURTHAL, SONIPAT · OFFLINE CLASSROOM BATCHES
+                SONIPAT, HARYANA · OFFLINE CLASSROOM BATCHES (COMING SOON)
               </p>
 
               <h2 className={`heading-display heading-xl ${styles.heroTitle}`}>
                 Sonipat&apos;s Premier<br />
-                <em>Offline Language Institute.</em>
+                <em>Offline Language Institute (Coming Soon).</em>
               </h2>
 
               <p className={`body-lg ${styles.heroSub}`}>
-                Learn at Eldeco County. Multimedia smart classrooms, direct faculty mentorship, and Goethe/DELF exam preparation 5 mins from DCRUST Murthal &amp; 12 mins from Rajiv Gandhi Education City.
+                Offline batches coming soon to Sonipat! Multimedia smart classrooms, direct faculty mentorship, and Goethe/DELF exam preparation. Live interactive online batches are actively enrolling today.
               </p>
 
               <div className={styles.heroSonipatChips}>
@@ -808,14 +808,14 @@ export default function HomePage() {
           <div className={`${styles.classroomHeader} reveal`}>
             <div className={styles.classroomBadge}>
               <MapPin size={14} aria-hidden="true" />
-              <span>FLAGSHIP OFFLINE CAMPUS · ELDECO COUNTY, SONIPAT</span>
+              <span>OFFLINE IN SONIPAT (COMING SOON)</span>
             </div>
             <h2 className={`heading-display heading-lg ${styles.classroomMainTitle}`}>
               Prefer in-person learning?<br />
-              <em>Step inside our Sonipat institute.</em>
+              <em>Offline batches coming soon to Sonipat.</em>
             </h2>
             <p className={styles.classroomMainSub}>
-              Located in Eldeco County right off GT Karnal Road (NH 44), our flagship institute features multimedia smart classrooms, direct faculty mentorship, and Goethe/DELF exam preparation for students across Sonipat and Delhi-NCR.
+              Launching soon in Sonipat! Our upcoming offline institute will feature multimedia smart classrooms, direct faculty mentorship, and Goethe/DELF exam preparation for students across Sonipat and Delhi-NCR. Live online batches are actively enrolling today.
             </p>
           </div>
 
@@ -825,7 +825,7 @@ export default function HomePage() {
               <span className={styles.proximityIcon}>🚗</span>
               <div className={styles.proximityDetails}>
                 <strong>5 Mins</strong>
-                <span>DCRUST Murthal &amp; NH 44</span>
+                <span>DCRUST &amp; NH 44</span>
               </div>
             </div>
             <div className={styles.proximityItem}>
@@ -846,7 +846,7 @@ export default function HomePage() {
               <span className={styles.proximityIcon}>🅿️</span>
               <div className={styles.proximityDetails}>
                 <strong>Free Parking</strong>
-                <span>Eldeco County Gated Security</span>
+                <span>Secured Campus Parking</span>
               </div>
             </div>
           </div>
@@ -865,10 +865,10 @@ export default function HomePage() {
               <div className={styles.classroomImgOverlay}>
                 <div className={styles.imgBadge}>
                   <MapPin size={14} />
-                  <span>Eldeco County, Murthal, Sonipat</span>
+                  <span>Sonipat, Haryana (Coming Soon)</span>
                 </div>
                 <div className={styles.imgSubBadge}>
-                  <span>Mon–Sat: 9:00 AM – 7:00 PM</span>
+                  <span>Pre-Register for Early Batches</span>
                 </div>
               </div>
             </div>
@@ -947,9 +947,9 @@ export default function HomePage() {
                 Official Goethe &amp; Telc exam preparation. Essential for Germany Master&apos;s degrees, public university free tuition, Ausbildung, and nursing visas.
               </p>
               <ul className={styles.programBullets}>
-                <li><CheckCircle size={14} /> 5 Mins from DCRUST Murthal</li>
+                <li><CheckCircle size={14} /> Convenient for Sonipat &amp; University Students</li>
                 <li><CheckCircle size={14} /> 100% Goethe Exam Pass Record</li>
-                <li><CheckCircle size={14} /> Offline Batches + Online Backup</li>
+                <li><CheckCircle size={14} /> Offline Batches (Coming Soon) + Online Backup</li>
               </ul>
               <Link href="/german-classes-sonipat" className={`btn btn-primary ${styles.programBtn}`}>
                 Explore German Institute
@@ -1006,34 +1006,31 @@ export default function HomePage() {
           <div className={`${styles.classroomCtaCard} reveal`}>
             <div className={styles.classroomCtaLeft}>
               <h3 className={styles.classroomCtaHeading}>
-                Want to see the classrooms before enrolling?
+                Offline Batches Coming Soon in Sonipat
               </h3>
               <p className={styles.classroomCtaText}>
-                Book a free campus visit at <strong>Eldeco County, Murthal, Sonipat</strong>. Meet our certified trainers and attend a 30-minute free trial class.
+                We are launching our dedicated offline classroom centre in <strong>Sonipat</strong> soon! Pre-register now to reserve your seat and get early-bird batch schedules. Live online batches are actively enrolling right now.
               </p>
               <div className={styles.classroomCtaMeta}>
-                <span>📍 Eldeco County, Murthal, Sonipat (131001)</span>
+                <span>📍 Sonipat, Haryana (Offline Centre Coming Soon)</span>
                 <span>·</span>
-                <span>🕒 Mon–Sat: 9 AM – 7 PM</span>
+                <span>🕒 Live Online Batches Active Mon–Sat</span>
               </div>
             </div>
             <div className={styles.classroomCtaRight}>
               <button
                 className="btn btn-primary btn-lg"
-                onClick={() => openEnquiry("Sonipat Campus Visit & Demo Class")}
+                onClick={() => openEnquiry("Pre-Register: Sonipat Offline Batches")}
               >
-                Book Free Campus Demo
+                Pre-Register for Offline Batches
                 <ArrowRight size={16} />
               </button>
-              <a
-                href="https://www.google.com/maps?q=29.009771,77.077504"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
                 className="btn btn-outline-light btn-lg"
+                onClick={() => openEnquiry("Live Online Demo Class")}
               >
-                <MapPin size={16} />
-                Get Directions on Maps
-              </a>
+                Join Live Online Trial Class
+              </button>
             </div>
           </div>
         </div>
@@ -1163,14 +1160,14 @@ export default function HomePage() {
 
             <div className={`${styles.contactMap} reveal reveal-delay-2`}>
               <iframe
-                src="https://www.google.com/maps?q=29.009771,77.077504&z=17&output=embed"
+                src="https://www.google.com/maps?q=Sonipat,+Haryana&z=13&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0, display: "block" }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Fluency Nest — Eldeco County, Murthal, Sonipat"
+                title="Fluency Nest — Sonipat Language Institute (Offline Centre Coming Soon)"
               />
             </div>
           </div>

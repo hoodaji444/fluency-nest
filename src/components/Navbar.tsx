@@ -33,7 +33,7 @@ const NAV_LINKS: NavLinkItem[] = [
     label: "Sonipat Centre",
     isSpecial: true,
     dropdown: [
-      { href: "/#classroom", label: "📍 Campus Tour & Facilities", highlight: true },
+      { href: "/#classroom", label: "📍 Offline Campus (Coming Soon)", highlight: true },
       { href: "/german-classes-sonipat", label: "🇩🇪 German Course in Sonipat" },
       { href: "/french-classes-sonipat", label: "🇫🇷 French Classes in Sonipat" },
       { href: "/spoken-english-classes-sonipat", label: "🇬🇧 Spoken English in Sonipat" },

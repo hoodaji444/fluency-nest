@@ -6,26 +6,26 @@
 export const SITE_CONFIG = {
   // Business Information
   name: "Fluency Nest",
-  tagline: "German Language Institute",
+  tagline: "German, French & Spoken English Institute in Sonipat",
   description:
-    "Est. 2024. Premier German, French & English language institute offering live interactive online classes nationwide, with dedicated offline classroom batches for in-person learners.",
+    "Est. 2024. Sonipat's premier German Language Institute, French Language Institute, and Spoken English & Public Speaking Institute. Live interactive online batches nationwide & Sonipat offline centre coming soon.",
 
   // Contact Details — UPDATE THESE
   phone: "+91 93507 76044",
   whatsapp: "+919350776044", // No spaces or dashes — used in WhatsApp links
   whatsappMessage:
-    "Hello, I am interested in your German language courses. Please share the course details and fees.",
+    "Hello, I am interested in your language courses. Please share the course details and fees.",
   email: "info@fluencynest.in",
 
   // Address
   address: {
-    line1: "Eldeco County",
-    line2: "Murthal, Sonipat",
+    line1: "Sonipat (Offline Centre Coming Soon)",
+    line2: "Haryana",
     city: "Sonipat",
     state: "Haryana",
     pin: "131001",
     country: "India",
-    full: "Eldeco County, Murthal, Sonipat, Haryana — 131001",
+    full: "Sonipat, Haryana — 131001 (Offline Centre Coming Soon)",
   },
 
   // Social Media — UPDATE THESE
@@ -369,12 +369,12 @@ export const FAQ_ITEMS = [
   {
     question: "How long has Fluency Nest been training students?",
     answer:
-      "Fluency Nest was established in 2024 as an online language training institute. After successfully mentoring students across India online with structured, CEFR-aligned courses, we also established our dedicated physical institute for students who prefer in-person classroom learning.",
+      "Fluency Nest was established in 2024 as an online language training institute. After successfully mentoring students across India online with structured, CEFR-aligned courses, we are now launching our dedicated physical offline classroom institute in Sonipat (Coming Soon).",
   },
   {
     question: "Do you offer offline in-person classes?",
     answer:
-      "Yes! If you want offline classes, we welcome you to our dedicated physical institute located at Eldeco County, Murthal, Sonipat, Haryana — 131001. We provide multimedia classrooms with round-table speaking sessions, or you can join our live interactive online batches from anywhere.",
+      "We are launching our dedicated offline in-person classroom batches in Sonipat very soon! Currently, our live interactive online batches are actively running nationwide with small batch sizes and round-table speaking sessions. You can also pre-register your interest for our upcoming Sonipat offline batches.",
   },
   {
     question: "How can I enquire about course fees?",
@@ -453,9 +453,9 @@ export const TESTIMONIALS: Testimonial[] = [
     role: "Mother of Aarav (Class 5)",
     location: "Sonipat",
     course: "English",
-    courseBadge: "Offline Batches — Sonipat",
+    courseBadge: "English Fluency Batch",
     quote:
-      "Before joining Fluency Nest, Aarav was very shy and hesitated to speak English during school assemblies. Within just three months of attending offline classes at the Eldeco County center, his hesitation vanished and his vocabulary improved remarkably.",
+      "Before joining Fluency Nest, Aarav was very shy and hesitated to speak English during school assemblies. Within just three months of attending classes at Fluency Nest, his hesitation vanished and his vocabulary improved remarkably.",
     rating: 5,
     type: "parent",
   },

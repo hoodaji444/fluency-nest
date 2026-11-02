@@ -22,13 +22,15 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Best Spoken English & Corporate Communication Classes in Sonipat | Fluency Nest",
+  title: "Spoken English & Public Speaking Institute in Sonipat | Fluency Nest",
   description:
-    "Master English fluency, eliminate hesitation, and excel in MNC job interviews. Interactive speaking batches at Eldeco County, Sonipat. In-person & online options.",
+    "Master English fluency, eliminate hesitation, and excel in MNC job interviews with Fluency Nest — the leading Spoken English & Public Speaking Institute in Sonipat (Offline Centre Coming Soon). Interactive speaking batches & live online options.",
   keywords: [
+    "Spoken English & Public Speaking Institute in Sonipat",
+    "Spoken English Institute in Sonipat",
+    "Public Speaking Institute in Sonipat",
+    "english speaking institute in sonipat",
     "Spoken English classes in Sonipat",
-    "English speaking institute in Sonipat",
-    "English coaching Murthal",
     "English speaking classes near me Sonipat",
     "corporate communication course Sonipat",
     "public speaking classes Sonipat",
@@ -43,9 +45,9 @@ export const metadata: Metadata = {
     canonical: "https://www.fluencynest.in/spoken-english-classes-sonipat",
   },
   openGraph: {
-    title: "Best Spoken English & Corporate Communication Classes in Sonipat | Fluency Nest",
+    title: "Spoken English & Public Speaking Institute in Sonipat | Fluency Nest",
     description:
-      "Premier English speaking & corporate communication institute at Eldeco County, Murthal, Sonipat. Small batches, mock interviews, public speaking, and neutral accent training.",
+      "Premier Spoken English & Public Speaking Institute in Sonipat (Offline Centre Coming Soon). Small batches, mock interviews, public speaking, and neutral accent training.",
     url: "https://www.fluencynest.in/spoken-english-classes-sonipat",
     siteName: "Fluency Nest",
     locale: "en_IN",
@@ -55,15 +57,15 @@ export const metadata: Metadata = {
         url: "/classroom.jpg",
         width: 1200,
         height: 630,
-        alt: "Fluency Nest Spoken English & Corporate Communication Classroom in Sonipat",
+        alt: "Fluency Nest Spoken English & Public Speaking Institute in Sonipat",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Best Spoken English & Corporate Communication Classes in Sonipat | Fluency Nest",
+    title: "Spoken English & Public Speaking Institute in Sonipat | Fluency Nest",
     description:
-      "Join offline & online Spoken English classes in Sonipat at Eldeco County. Speak fluently without hesitation.",
+      "Premier Spoken English & Public Speaking Institute in Sonipat (Offline Centre Coming Soon). Small batches, mock interviews, and confidence building.",
     images: ["/classroom.jpg"],
   },
 };
@@ -71,7 +73,7 @@ export const metadata: Metadata = {
 const LOCAL_FAQS = [
   {
     q: "Where is Fluency Nest located in Sonipat for English classes?",
-    a: "Our physical institute is located at Eldeco County, Murthal, Sonipat, Haryana — 131001. We are situated right along the GT Karnal Road (NH 44), providing rapid access for learners from Sonipat city, Murthal, Rai, Kundli, and Panipat.",
+    a: "Our upcoming offline centre is situated in Sonipat, Haryana — 131001, providing convenient connectivity from GT Karnal Road (NH 44). We are currently accepting offline batch pre-registrations while our live interactive online classes run actively.",
   },
   {
     q: "I know English grammar in writing, but I freeze when speaking. Can you help?",
@@ -106,26 +108,33 @@ export default function SpokenEnglishClassesSonipatPage() {
       {
         "@type": ["LanguageSchool", "EducationalOrganization", "LocalBusiness"],
         "@id": "https://www.fluencynest.in/spoken-english-classes-sonipat#organization",
-        "name": "Fluency Nest — Spoken English & Communication Institute Sonipat",
+        "name": "Fluency Nest — Spoken English & Public Speaking Institute in Sonipat",
+        "alternateName": [
+          "Spoken English & Public Speaking Institute in Sonipat",
+          "Spoken English Institute in Sonipat",
+          "Public Speaking Institute in Sonipat",
+          "English Speaking Classes in Sonipat",
+          "Fluency Nest Spoken English",
+        ],
         "url": "https://www.fluencynest.in/spoken-english-classes-sonipat",
         "logo": "https://www.fluencynest.in/logo.png",
         "image": "https://www.fluencynest.in/classroom.jpg",
         "description":
-          "Premier Spoken English, public speaking, and corporate communication classes in Sonipat at Eldeco County, Murthal. Small batches, mock interviews, and confidence building.",
+          "Premier Spoken English & Public Speaking Institute in Sonipat (Offline Centre Coming Soon). Small batches, mock interviews, and confidence building.",
         "telephone": SITE_CONFIG.phone,
         "email": "info@fluencynest.in",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Eldeco County",
-          "addressLocality": "Murthal, Sonipat",
+          "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+          "addressLocality": "Sonipat",
           "addressRegion": "Haryana",
           "postalCode": "131001",
           "addressCountry": "IN",
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 29.009771,
-          "longitude": 77.077504,
+          "latitude": 28.993082,
+          "longitude": 77.015076,
         },
         "openingHoursSpecification": [
           {
@@ -248,31 +257,31 @@ export default function SpokenEnglishClassesSonipatPage() {
           <nav className={styles.breadcrumb} aria-label="Breadcrumb">
             <Link href="/">Home</Link>
             <span className={styles.breadcrumbSep}>/</span>
-            <span className={styles.breadcrumbCurrent}>Spoken English Classes in Sonipat</span>
+            <span className={styles.breadcrumbCurrent}>Spoken English &amp; Public Speaking Institute in Sonipat</span>
           </nav>
 
           <div className={styles.locationBadge}>
             <MapPin size={14} aria-hidden="true" />
-            Eldeco County, Murthal, Sonipat · In-Person &amp; Online Batches
+            Spoken English &amp; Public Speaking Institute in Sonipat · Offline Centre (Coming Soon)
           </div>
 
           <h1 className={`heading-display heading-xl ${styles.heroTitle}`}>
-            Best Spoken English Classes in<br />
-            <em>Sonipat &amp; Murthal, Haryana</em>
+            Spoken English &amp; Public Speaking Institute in Sonipat<br />
+            <em>Offline Centre Coming Soon · Live Online Batches Active</em>
           </h1>
 
           <p className={styles.heroSub}>
-            Speak English fluently, clearly, and without hesitation. Learn in small interactive batches (8–10 learners) at our modern Eldeco County centre.
-            100% practical speaking practice, neutral accent training, mock interviews, and corporate communication mastery.
+            Speak English fluently, clearly, and without hesitation. Learn in small interactive batches (8–10 learners) with Fluency Nest.
+            100% practical speaking practice, neutral accent training, mock interviews, and corporate communication mastery. Pre-register for our Sonipat centre or join live online today.
           </p>
 
           <div className={styles.heroCTAs}>
             <a href="#enquiry-section" className="btn btn-primary btn-lg">
-              Book In-Person Trial Class
+              Pre-Register / Book Trial Class
               <ArrowRight size={17} />
             </a>
             <a href="#location-map" className="btn btn-outline-light btn-lg">
-              View Institute Location &amp; Map
+              Sonipat Centre Details
             </a>
           </div>
 
@@ -389,9 +398,9 @@ export default function SpokenEnglishClassesSonipatPage() {
               <div className={styles.highlightIconBox}>
                 <Compass size={24} />
               </div>
-              <h3 className={styles.highlightCardTitle}>Prime Highway Location</h3>
+              <h3 className={styles.highlightCardTitle}>Upcoming Sonipat Centre</h3>
               <p className={styles.highlightCardDesc}>
-                Located inside Eldeco County, Murthal right off the GT Karnal Road (NH 44). Ample parking, peaceful green surroundings, and close proximity to Sonipat universities.
+                Centrally accessible in Sonipat with easy connectivity from GT Karnal Road (NH 44). Ample parking, peaceful surroundings, and close proximity to Sonipat universities.
               </p>
             </div>
 
@@ -573,28 +582,28 @@ export default function SpokenEnglishClassesSonipatPage() {
           <div className={styles.sectionHeader}>
             <div className="section-label">Campus Location &amp; Directions</div>
             <h2 className={`heading-display heading-lg ${styles.sectionTitle}`}>
-              Visit Fluency Nest in Eldeco County, Sonipat
+              Fluency Nest in Sonipat — Offline Centre (Coming Soon)
             </h2>
             <p className={styles.sectionDesc}>
-              Centrally situated to serve students and working professionals across Sonipat, Murthal, Rai, Kundli, Ganaur, and Panipat.
+              Centrally situated to serve students and working professionals across Sonipat, Rai, Kundli, Ganaur, Panipat, and Delhi-NCR. Live online batches are running actively.
             </p>
           </div>
 
           <div className={styles.locationGrid}>
             <div className={styles.locationCard}>
               <div>
-                <h3 className={styles.locationCardTitle}>Campus Information</h3>
+                <h3 className={styles.locationCardTitle}>Sonipat Centre Information</h3>
                 <p className={styles.locationCardDesc}>
-                  We invite you to visit our physical institute for a campus tour, personal communication assessment, and consultation with our mentors.
+                  We are launching our dedicated offline physical centre in Sonipat soon! You can pre-register for upcoming offline batches or get started immediately with our live interactive online batches.
                 </p>
 
                 <div className={styles.infoRows}>
                   <div className={styles.infoRow}>
                     <MapPin size={18} className={styles.infoRowIcon} />
                     <div>
-                      <span className={styles.infoRowLabel}>Physical Address</span>
+                      <span className={styles.infoRowLabel}>Location</span>
                       <span className={styles.infoRowVal}>
-                        Eldeco County, Murthal, Sonipat, Haryana — 131001
+                        Sonipat, Haryana — 131001 (Offline Centre Coming Soon)
                       </span>
                     </div>
                   </div>
@@ -612,7 +621,7 @@ export default function SpokenEnglishClassesSonipatPage() {
                   <div className={styles.infoRow}>
                     <Clock size={18} className={styles.infoRowIcon} />
                     <div>
-                      <span className={styles.infoRowLabel}>Visiting Hours</span>
+                      <span className={styles.infoRowLabel}>Support &amp; Counselling Hours</span>
                       <span className={styles.infoRowVal}>
                         Monday – Saturday: 9:00 AM – 7:00 PM (Sunday: Closed)
                       </span>
@@ -623,27 +632,27 @@ export default function SpokenEnglishClassesSonipatPage() {
 
               <div>
                 <a
-                  href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent("Hello! I want to enquire about Spoken English & Corporate Communication classes at Fluency Nest (Eldeco County, Sonipat). Please share upcoming batch details.")}`}
+                  href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent("Hello! I want to enquire about Spoken English classes and pre-register for the upcoming Sonipat offline centre at Fluency Nest.")}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-primary"
                   style={{ width: "100%", justifyContent: "center" }}
                 >
-                  Schedule an In-Person Campus Visit
+                  Pre-Register / Connect on WhatsApp
                 </a>
               </div>
             </div>
 
             <div className={styles.mapBox}>
               <iframe
-                src="https://www.google.com/maps?q=29.009771,77.077504&amp;z=17&amp;output=embed"
+                src="https://www.google.com/maps?q=Sonipat,+Haryana&amp;z=13&amp;output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0, display: "block" }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Fluency Nest Spoken English Institute — Eldeco County, Murthal, Sonipat"
+                title="Fluency Nest Spoken English Institute — Sonipat, Haryana (Offline Coming Soon)"
               />
             </div>
           </div>

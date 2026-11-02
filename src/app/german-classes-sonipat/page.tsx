@@ -20,20 +20,22 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "German Language Course in Sonipat | Goethe & Telc Prep (A1–C2)",
+  title: "German Language Institute in Sonipat | Goethe & Telc Prep (A1–C2)",
   description:
-    "Enroll in the best German language course in Sonipat at Fluency Nest (Eldeco County, Murthal). Certified Goethe & Telc exam coaching (A1–C2), small batches (8–10) & free trial class.",
+    "Fluency Nest is the premier German Language Institute in Sonipat (Offline Centre Coming Soon). Certified Goethe & Telc exam coaching (A1–C2), small batches (8–10) & live interactive online classes nationwide.",
   keywords: [
+    "German Language Institute in Sonipat",
+    "German Language Institute Sonipat",
+    "german institute in sonipat",
+    "sonipat german language institute",
     "german language course in sonipat",
     "german language course sonipat",
     "german language classes in sonipat",
-    "german language institute in sonipat",
     "best german course in sonipat",
     "german a1 course in sonipat",
     "german b1 course in sonipat",
     "german coaching in sonipat",
-    "german coaching murthal",
-    "german institute near DCRUST murthal",
+    "german institute near DCRUST",
     "goethe exam preparation sonipat",
     "telc german coaching sonipat",
     "study in germany course sonipat",
@@ -47,9 +49,9 @@ export const metadata: Metadata = {
     canonical: "https://www.fluencynest.in/german-classes-sonipat",
   },
   openGraph: {
-    title: "German Language Course in Sonipat | Fluency Nest",
+    title: "German Language Institute in Sonipat | Fluency Nest",
     description:
-      "Premier German language course in Sonipat at Eldeco County, Murthal. Certified Goethe & Telc exam coaching (A1–C2), small batches & trial classes.",
+      "Premier German Language Institute in Sonipat (Offline Centre Coming Soon). Certified Goethe & Telc exam coaching (A1–C2), small batches & interactive classes.",
     url: "https://www.fluencynest.in/german-classes-sonipat",
     siteName: "Fluency Nest",
     locale: "en_IN",
@@ -59,15 +61,15 @@ export const metadata: Metadata = {
         url: "/classroom.jpg",
         width: 1200,
         height: 630,
-        alt: "Fluency Nest German Language Course Classroom in Sonipat",
+        alt: "Fluency Nest German Language Institute in Sonipat",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "German Language Course in Sonipat | Fluency Nest",
+    title: "German Language Institute in Sonipat | Fluency Nest",
     description:
-      "Premier German language course in Sonipat at Eldeco County. Certified Goethe & Telc exam coaching (A1–C2) with small batches.",
+      "Premier German Language Institute in Sonipat (Offline Centre Coming Soon). Certified Goethe & Telc exam coaching (A1–C2) with small batches.",
     images: ["/classroom.jpg"],
   },
 };
@@ -75,7 +77,7 @@ export const metadata: Metadata = {
 const LOCAL_FAQS = [
   {
     q: "Which is the best German language course in Sonipat?",
-    a: "Fluency Nest offers the leading German language course in Sonipat, located at Eldeco County, Murthal (Haryana — 131001). We specialize in CEFR-aligned German courses from A1 to C2, offering official Goethe-Zertifikat and Telc exam preparation, interactive smart classrooms, small batches strictly limited to 8–10 students, and direct faculty mentorship.",
+    a: "Fluency Nest offers the leading German language course in Sonipat, Haryana (offline centre launching soon). We specialize in CEFR-aligned German courses from A1 to C2, offering official Goethe-Zertifikat and Telc exam preparation, interactive smart classrooms, small batches strictly limited to 8–10 students, and direct faculty mentorship. Live interactive online batches are actively running.",
   },
   {
     q: "What are the course levels, duration, and batch timings for German courses in Sonipat?",
@@ -99,11 +101,11 @@ const LOCAL_FAQS = [
   },
   {
     q: "Can students from DCRUST Murthal, Ashoka University, or Panipat commute easily?",
-    a: "Yes. Eldeco County is located right in Murthal, less than 10 minutes from DCRUST University and within comfortable driving/transit distance from Rajiv Gandhi Education City (Ashoka University, SRM) as well as Panipat and Kundli.",
+    a: "Yes. Our upcoming Sonipat offline centre is conveniently located with easy access from GT Karnal Road (NH 44), making it accessible for students from DCRUST Murthal, Rajiv Gandhi Education City (Ashoka University, SRM), Kundli, and Panipat. Live online classes are also running daily.",
   },
   {
     q: "Do you offer both offline classroom batches and live online classes?",
-    a: "Yes. You can attend in-person classroom batches at our Sonipat institute, or join live interactive online sessions. Students can also switch between modes if they are traveling or have academic semester exams.",
+    a: "Yes. We are currently accepting pre-registrations for our upcoming offline classroom batches in Sonipat. Meanwhile, our live interactive online batches are actively running nationwide with flexible morning and evening timings. Students can also switch between modes when offline batches launch.",
   },
   {
     q: "Are weekend and evening batches available for working professionals and university students?",
@@ -122,11 +124,11 @@ export default function GermanClassesSonipatPage() {
       {
         "@type": ["LanguageSchool", "EducationalOrganization", "LocalBusiness"],
         "@id": "https://www.fluencynest.in/german-classes-sonipat#institute",
-        "name": "Fluency Nest — German Language Institute Sonipat",
+        "name": "Fluency Nest — German Language Institute in Sonipat",
         "alternateName": [
-          "German Language Course in Sonipat",
-          "Sonipat German Language Institute",
           "German Language Institute in Sonipat",
+          "Sonipat German Language Institute",
+          "German Language Course in Sonipat",
           "German Institute Sonipat",
           "Fluency Nest German Classes",
         ],
@@ -134,21 +136,21 @@ export default function GermanClassesSonipatPage() {
         "logo": "https://www.fluencynest.in/logo.png",
         "image": "https://www.fluencynest.in/classroom.jpg",
         "description":
-          "Leading German language course in Sonipat located at Eldeco County, Murthal. Complete CEFR A1–C2, Goethe-Zertifikat and Telc exam preparation.",
+          "Leading German Language Institute in Sonipat (Offline Centre Coming Soon). Complete CEFR A1–C2, Goethe-Zertifikat and Telc exam preparation.",
         "telephone": SITE_CONFIG.phone,
         "email": "info@fluencynest.in",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Eldeco County",
-          "addressLocality": "Murthal, Sonipat",
+          "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+          "addressLocality": "Sonipat",
           "addressRegion": "Haryana",
           "postalCode": "131001",
           "addressCountry": "IN",
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 29.009771,
-          "longitude": 77.077504,
+          "latitude": 28.993082,
+          "longitude": 77.015076,
         },
         "areaServed": [
           { "@type": "City", "name": "Sonipat" },
@@ -207,11 +209,11 @@ export default function GermanClassesSonipatPage() {
           "courseWorkload": "PT60H",
           "location": {
             "@type": "Place",
-            "name": "Fluency Nest Language Institute",
+            "name": "Fluency Nest Language Institute (Sonipat)",
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "Eldeco County",
-              "addressLocality": "Murthal, Sonipat",
+              "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+              "addressLocality": "Sonipat",
               "addressRegion": "Haryana",
               "postalCode": "131001",
               "addressCountry": "IN",
@@ -236,11 +238,11 @@ export default function GermanClassesSonipatPage() {
           "courseWorkload": "PT80H",
           "location": {
             "@type": "Place",
-            "name": "Fluency Nest Language Institute",
+            "name": "Fluency Nest Language Institute (Sonipat)",
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "Eldeco County",
-              "addressLocality": "Murthal, Sonipat",
+              "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+              "addressLocality": "Sonipat",
               "addressRegion": "Haryana",
               "postalCode": "131001",
               "addressCountry": "IN",
@@ -265,11 +267,11 @@ export default function GermanClassesSonipatPage() {
           "courseWorkload": "PT90H",
           "location": {
             "@type": "Place",
-            "name": "Fluency Nest Language Institute",
+            "name": "Fluency Nest Language Institute (Sonipat)",
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "Eldeco County",
-              "addressLocality": "Murthal, Sonipat",
+              "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+              "addressLocality": "Sonipat",
               "addressRegion": "Haryana",
               "postalCode": "131001",
               "addressCountry": "IN",
@@ -305,7 +307,7 @@ export default function GermanClassesSonipatPage() {
         <div className={styles.heroBg}>
           <Image
             src="/classroom.jpg"
-            alt="Fluency Nest German language course classroom and multimedia setup at Eldeco County, Sonipat"
+            alt="Fluency Nest German language course classroom setup in Sonipat"
             fill
             priority
             quality={90}
@@ -319,30 +321,30 @@ export default function GermanClassesSonipatPage() {
           <nav className={styles.breadcrumb} aria-label="Breadcrumb">
             <Link href="/">Home</Link>
             <span className={styles.breadcrumbSep}>/</span>
-            <span className={styles.breadcrumbCurrent}>German Language Course in Sonipat</span>
+            <span className={styles.breadcrumbCurrent}>German Language Institute in Sonipat</span>
           </nav>
 
           <div className={styles.locationBadge}>
             <MapPin size={14} aria-hidden="true" />
-            German Language Course in Sonipat · Eldeco County, Murthal
+            German Language Institute in Sonipat · Offline Centre (Coming Soon)
           </div>
 
           <h1 className={`heading-display heading-xl ${styles.heroTitle}`}>
-            German Language Course in Sonipat<br />
-            <em>&amp; Murthal, Haryana — Fluency Nest</em>
+            German Language Institute in Sonipat<br />
+            <em>Offline Centre Coming Soon · Live Online Batches Active</em>
           </h1>
 
           <p className={styles.heroSub}>
-            Looking for a certified German language course in Sonipat? Fluency Nest offers comprehensive CEFR-aligned training from Beginner (A1) to Advanced (C2), specifically designed for university students (DCRUST, Ashoka, SRM), job seekers, and healthcare professionals planning to work or study in Germany. Learn in small interactive batches (8–10 learners) at our modern Eldeco County campus or join live online sessions.
+            Looking for a certified German language course in Sonipat? Fluency Nest offers comprehensive CEFR-aligned training from Beginner (A1) to Advanced (C2), specifically designed for university students (DCRUST, Ashoka, SRM), job seekers, and healthcare professionals planning to work or study in Germany. Learn in small interactive batches (8–10 learners) — pre-register for our upcoming Sonipat offline centre or join live interactive online sessions today.
           </p>
 
           <div className={styles.heroCTAs}>
             <a href="#enquiry-section" className="btn btn-primary btn-lg">
-              Book In-Person Trial Class
+              Pre-Register / Book Trial Class
               <ArrowRight size={17} />
             </a>
             <a href="#location-map" className="btn btn-outline-light btn-lg">
-              View Institute Location &amp; Map
+              Sonipat Centre Details
             </a>
           </div>
 
@@ -381,9 +383,9 @@ export default function GermanClassesSonipatPage() {
               <div className={styles.highlightIconBox}>
                 <Compass size={24} />
               </div>
-              <h3 className={styles.highlightCardTitle}>Prime Highway Location</h3>
+              <h3 className={styles.highlightCardTitle}>Upcoming Sonipat Centre</h3>
               <p className={styles.highlightCardDesc}>
-                Situated inside Eldeco County, Murthal with easy access from GT Karnal Road (NH 44). Enjoy a serene study environment, zero traffic congestion, and free on-campus vehicle parking.
+                Centrally accessible in Sonipat with seamless connectivity from GT Karnal Road (NH 44). Enjoy a serene study environment, zero traffic hassle, and dedicated student facilities.
               </p>
             </div>
 
@@ -627,28 +629,28 @@ export default function GermanClassesSonipatPage() {
           <div className={styles.sectionHeader}>
             <div className="section-label">Campus Location &amp; Directions</div>
             <h2 className={`heading-display heading-lg ${styles.sectionTitle}`}>
-              Visit Fluency Nest in Eldeco County, Sonipat
+              Fluency Nest in Sonipat — Offline Centre (Coming Soon)
             </h2>
             <p className={styles.sectionDesc}>
-              Centrally situated to serve students across Sonipat, Murthal, Rai, Kundli, Ganaur, and Panipat.
+              Centrally situated to serve students across Sonipat, Rai, Kundli, Ganaur, Panipat, and Delhi-NCR. Live online batches are running actively.
             </p>
           </div>
 
           <div className={styles.locationGrid}>
             <div className={styles.locationCard}>
               <div>
-                <h3 className={styles.locationCardTitle}>Campus Information</h3>
+                <h3 className={styles.locationCardTitle}>Sonipat Centre Information</h3>
                 <p className={styles.locationCardDesc}>
-                  We welcome you to visit our physical institute for a campus tour, level assessment, and faculty discussion.
+                  We are launching our dedicated offline physical centre in Sonipat soon! You can pre-register for upcoming offline batches or get started immediately with our live interactive online batches.
                 </p>
 
                 <div className={styles.infoRows}>
                   <div className={styles.infoRow}>
                     <MapPin size={18} className={styles.infoRowIcon} />
                     <div>
-                      <span className={styles.infoRowLabel}>Physical Address</span>
+                      <span className={styles.infoRowLabel}>Location</span>
                       <span className={styles.infoRowVal}>
-                        Eldeco County, Murthal, Sonipat, Haryana — 131001
+                        Sonipat, Haryana — 131001 (Offline Centre Coming Soon)
                       </span>
                     </div>
                   </div>
@@ -666,7 +668,7 @@ export default function GermanClassesSonipatPage() {
                   <div className={styles.infoRow}>
                     <Clock size={18} className={styles.infoRowIcon} />
                     <div>
-                      <span className={styles.infoRowLabel}>Visiting Hours</span>
+                      <span className={styles.infoRowLabel}>Support &amp; Counselling Hours</span>
                       <span className={styles.infoRowVal}>
                         Monday – Saturday: 9:00 AM – 7:00 PM (Sunday: Closed)
                       </span>
@@ -677,27 +679,27 @@ export default function GermanClassesSonipatPage() {
 
               <div>
                 <a
-                  href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent("Hello! I want to visit Fluency Nest for the German language course at Eldeco County, Sonipat. Please share timing and batch details.")}`}
+                  href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent("Hello! I want to enquire about German language batches and pre-register for the upcoming Sonipat offline centre at Fluency Nest.")}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-primary"
                   style={{ width: "100%", justifyContent: "center" }}
                 >
-                  Schedule an In-Person Campus Visit
+                  Pre-Register / Connect on WhatsApp
                 </a>
               </div>
             </div>
 
             <div className={styles.mapBox}>
               <iframe
-                src="https://www.google.com/maps?q=29.009771,77.077504&amp;z=17&amp;output=embed"
+                src="https://www.google.com/maps?q=Sonipat,+Haryana&amp;z=13&amp;output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0, display: "block" }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Fluency Nest German Language Course — Eldeco County, Murthal, Sonipat"
+                title="Fluency Nest German Language Institute — Sonipat, Haryana (Offline Coming Soon)"
               />
             </div>
           </div>

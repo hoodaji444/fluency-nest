@@ -32,7 +32,7 @@ const COURSES_OPTIONS = [
 
 const MODE_OPTIONS = [
   { value: "online", label: "Online Classes (Live Interactive)" },
-  { value: "offline", label: "Offline In-Person (Eldeco County, Murthal, Sonipat)" },
+  { value: "offline", label: "Offline In-Person — Sonipat (Coming Soon / Pre-Register)" },
   { value: "guidance", label: "Need Guidance" },
 ];
 

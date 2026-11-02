@@ -21,13 +21,14 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Best French Classes in Sonipat & Murthal | Fluency Nest Institute",
+  title: "French Language Institute in Sonipat | DELF & TEF Canada Prep",
   description:
-    "Join top French language classes in Sonipat at Eldeco County. Certified faculty, DELF exam preparation (A1–B2) & French for Canada PR (TEF/TCF Canada). In-person & online batches.",
+    "Fluency Nest is the premier French Language Institute in Sonipat (Offline Centre Coming Soon). Certified faculty, DELF exam preparation (A1–B2) & French for Canada PR (TEF/TCF Canada).",
   keywords: [
+    "French Language Institute in Sonipat",
+    "French Language Institute Sonipat",
+    "french institute in sonipat",
     "French classes in Sonipat",
-    "French language institute in Sonipat",
-    "French coaching Murthal",
     "French classes near me Sonipat",
     "French language institute Sonipat Haryana",
     "learn French Sonipat",
@@ -44,9 +45,9 @@ export const metadata: Metadata = {
     canonical: "https://www.fluencynest.in/french-classes-sonipat",
   },
   openGraph: {
-    title: "Best French Classes in Sonipat & Murthal | Fluency Nest Institute",
+    title: "French Language Institute in Sonipat | Fluency Nest",
     description:
-      "Premier French, German & English language institute at Eldeco County, Murthal, Sonipat. Certified faculty, DELF exam prep, TEF Canada immigration training, and interactive batches.",
+      "Premier French Language Institute in Sonipat (Offline Centre Coming Soon). Certified faculty, DELF exam prep, TEF Canada immigration training, and live online batches.",
     url: "https://www.fluencynest.in/french-classes-sonipat",
     siteName: "Fluency Nest",
     locale: "en_IN",
@@ -62,9 +63,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Best French Classes in Sonipat & Murthal | Fluency Nest Institute",
+    title: "French Language Institute in Sonipat | Fluency Nest",
     description:
-      "Join offline & online French language classes in Sonipat at Eldeco County. CEFR A1 to B2 DELF certification & TEF Canada PR preparation.",
+      "Premier French Language Institute in Sonipat (Offline Centre Coming Soon). CEFR A1 to B2 DELF certification & TEF Canada PR preparation.",
     images: ["/classroom.jpg"],
   },
 };
@@ -72,7 +73,7 @@ export const metadata: Metadata = {
 const LOCAL_FAQS = [
   {
     q: "Where is Fluency Nest located in Sonipat for French classes?",
-    a: "Our physical institute is located at Eldeco County, Murthal, Sonipat, Haryana — 131001. We are situated directly off the GT Karnal Road (NH 44), making it easily accessible for students from Sonipat city, Murthal, Panipat, Rai, and Kundli.",
+    a: "Our upcoming physical centre is located in Sonipat, Haryana — 131001, conveniently situated near the GT Karnal Road (NH 44). We are currently accepting offline batch pre-registrations while our live interactive online classes run actively nationwide.",
   },
   {
     q: "Can I learn French from scratch (zero level) at your Sonipat centre?",
@@ -88,11 +89,11 @@ const LOCAL_FAQS = [
   },
   {
     q: "Can university students from DCRUST Murthal, Ashoka, or OP Jindal commute easily?",
-    a: "Yes. Eldeco County is less than 10 minutes from DCRUST Murthal and under 20 minutes from Rajiv Gandhi Education City (Ashoka University, SRM University). We offer flexible morning, evening, and weekend batches to match university timetables.",
+    a: "Yes. Our upcoming offline centre in Sonipat will be easily accessible from DCRUST Murthal and Rajiv Gandhi Education City (Ashoka University, SRM University). We offer flexible morning, evening, and weekend batches to match university timetables, and live online batches are available right now.",
   },
   {
     q: "Are classes available both in-person (offline) and live online?",
-    a: "Yes. You can attend interactive in-person sessions at our modern Eldeco County classrooms, or join live instructor-led online sessions from home. Students can switch between modes during college exams or personal travel.",
+    a: "Yes. You can pre-register for upcoming offline classroom batches at our Sonipat centre, or join live instructor-led online sessions from home today. Students can switch between modes during college exams or personal travel.",
   },
   {
     q: "How many students are there in a French batch?",
@@ -107,26 +108,33 @@ export default function FrenchClassesSonipatPage() {
       {
         "@type": ["LanguageSchool", "EducationalOrganization", "LocalBusiness"],
         "@id": "https://www.fluencynest.in/french-classes-sonipat#organization",
-        "name": "Fluency Nest — French Language Institute Sonipat",
+        "name": "Fluency Nest — French Language Institute in Sonipat",
+        "alternateName": [
+          "French Language Institute in Sonipat",
+          "Sonipat French Language Institute",
+          "French Classes in Sonipat",
+          "French Institute Sonipat",
+          "Fluency Nest French Classes",
+        ],
         "url": "https://www.fluencynest.in/french-classes-sonipat",
         "logo": "https://www.fluencynest.in/logo.png",
         "image": "https://www.fluencynest.in/classroom.jpg",
         "description":
-          "Premier French language classes in Sonipat at Eldeco County, Murthal. Complete CEFR A1–B2, DELF examinations, and TEF / TCF Canada PR preparation.",
+          "Premier French Language Institute in Sonipat (Offline Centre Coming Soon). Complete CEFR A1–B2, DELF examinations, and TEF / TCF Canada PR preparation.",
         "telephone": SITE_CONFIG.phone,
         "email": "info@fluencynest.in",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Eldeco County",
-          "addressLocality": "Murthal, Sonipat",
+          "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+          "addressLocality": "Sonipat",
           "addressRegion": "Haryana",
           "postalCode": "131001",
           "addressCountry": "IN",
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 29.009771,
-          "longitude": 77.077504,
+          "latitude": 28.993082,
+          "longitude": 77.015076,
         },
         "openingHoursSpecification": [
           {
@@ -249,31 +257,31 @@ export default function FrenchClassesSonipatPage() {
           <nav className={styles.breadcrumb} aria-label="Breadcrumb">
             <Link href="/">Home</Link>
             <span className={styles.breadcrumbSep}>/</span>
-            <span className={styles.breadcrumbCurrent}>French Classes in Sonipat</span>
+            <span className={styles.breadcrumbCurrent}>French Language Institute in Sonipat</span>
           </nav>
 
           <div className={styles.locationBadge}>
             <MapPin size={14} aria-hidden="true" />
-            Eldeco County, Murthal, Sonipat · In-Person &amp; Online Batches
+            French Language Institute in Sonipat · Offline Centre (Coming Soon)
           </div>
 
           <h1 className={`heading-display heading-xl ${styles.heroTitle}`}>
-            Best French Classes in<br />
-            <em>Sonipat &amp; Murthal, Haryana</em>
+            French Language Institute in Sonipat<br />
+            <em>Offline Centre Coming Soon · Live Online Batches Active</em>
           </h1>
 
           <p className={styles.heroSub}>
-            Learn French with certified language mentors at our modern institute in Eldeco County, Sonipat.
-            Small interactive batches (8–10 students), CEFR curriculum (A1–B2), DELF certification preparation, and specialized French for Canada PR (TEF / TCF).
+            Learn French with certified language mentors at Fluency Nest.
+            Small interactive batches (8–10 students), CEFR curriculum (A1–B2), DELF certification preparation, and specialized French for Canada PR (TEF / TCF). Pre-register for our upcoming Sonipat centre or start online today.
           </p>
 
           <div className={styles.heroCTAs}>
             <a href="#enquiry-section" className="btn btn-primary btn-lg">
-              Book In-Person Trial Class
+              Pre-Register / Book Trial Class
               <ArrowRight size={17} />
             </a>
             <a href="#location-map" className="btn btn-outline-light btn-lg">
-              View Institute Location &amp; Map
+              Sonipat Centre Details
             </a>
           </div>
 
@@ -350,9 +358,9 @@ export default function FrenchClassesSonipatPage() {
               <div className={styles.highlightIconBox}>
                 <Compass size={24} />
               </div>
-              <h3 className={styles.highlightCardTitle}>Prime Highway Location</h3>
+              <h3 className={styles.highlightCardTitle}>Upcoming Sonipat Centre</h3>
               <p className={styles.highlightCardDesc}>
-                Located at Eldeco County, Murthal with easy access from GT Karnal Road (NH 44). Ample parking, calm academic environment, and zero city traffic jams.
+                Centrally accessible in Sonipat with easy access from GT Karnal Road (NH 44). Ample parking, calm academic environment, and zero city traffic jams.
               </p>
             </div>
 
@@ -533,7 +541,7 @@ export default function FrenchClassesSonipatPage() {
                 Classroom Amenities at Our Sonipat Centre
               </h2>
               <p className={styles.sectionDesc} style={{ marginBottom: "28px" }}>
-                Language mastery requires immersion. Our physical campus at Eldeco County is tailored for interactive communication and rapid phonetics absorption.
+                Language mastery requires immersion. Our upcoming Sonipat centre is tailored for interactive communication and rapid phonetics absorption.
               </p>
 
               <div className={styles.amenitiesList}>
@@ -596,28 +604,28 @@ export default function FrenchClassesSonipatPage() {
           <div className={styles.sectionHeader}>
             <div className="section-label">Campus Location &amp; Directions</div>
             <h2 className={`heading-display heading-lg ${styles.sectionTitle}`}>
-              Visit Fluency Nest in Eldeco County, Sonipat
+              Fluency Nest in Sonipat — Offline Centre (Coming Soon)
             </h2>
             <p className={styles.sectionDesc}>
-              Centrally situated to serve students and professionals across Sonipat, Murthal, Rai, Kundli, Ganaur, and Panipat.
+              Centrally situated to serve students and professionals across Sonipat, Rai, Kundli, Ganaur, and Panipat. Live online batches are running actively.
             </p>
           </div>
 
           <div className={styles.locationGrid}>
             <div className={styles.locationCard}>
               <div>
-                <h3 className={styles.locationCardTitle}>Campus Information</h3>
+                <h3 className={styles.locationCardTitle}>Sonipat Centre Information</h3>
                 <p className={styles.locationCardDesc}>
-                  We invite you to visit our physical institute for a campus tour, level assessment, and consultation with our French trainers.
+                  We are launching our dedicated offline physical centre in Sonipat soon! You can pre-register for upcoming offline batches or get started immediately with our live interactive online batches.
                 </p>
 
                 <div className={styles.infoRows}>
                   <div className={styles.infoRow}>
                     <MapPin size={18} className={styles.infoRowIcon} />
                     <div>
-                      <span className={styles.infoRowLabel}>Physical Address</span>
+                      <span className={styles.infoRowLabel}>Location</span>
                       <span className={styles.infoRowVal}>
-                        Eldeco County, Murthal, Sonipat, Haryana — 131001
+                        Sonipat, Haryana — 131001 (Offline Centre Coming Soon)
                       </span>
                     </div>
                   </div>
@@ -635,7 +643,7 @@ export default function FrenchClassesSonipatPage() {
                   <div className={styles.infoRow}>
                     <Clock size={18} className={styles.infoRowIcon} />
                     <div>
-                      <span className={styles.infoRowLabel}>Visiting Hours</span>
+                      <span className={styles.infoRowLabel}>Support &amp; Counselling Hours</span>
                       <span className={styles.infoRowVal}>
                         Monday – Saturday: 9:00 AM – 7:00 PM (Sunday: Closed)
                       </span>
@@ -646,27 +654,27 @@ export default function FrenchClassesSonipatPage() {
 
               <div>
                 <a
-                  href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent("Hello! I want to enquire about French classes at Fluency Nest (Eldeco County, Sonipat). Please share upcoming batch timings.")}`}
+                  href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent("Hello! I want to enquire about French classes and pre-register for the upcoming Sonipat offline centre at Fluency Nest.")}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-primary"
                   style={{ width: "100%", justifyContent: "center" }}
                 >
-                  Schedule an In-Person Campus Visit
+                  Pre-Register / Connect on WhatsApp
                 </a>
               </div>
             </div>
 
             <div className={styles.mapBox}>
               <iframe
-                src="https://www.google.com/maps?q=29.009771,77.077504&amp;z=17&amp;output=embed"
+                src="https://www.google.com/maps?q=Sonipat,+Haryana&amp;z=13&amp;output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0, display: "block" }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Fluency Nest French Language Institute — Eldeco County, Murthal, Sonipat"
+                title="Fluency Nest French Language Institute — Sonipat, Haryana (Offline Coming Soon)"
               />
             </div>
           </div>

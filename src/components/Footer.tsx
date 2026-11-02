@@ -27,7 +27,7 @@ export default function Footer() {
             </div>
           </Link>
           <p className={styles.footerDesc}>
-            Est. 2024. Structured online German, French, and English language training across India, with dedicated offline classroom batches if you prefer in-person learning.
+            Est. 2024. Structured online German, French, and English language training across India, with dedicated offline classroom batches in Sonipat (Coming Soon).
           </p>
           <div className={styles.footerSocial}>
             <a
