@@ -482,4 +482,52 @@ export const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     type: "parent",
   },
+  {
+    id: "rohan-dahiya-german",
+    name: "Rohan Dahiya",
+    role: "Final Year B.Tech Student (DCRUST)",
+    location: "Sonipat",
+    course: "German",
+    courseBadge: "German A2 & B1 — Offline",
+    quote:
+      "Balancing college lectures with language coaching was tough until I joined Fluency Nest. The trainers explained tricky German grammar with real clarity, helping me clear Goethe-Zertifikat B1 on my very first attempt.",
+    rating: 5,
+    type: "student",
+  },
+  {
+    id: "simran-kaur-german",
+    name: "Simran Kaur",
+    role: "Homemaker & Spouse Visa Aspirant",
+    location: "Panipat",
+    course: "German",
+    courseBadge: "German A1 — Live Online",
+    quote:
+      "Starting a new language after a long study gap felt intimidating, but the teachers were so patient and encouraging. Within two months, I gained the vocabulary and confidence needed to clear my A1 exam for my German family reunion visa.",
+    rating: 5,
+    type: "student",
+  },
+  {
+    id: "naveen-hooda-german",
+    name: "Naveen Hooda",
+    role: "Software Engineer, Settled in Frankfurt",
+    location: "Frankfurt, Germany",
+    course: "German",
+    courseBadge: "German B2 — Evening Batch",
+    quote:
+      "Even after moving to Germany, managing conversations at work and government offices was stressful. Fluency Nest's flexible online evening sessions helped me level up to B2 and speak German spontaneously without hesitating.",
+    rating: 5,
+    type: "student",
+  },
+  {
+    id: "priya-sharma-german",
+    name: "Priya Sharma",
+    role: "M.Sc. Student, TU Munich",
+    location: "Munich, Germany",
+    course: "German",
+    courseBadge: "German B1/B2 Exam Prep",
+    quote:
+      "Getting admission to a German public university required solid language proficiency. The intensive mock exams and targeted speaking sessions at Fluency Nest were crucial in preparing me for academic life here in Munich.",
+    rating: 5,
+    type: "student",
+  },
 ];
