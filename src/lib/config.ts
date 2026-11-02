@@ -410,6 +410,43 @@ export interface Testimonial {
 }
 
 export const TESTIMONIALS: Testimonial[] = [
+  // ── ENGLISH ──────────────────────────────────────────────
+  {
+    id: "ankit-chahal-english",
+    name: "Ankit Chahal",
+    role: "Senior Analyst, MNC (Gurugram)",
+    location: "Sonipat",
+    course: "English",
+    courseBadge: "Corporate Communication & Interview Lab",
+    quote:
+      "I understood English well technically, but I always hesitated during international client meetings and presentations. The debate sessions and round-table speaking stations at Fluency Nest completely changed my workplace presence and confidence.",
+    rating: 5,
+    type: "student",
+  },
+  {
+    id: "megha-juneja-english",
+    name: "Megha Juneja",
+    role: "MBA Student, O.P. Jindal Global University",
+    location: "Sonipat",
+    course: "English",
+    courseBadge: "Public Speaking & GD Mastery",
+    quote:
+      "Campus placement group discussions require spontaneous thinking and clear articulation under pressure. The mock GD rounds and constructive feedback from the mentors helped me crack my dream consulting placement effortlessly.",
+    rating: 5,
+    type: "student",
+  },
+  {
+    id: "gaurav-deswal-english",
+    name: "Gaurav Deswal",
+    role: "Software Developer, Settled in Toronto",
+    location: "Toronto, Canada",
+    course: "English",
+    courseBadge: "IELTS 7.5+ & Advanced Fluency",
+    quote:
+      "Before moving abroad, I needed to improve my natural spoken fluency and IELTS score. The structured speaking modules helped me score Band 8 in IELTS Speaking and made adapting to workplace communication in Canada completely seamless.",
+    rating: 5,
+    type: "student",
+  },
   {
     id: "aarav-sharma",
     name: "Sunita Sharma",
@@ -422,66 +459,8 @@ export const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     type: "parent",
   },
-  {
-    id: "ananya-verma",
-    name: "Ananya Verma",
-    role: "Class 9 Student",
-    location: "Delhi NCR",
-    course: "French",
-    courseBadge: "School French & DELF A1",
-    quote:
-      "French grammar and accents always felt confusing in school until I started classes at Fluency Nest. The interactive speaking activities made learning fun, and I scored an A+ in my school French term exams.",
-    rating: 5,
-    type: "student",
-  },
-  {
-    id: "reyansh-malik",
-    name: "Rajesh Malik",
-    role: "Father of Reyansh (Age 7)",
-    location: "Gurugram",
-    course: "English",
-    courseBadge: "Foundational English — Online",
-    quote:
-      "Finding educators who have the patience and energy to keep a 7-year-old engaged online is rare. The trainers use fun storytelling and dialogue exercises, and Reyansh genuinely looks forward to his class every evening.",
-    rating: 5,
-    type: "parent",
-  },
-  {
-    id: "diya-hooda",
-    name: "Dr. Meenakshi Hooda",
-    role: "Mother of Diya (Class 11)",
-    location: "Sonipat",
-    course: "German",
-    courseBadge: "German A1 — Sonipat Campus",
-    quote:
-      "We enrolled our daughter in the German A1 batch to build an early foundation for her higher education goals in Europe. The structured CEFR curriculum and personalized attention in small batches have given her great confidence right from day one.",
-    rating: 5,
-    type: "parent",
-  },
-  {
-    id: "kabir-singhal",
-    name: "Kabir Singhal",
-    role: "Class 7 Student",
-    location: "Sonipat",
-    course: "English",
-    courseBadge: "Public Speaking & GD Lab",
-    quote:
-      "I used to get very nervous talking in front of people, but the round-table group discussions at the institute helped me overcome my stage fear. Now I can speak fluently and even represented my school in the inter-school debate.",
-    rating: 5,
-    type: "student",
-  },
-  {
-    id: "rohan-riya-nanda",
-    name: "Pooja Nanda",
-    role: "Mother of Rohan & Riya (Class 6)",
-    location: "Chandigarh",
-    course: "French",
-    courseBadge: "French Middle School — Online",
-    quote:
-      "Both my children picked French as their third language in school and were struggling with pronunciation and reading. The teachers at Fluency Nest broke everything down with clear phonetics and constant practice, making learning smooth and enjoyable for them.",
-    rating: 5,
-    type: "parent",
-  },
+
+  // ── GERMAN ───────────────────────────────────────────────
   {
     id: "rohan-dahiya-german",
     name: "Rohan Dahiya",
@@ -529,5 +508,67 @@ export const TESTIMONIALS: Testimonial[] = [
       "Getting admission to a German public university required solid language proficiency. The intensive mock exams and targeted speaking sessions at Fluency Nest were crucial in preparing me for academic life here in Munich.",
     rating: 5,
     type: "student",
+  },
+  {
+    id: "vikram-malik-german",
+    name: "Vikram Malik",
+    role: "Automotive Engineer, Settled in Stuttgart",
+    location: "Stuttgart, Germany",
+    course: "German",
+    courseBadge: "German B2 — Chancenkarte & Work Visa",
+    quote:
+      "Clearing Goethe B2 was mandatory for my engineering job role in Germany. The exam-focused mocks and professional speaking drills at Fluency Nest were the reason I cleared my Goethe exam in 4 months and secured my EU Blue Card.",
+    rating: 5,
+    type: "student",
+  },
+  {
+    id: "aakash-bansal-german",
+    name: "Aakash Bansal",
+    role: "Engineering Graduate & RWTH Aachen Admit",
+    location: "Sonipat",
+    course: "German",
+    courseBadge: "German B1/B2 Fast-Track",
+    quote:
+      "Studying at top German public universities tuition-free requires solid German command. The structured CEFR syllabus and daily speaking practice at the Sonipat center made passing Goethe B2 smooth and stress-free.",
+    rating: 5,
+    type: "student",
+  },
+
+  // ── FRENCH ───────────────────────────────────────────────
+  {
+    id: "divya-sachdeva-french",
+    name: "Divya Sachdeva",
+    role: "IT Consultant & Canada PR Aspirant",
+    location: "Delhi NCR",
+    course: "French",
+    courseBadge: "TEF Canada & DELF B2 Fast-Track",
+    quote:
+      "Learning French from scratch for Canada Express Entry points sounded impossible until I joined Fluency Nest. The trainers focus relentlessly on TEF exam strategies and listening comprehension, making rapid progress achievable.",
+    rating: 5,
+    type: "student",
+  },
+  {
+    id: "sahil-grover-french",
+    name: "Sahil Grover",
+    role: "University Student, French Studies (DU)",
+    location: "Sonipat",
+    course: "French",
+    courseBadge: "DELF B1/B2 Certification",
+    quote:
+      "The university curriculum covered mostly literature, but Fluency Nest gave me genuine conversational fluency and pronunciation correction. It helped me pass my DELF B2 exam and secure my French university admission.",
+    rating: 5,
+    type: "student",
+  },
+  {
+    id: "rohan-riya-nanda",
+    name: "Pooja Nanda",
+    role: "Mother of Rohan & Riya (Class 6)",
+    location: "Chandigarh",
+    course: "French",
+    courseBadge: "French Middle School — Online",
+    quote:
+      "Both my children picked French as their third language in school and were struggling with pronunciation and reading. The teachers at Fluency Nest broke everything down with clear phonetics and constant practice, making learning smooth and enjoyable for them.",
+    rating: 5,
+    type: "parent",
   },
 ];
