@@ -22,7 +22,9 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Spoken English & Public Speaking Institute in Sonipat | Fluency Nest",
+  title: {
+    absolute: "Spoken English & Public Speaking Institute in Sonipat | Fluency Nest",
+  },
   description:
     "Master English fluency, eliminate hesitation, and excel in MNC job interviews with Fluency Nest — the leading Spoken English & Public Speaking Institute in Sonipat (Offline Centre Coming Soon). Interactive speaking batches & live online options.",
   keywords: [

@@ -2,7 +2,9 @@ import { Metadata } from "next";
 import HomePage from "@/components/HomePage";
 
 export const metadata: Metadata = {
-  title: "German, French & Spoken English Institute in Sonipat | Fluency Nest",
+  title: {
+    absolute: "German, French & Spoken English Institute in Sonipat | Fluency Nest",
+  },
   description:
     "Fluency Nest is Sonipat's premier German Language Institute, French Language Institute, and Spoken English & Public Speaking Institute. Live interactive online batches nationwide & offline centre coming soon in Sonipat.",
   keywords: [
