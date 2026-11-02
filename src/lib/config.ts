@@ -8,7 +8,7 @@ export const SITE_CONFIG = {
   name: "Fluency Nest",
   tagline: "German, French & Spoken English Institute in Sonipat",
   description:
-    "Est. 2024. Sonipat's premier German Language Institute, French Language Institute, and Spoken English & Public Speaking Institute. Live interactive online batches nationwide & Sonipat offline centre coming soon.",
+    "Fluency Nest is Sonipat's premier German language institute — offline centre coming soon in Sonipat! Certified Goethe & Telc exam coaching (A1–C2), French & Spoken English classes, and live interactive online batches nationwide.",
 
   // Contact Details — UPDATE THESE
   phone: "+91 93507 76044",

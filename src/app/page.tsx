@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     absolute: "German, French & Spoken English Institute in Sonipat | Fluency Nest",
   },
   description:
-    "Fluency Nest is Sonipat's premier German Language Institute, French Language Institute, and Spoken English & Public Speaking Institute. Live interactive online batches nationwide & offline centre coming soon in Sonipat.",
+    "Fluency Nest is Sonipat's premier German language institute — offline centre coming soon in Sonipat! Certified Goethe & Telc exam coaching (A1–C2), French & Spoken English classes, and live interactive online batches nationwide.",
   keywords: [
     "German Language Institute in Sonipat",
     "French Language Institute in Sonipat",
