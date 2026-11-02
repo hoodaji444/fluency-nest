@@ -963,7 +963,7 @@ export default function HomePage() {
                 <span className={styles.programFlag}>🇫🇷</span>
                 <span className={styles.programBadge}>Canada PR Booster</span>
               </div>
-              <h4 className={styles.programTitle}>French Classes in Sonipat</h4>
+              <h4 className={styles.programTitle}>French Language Institute in Sonipat</h4>
               <p className={styles.programLevel}>DELF A1–B2 &amp; TEF / TCF Canada</p>
               <p className={styles.programDesc}>
                 Targeted coaching for Canada Express Entry PR (+50 CRS bonus points), Alliance Française DELF exams, and French university admissions.
@@ -974,7 +974,7 @@ export default function HomePage() {
                 <li><CheckCircle size={14} /> Weekend &amp; Weekday Options</li>
               </ul>
               <Link href="/french-classes-sonipat" className={`btn btn-primary ${styles.programBtn}`}>
-                View French Batches
+                Explore French Institute
                 <ArrowRight size={15} />
               </Link>
             </div>
@@ -985,7 +985,7 @@ export default function HomePage() {
                 <span className={styles.programFlag}>🇬🇧</span>
                 <span className={styles.programBadge}>Career Fluency</span>
               </div>
-              <h4 className={styles.programTitle}>Spoken English &amp; Public Speaking</h4>
+              <h4 className={styles.programTitle}>Spoken English &amp; Public Speaking Institute in Sonipat</h4>
               <p className={styles.programLevel}>Hesitation Removal &amp; MNC Placements</p>
               <p className={styles.programDesc}>
                 Eliminate mother-tongue influence, build spontaneous conversational fluency, and master interview skills for top corporate and campus placements.
@@ -996,7 +996,7 @@ export default function HomePage() {
                 <li><CheckCircle size={14} /> IELTS / PTE Speaking Foundation</li>
               </ul>
               <Link href="/spoken-english-classes-sonipat" className={`btn btn-primary ${styles.programBtn}`}>
-                View English Batches
+                Explore English Institute
                 <ArrowRight size={15} />
               </Link>
             </div>
