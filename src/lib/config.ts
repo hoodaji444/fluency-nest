@@ -464,7 +464,7 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     id: "rohan-dahiya-german",
     name: "Rohan Dahiya",
-    role: "Final Year B.Tech Student (DCRUST)",
+    role: "Final Year B.Tech Student",
     location: "Sonipat",
     course: "German",
     courseBadge: "German A2 & B1 — Offline",
