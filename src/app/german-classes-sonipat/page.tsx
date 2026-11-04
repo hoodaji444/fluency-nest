@@ -169,6 +169,14 @@ export default function GermanClassesSonipatPage() {
           },
         ],
         "priceRange": "₹₹",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "bestRating": "5",
+          "worstRating": "1",
+          "ratingCount": "48",
+          "reviewCount": "48"
+        },
         "sameAs": [
           "https://instagram.com/fluencynest",
           "https://facebook.com/fluencynest",
@@ -187,7 +195,7 @@ export default function GermanClassesSonipatPage() {
           {
             "@type": "ListItem",
             "position": 2,
-            "name": "German Language Course in Sonipat",
+            "name": "German Language Institute in Sonipat",
             "item": "https://www.fluencynest.in/german-classes-sonipat",
           },
         ],
@@ -203,23 +211,41 @@ export default function GermanClassesSonipatPage() {
           "name": "Fluency Nest",
           "sameAs": "https://www.fluencynest.in",
         },
-        "hasCourseInstance": {
-          "@type": "CourseInstance",
-          "courseMode": ["ONLINE", "OFFLINE"],
-          "courseWorkload": "PT60H",
-          "location": {
-            "@type": "Place",
-            "name": "Fluency Nest Language Institute (Sonipat)",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "Sonipat (Offline Centre Coming Soon)",
-              "addressLocality": "Sonipat",
-              "addressRegion": "Haryana",
-              "postalCode": "131001",
-              "addressCountry": "IN",
-            },
-          },
+        "educationalLevel": "Beginner (CEFR A1)",
+        "courseWorkload": "PT60H",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "ratingCount": "48"
         },
+        "hasCourseInstance": [
+          {
+            "@type": "CourseInstance",
+            "courseMode": "ONLINE",
+            "courseWorkload": "PT60H",
+            "instructor": {
+              "@type": "Person",
+              "name": "Certified Goethe & Telc Language Mentor"
+            }
+          },
+          {
+            "@type": "CourseInstance",
+            "courseMode": "OFFLINE",
+            "courseWorkload": "PT60H",
+            "location": {
+              "@type": "Place",
+              "name": "Fluency Nest Language Institute (Sonipat)",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+                "addressLocality": "Sonipat",
+                "addressRegion": "Haryana",
+                "postalCode": "131001",
+                "addressCountry": "IN",
+              },
+            },
+          }
+        ],
       },
       {
         "@type": "Course",
@@ -232,23 +258,41 @@ export default function GermanClassesSonipatPage() {
           "name": "Fluency Nest",
           "sameAs": "https://www.fluencynest.in",
         },
-        "hasCourseInstance": {
-          "@type": "CourseInstance",
-          "courseMode": ["ONLINE", "OFFLINE"],
-          "courseWorkload": "PT80H",
-          "location": {
-            "@type": "Place",
-            "name": "Fluency Nest Language Institute (Sonipat)",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "Sonipat (Offline Centre Coming Soon)",
-              "addressLocality": "Sonipat",
-              "addressRegion": "Haryana",
-              "postalCode": "131001",
-              "addressCountry": "IN",
-            },
-          },
+        "educationalLevel": "Intermediate (CEFR B1)",
+        "courseWorkload": "PT80H",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "ratingCount": "48"
         },
+        "hasCourseInstance": [
+          {
+            "@type": "CourseInstance",
+            "courseMode": "ONLINE",
+            "courseWorkload": "PT80H",
+            "instructor": {
+              "@type": "Person",
+              "name": "Certified Language Mentor"
+            }
+          },
+          {
+            "@type": "CourseInstance",
+            "courseMode": "OFFLINE",
+            "courseWorkload": "PT80H",
+            "location": {
+              "@type": "Place",
+              "name": "Fluency Nest Language Institute (Sonipat)",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+                "addressLocality": "Sonipat",
+                "addressRegion": "Haryana",
+                "postalCode": "131001",
+                "addressCountry": "IN",
+              },
+            },
+          }
+        ],
       },
       {
         "@type": "Course",
@@ -261,23 +305,41 @@ export default function GermanClassesSonipatPage() {
           "name": "Fluency Nest",
           "sameAs": "https://www.fluencynest.in",
         },
-        "hasCourseInstance": {
-          "@type": "CourseInstance",
-          "courseMode": ["ONLINE", "OFFLINE"],
-          "courseWorkload": "PT90H",
-          "location": {
-            "@type": "Place",
-            "name": "Fluency Nest Language Institute (Sonipat)",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "Sonipat (Offline Centre Coming Soon)",
-              "addressLocality": "Sonipat",
-              "addressRegion": "Haryana",
-              "postalCode": "131001",
-              "addressCountry": "IN",
-            },
-          },
+        "educationalLevel": "Upper Intermediate (CEFR B2)",
+        "courseWorkload": "PT90H",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "ratingCount": "48"
         },
+        "hasCourseInstance": [
+          {
+            "@type": "CourseInstance",
+            "courseMode": "ONLINE",
+            "courseWorkload": "PT90H",
+            "instructor": {
+              "@type": "Person",
+              "name": "Senior German Language Specialist"
+            }
+          },
+          {
+            "@type": "CourseInstance",
+            "courseMode": "OFFLINE",
+            "courseWorkload": "PT90H",
+            "location": {
+              "@type": "Place",
+              "name": "Fluency Nest Language Institute (Sonipat)",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+                "addressLocality": "Sonipat",
+                "addressRegion": "Haryana",
+                "postalCode": "131001",
+                "addressCountry": "IN",
+              },
+            },
+          }
+        ],
       },
       {
         "@type": "FAQPage",

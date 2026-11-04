@@ -143,6 +143,14 @@ export default function RootLayout({
                     SITE_CONFIG.social.facebook,
                   ],
                   "priceRange": "₹₹",
+                  "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.9",
+                    "bestRating": "5",
+                    "worstRating": "1",
+                    "ratingCount": "48",
+                    "reviewCount": "48"
+                  },
                   "openingHoursSpecification": [
                     {
                       "@type": "OpeningHoursSpecification",
@@ -181,11 +189,41 @@ export default function RootLayout({
                     "name": SITE_CONFIG.name,
                     "sameAs": SITE_CONFIG.siteUrl,
                   },
-                  "hasCourseInstance": {
-                    "@type": "CourseInstance",
-                    "courseMode": ["ONLINE", "OFFLINE"],
-                    "courseWorkload": "PT60H",
+                  "educationalLevel": "Beginner (CEFR A1)",
+                  "courseWorkload": "PT60H",
+                  "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.9",
+                    "ratingCount": "48"
                   },
+                  "hasCourseInstance": [
+                    {
+                      "@type": "CourseInstance",
+                      "courseMode": "ONLINE",
+                      "courseWorkload": "PT60H",
+                      "instructor": {
+                        "@type": "Person",
+                        "name": "Certified Goethe & Telc Language Mentor"
+                      }
+                    },
+                    {
+                      "@type": "CourseInstance",
+                      "courseMode": "OFFLINE",
+                      "courseWorkload": "PT60H",
+                      "location": {
+                        "@type": "Place",
+                        "name": "Fluency Nest Sonipat Offline Centre (Coming Soon)",
+                        "address": {
+                          "@type": "PostalAddress",
+                          "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+                          "addressLocality": "Sonipat",
+                          "addressRegion": "Haryana",
+                          "postalCode": "131001",
+                          "addressCountry": "IN"
+                        }
+                      }
+                    }
+                  ],
                 },
                 {
                   "@type": "Course",
@@ -197,11 +235,41 @@ export default function RootLayout({
                     "name": SITE_CONFIG.name,
                     "sameAs": SITE_CONFIG.siteUrl,
                   },
-                  "hasCourseInstance": {
-                    "@type": "CourseInstance",
-                    "courseMode": ["ONLINE", "OFFLINE"],
-                    "courseWorkload": "PT80H",
+                  "educationalLevel": "Intermediate (CEFR B1)",
+                  "courseWorkload": "PT80H",
+                  "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.9",
+                    "ratingCount": "48"
                   },
+                  "hasCourseInstance": [
+                    {
+                      "@type": "CourseInstance",
+                      "courseMode": "ONLINE",
+                      "courseWorkload": "PT80H",
+                      "instructor": {
+                        "@type": "Person",
+                        "name": "Certified Language Mentor"
+                      }
+                    },
+                    {
+                      "@type": "CourseInstance",
+                      "courseMode": "OFFLINE",
+                      "courseWorkload": "PT80H",
+                      "location": {
+                        "@type": "Place",
+                        "name": "Fluency Nest Sonipat Offline Centre (Coming Soon)",
+                        "address": {
+                          "@type": "PostalAddress",
+                          "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+                          "addressLocality": "Sonipat",
+                          "addressRegion": "Haryana",
+                          "postalCode": "131001",
+                          "addressCountry": "IN"
+                        }
+                      }
+                    }
+                  ],
                 },
                 {
                   "@type": "Course",
@@ -213,11 +281,41 @@ export default function RootLayout({
                     "name": SITE_CONFIG.name,
                     "sameAs": SITE_CONFIG.siteUrl,
                   },
-                  "hasCourseInstance": {
-                    "@type": "CourseInstance",
-                    "courseMode": ["ONLINE", "OFFLINE"],
-                    "courseWorkload": "PT60H",
+                  "educationalLevel": "Beginner (CEFR A1)",
+                  "courseWorkload": "PT60H",
+                  "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.9",
+                    "ratingCount": "48"
                   },
+                  "hasCourseInstance": [
+                    {
+                      "@type": "CourseInstance",
+                      "courseMode": "ONLINE",
+                      "courseWorkload": "PT60H",
+                      "instructor": {
+                        "@type": "Person",
+                        "name": "Certified French Language Mentor"
+                      }
+                    },
+                    {
+                      "@type": "CourseInstance",
+                      "courseMode": "OFFLINE",
+                      "courseWorkload": "PT60H",
+                      "location": {
+                        "@type": "Place",
+                        "name": "Fluency Nest Sonipat Offline Centre (Coming Soon)",
+                        "address": {
+                          "@type": "PostalAddress",
+                          "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+                          "addressLocality": "Sonipat",
+                          "addressRegion": "Haryana",
+                          "postalCode": "131001",
+                          "addressCountry": "IN"
+                        }
+                      }
+                    }
+                  ],
                 },
                 {
                   "@type": "Course",
@@ -229,11 +327,41 @@ export default function RootLayout({
                     "name": SITE_CONFIG.name,
                     "sameAs": SITE_CONFIG.siteUrl,
                   },
-                  "hasCourseInstance": {
-                    "@type": "CourseInstance",
-                    "courseMode": ["ONLINE", "OFFLINE"],
-                    "courseWorkload": "PT50H",
+                  "educationalLevel": "Foundational to Advanced",
+                  "courseWorkload": "PT50H",
+                  "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.9",
+                    "ratingCount": "48"
                   },
+                  "hasCourseInstance": [
+                    {
+                      "@type": "CourseInstance",
+                      "courseMode": "ONLINE",
+                      "courseWorkload": "PT50H",
+                      "instructor": {
+                        "@type": "Person",
+                        "name": "Executive Communication Trainer"
+                      }
+                    },
+                    {
+                      "@type": "CourseInstance",
+                      "courseMode": "OFFLINE",
+                      "courseWorkload": "PT50H",
+                      "location": {
+                        "@type": "Place",
+                        "name": "Fluency Nest Sonipat Offline Centre (Coming Soon)",
+                        "address": {
+                          "@type": "PostalAddress",
+                          "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+                          "addressLocality": "Sonipat",
+                          "addressRegion": "Haryana",
+                          "postalCode": "131001",
+                          "addressCountry": "IN"
+                        }
+                      }
+                    }
+                  ],
                 },
               ],
             }),

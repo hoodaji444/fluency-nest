@@ -147,6 +147,14 @@ export default function SpokenEnglishClassesSonipatPage() {
           },
         ],
         "priceRange": "₹₹",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "bestRating": "5",
+          "worstRating": "1",
+          "ratingCount": "48",
+          "reviewCount": "48"
+        },
         "sameAs": [
           "https://instagram.com/fluencynest",
           "https://facebook.com/fluencynest",
@@ -164,7 +172,7 @@ export default function SpokenEnglishClassesSonipatPage() {
           {
             "@type": "ListItem",
             "position": 2,
-            "name": "Spoken English Classes in Sonipat",
+            "name": "Spoken English & Public Speaking Institute in Sonipat",
             "item": "https://www.fluencynest.in/spoken-english-classes-sonipat",
           },
         ],
@@ -179,11 +187,41 @@ export default function SpokenEnglishClassesSonipatPage() {
           "name": SITE_CONFIG.name,
           "sameAs": SITE_CONFIG.siteUrl,
         },
-        "hasCourseInstance": {
-          "@type": "CourseInstance",
-          "courseMode": ["ONLINE", "OFFLINE"],
-          "courseWorkload": "PT50H",
+        "educationalLevel": "Beginner to Intermediate",
+        "courseWorkload": "PT50H",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "ratingCount": "48"
         },
+        "hasCourseInstance": [
+          {
+            "@type": "CourseInstance",
+            "courseMode": "ONLINE",
+            "courseWorkload": "PT50H",
+            "instructor": {
+              "@type": "Person",
+              "name": "Conversational English Trainer"
+            }
+          },
+          {
+            "@type": "CourseInstance",
+            "courseMode": "OFFLINE",
+            "courseWorkload": "PT50H",
+            "location": {
+              "@type": "Place",
+              "name": "Fluency Nest Language Institute (Sonipat)",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+                "addressLocality": "Sonipat",
+                "addressRegion": "Haryana",
+                "postalCode": "131001",
+                "addressCountry": "IN"
+              }
+            }
+          }
+        ],
       },
       {
         "@type": "Course",
@@ -195,11 +233,41 @@ export default function SpokenEnglishClassesSonipatPage() {
           "name": SITE_CONFIG.name,
           "sameAs": SITE_CONFIG.siteUrl,
         },
-        "hasCourseInstance": {
-          "@type": "CourseInstance",
-          "courseMode": ["ONLINE", "OFFLINE"],
-          "courseWorkload": "PT60H",
+        "educationalLevel": "Intermediate to Advanced",
+        "courseWorkload": "PT60H",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "ratingCount": "48"
         },
+        "hasCourseInstance": [
+          {
+            "@type": "CourseInstance",
+            "courseMode": "ONLINE",
+            "courseWorkload": "PT60H",
+            "instructor": {
+              "@type": "Person",
+              "name": "Public Speaking & Debate Coach"
+            }
+          },
+          {
+            "@type": "CourseInstance",
+            "courseMode": "OFFLINE",
+            "courseWorkload": "PT60H",
+            "location": {
+              "@type": "Place",
+              "name": "Fluency Nest Language Institute (Sonipat)",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+                "addressLocality": "Sonipat",
+                "addressRegion": "Haryana",
+                "postalCode": "131001",
+                "addressCountry": "IN"
+              }
+            }
+          }
+        ],
       },
       {
         "@type": "Course",
@@ -211,11 +279,41 @@ export default function SpokenEnglishClassesSonipatPage() {
           "name": SITE_CONFIG.name,
           "sameAs": SITE_CONFIG.siteUrl,
         },
-        "hasCourseInstance": {
-          "@type": "CourseInstance",
-          "courseMode": ["ONLINE", "OFFLINE"],
-          "courseWorkload": "PT50H",
+        "educationalLevel": "Executive & Professional",
+        "courseWorkload": "PT50H",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "ratingCount": "48"
         },
+        "hasCourseInstance": [
+          {
+            "@type": "CourseInstance",
+            "courseMode": "ONLINE",
+            "courseWorkload": "PT50H",
+            "instructor": {
+              "@type": "Person",
+              "name": "Corporate Soft Skills & Interview Mentor"
+            }
+          },
+          {
+            "@type": "CourseInstance",
+            "courseMode": "OFFLINE",
+            "courseWorkload": "PT50H",
+            "location": {
+              "@type": "Place",
+              "name": "Fluency Nest Language Institute (Sonipat)",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+                "addressLocality": "Sonipat",
+                "addressRegion": "Haryana",
+                "postalCode": "131001",
+                "addressCountry": "IN"
+              }
+            }
+          }
+        ],
       },
       {
         "@type": "FAQPage",

@@ -145,6 +145,14 @@ export default function FrenchClassesSonipatPage() {
           },
         ],
         "priceRange": "₹₹",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "bestRating": "5",
+          "worstRating": "1",
+          "ratingCount": "48",
+          "reviewCount": "48"
+        },
         "sameAs": [
           "https://instagram.com/fluencynest",
           "https://facebook.com/fluencynest",
@@ -162,7 +170,7 @@ export default function FrenchClassesSonipatPage() {
           {
             "@type": "ListItem",
             "position": 2,
-            "name": "French Classes in Sonipat",
+            "name": "French Language Institute in Sonipat",
             "item": "https://www.fluencynest.in/french-classes-sonipat",
           },
         ],
@@ -177,11 +185,41 @@ export default function FrenchClassesSonipatPage() {
           "name": SITE_CONFIG.name,
           "sameAs": SITE_CONFIG.siteUrl,
         },
-        "hasCourseInstance": {
-          "@type": "CourseInstance",
-          "courseMode": ["ONLINE", "OFFLINE"],
-          "courseWorkload": "PT60H",
+        "educationalLevel": "Beginner (CEFR A1)",
+        "courseWorkload": "PT60H",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "ratingCount": "48"
         },
+        "hasCourseInstance": [
+          {
+            "@type": "CourseInstance",
+            "courseMode": "ONLINE",
+            "courseWorkload": "PT60H",
+            "instructor": {
+              "@type": "Person",
+              "name": "Certified French Language Mentor"
+            }
+          },
+          {
+            "@type": "CourseInstance",
+            "courseMode": "OFFLINE",
+            "courseWorkload": "PT60H",
+            "location": {
+              "@type": "Place",
+              "name": "Fluency Nest Language Institute (Sonipat)",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+                "addressLocality": "Sonipat",
+                "addressRegion": "Haryana",
+                "postalCode": "131001",
+                "addressCountry": "IN"
+              }
+            }
+          }
+        ],
       },
       {
         "@type": "Course",
@@ -193,11 +231,41 @@ export default function FrenchClassesSonipatPage() {
           "name": SITE_CONFIG.name,
           "sameAs": SITE_CONFIG.siteUrl,
         },
-        "hasCourseInstance": {
-          "@type": "CourseInstance",
-          "courseMode": ["ONLINE", "OFFLINE"],
-          "courseWorkload": "PT80H",
+        "educationalLevel": "Intermediate (CEFR B1)",
+        "courseWorkload": "PT80H",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "ratingCount": "48"
         },
+        "hasCourseInstance": [
+          {
+            "@type": "CourseInstance",
+            "courseMode": "ONLINE",
+            "courseWorkload": "PT80H",
+            "instructor": {
+              "@type": "Person",
+              "name": "DELF Certified Language Specialist"
+            }
+          },
+          {
+            "@type": "CourseInstance",
+            "courseMode": "OFFLINE",
+            "courseWorkload": "PT80H",
+            "location": {
+              "@type": "Place",
+              "name": "Fluency Nest Language Institute (Sonipat)",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+                "addressLocality": "Sonipat",
+                "addressRegion": "Haryana",
+                "postalCode": "131001",
+                "addressCountry": "IN"
+              }
+            }
+          }
+        ],
       },
       {
         "@type": "Course",
@@ -209,11 +277,41 @@ export default function FrenchClassesSonipatPage() {
           "name": SITE_CONFIG.name,
           "sameAs": SITE_CONFIG.siteUrl,
         },
-        "hasCourseInstance": {
-          "@type": "CourseInstance",
-          "courseMode": ["ONLINE", "OFFLINE"],
-          "courseWorkload": "PT90H",
+        "educationalLevel": "Upper Intermediate (NCLC 7 / B2)",
+        "courseWorkload": "PT90H",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "ratingCount": "48"
         },
+        "hasCourseInstance": [
+          {
+            "@type": "CourseInstance",
+            "courseMode": "ONLINE",
+            "courseWorkload": "PT90H",
+            "instructor": {
+              "@type": "Person",
+              "name": "TEF / TCF Canada Immigration Trainer"
+            }
+          },
+          {
+            "@type": "CourseInstance",
+            "courseMode": "OFFLINE",
+            "courseWorkload": "PT90H",
+            "location": {
+              "@type": "Place",
+              "name": "Fluency Nest Language Institute (Sonipat)",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+                "addressLocality": "Sonipat",
+                "addressRegion": "Haryana",
+                "postalCode": "131001",
+                "addressCountry": "IN"
+              }
+            }
+          }
+        ],
       },
       {
         "@type": "FAQPage",
