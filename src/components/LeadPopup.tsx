@@ -35,15 +35,38 @@ export default function LeadPopup() {
   const closePopup = useCallback(() => {
     setIsOpen(false);
     try {
-      sessionStorage.setItem(POPUP_STORAGE_KEY, "true");
+      sessionStorage.setItem(POPUP_STORAGE_KEY, Date.now().toString());
     } catch {
       // Ignore storage errors in private browsing
     }
   }, []);
 
   useEffect(() => {
-    // Intrusive 4-second auto-open eliminated (Hallmark Restraint Gate 69).
-    // Window event listener enables any button to trigger the modal.
+    // Check if user already submitted or dismissed recently in this session
+    try {
+      const isSubmitted = sessionStorage.getItem(POPUP_SUBMITTED_KEY);
+      if (isSubmitted) {
+        return;
+      }
+
+      const isDismissed = sessionStorage.getItem(POPUP_STORAGE_KEY);
+      if (isDismissed) {
+        const dismissedTime = parseInt(isDismissed, 10);
+        // Do not auto-show if dismissed less than 3 minutes ago
+        if (!isNaN(dismissedTime) && Date.now() - dismissedTime < 180000) {
+          return;
+        }
+      }
+    } catch {
+      // Ignore storage errors in private browsing
+    }
+
+    // Auto-open after exactly 11 seconds
+    const timer = setTimeout(() => {
+      setIsOpen(true);
+    }, 11000);
+
+    // Window event listener enables any button to trigger the modal immediately
     const handleOpen = () => setIsOpen(true);
     window.addEventListener("open-lead-popup", handleOpen);
 
@@ -56,6 +79,7 @@ export default function LeadPopup() {
     window.addEventListener("keydown", handleKeyDown);
 
     return () => {
+      clearTimeout(timer);
       window.removeEventListener("open-lead-popup", handleOpen);
       window.removeEventListener("keydown", handleKeyDown);
     };

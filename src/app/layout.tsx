@@ -6,6 +6,7 @@ import { SITE_CONFIG, FAQ_ITEMS } from "@/lib/config";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import LeadPopup from "@/components/LeadPopup";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.siteUrl),
@@ -394,6 +395,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <WhatsAppButton />
+        <LeadPopup />
       </body>
     </html>
   );
