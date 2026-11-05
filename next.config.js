@@ -16,6 +16,9 @@ const ContentSecurityPolicy = `
 `.replace(/\s{2,}/g, " ").trim();
 
 const nextConfig = {
+  typescript: {
+    ignoreBuildErrors: false,
+  },
   images: {
     remotePatterns: [],
     formats: ["image/avif", "image/webp"],

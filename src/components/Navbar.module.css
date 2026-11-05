@@ -5,7 +5,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: var(--z-sticky-nav);
+  z-index: 1000;
   padding: var(--space-sm) 0;
   background: var(--color-paper);
   border-bottom: var(--rule-hair) solid var(--color-rule);
@@ -351,7 +351,7 @@
   position: fixed;
   inset: 0;
   background: color-mix(in oklab, var(--color-ink) 45%, transparent);
-  z-index: var(--z-sticky-nav);
+  z-index: 1001;
   opacity: 0;
   transition: opacity var(--dur-short) var(--ease-out);
   pointer-events: none;
@@ -371,7 +371,7 @@
   bottom: 0;
   width: min(360px, 92vw);
   background: var(--color-paper);
-  z-index: calc(var(--z-sticky-nav) + 1);
+  z-index: 1002;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   transform: translateX(100%);
@@ -688,16 +688,26 @@
 
 /* ── Responsive ── */
 @media (max-width: 64rem) {
+  .navbar {
+    background: var(--color-paper) !important;
+    border-bottom: var(--rule-hair) solid var(--color-rule) !important;
+    box-shadow: var(--shadow-sm) !important;
+  }
+
+  .logo {
+    margin-right: auto;
+  }
+
   .desktopNav {
-    display: none;
+    display: none !important;
   }
 
   .navPhoneLink {
-    display: none;
+    display: none !important;
   }
 
   .mobileToggle {
-    display: flex;
+    display: flex !important;
   }
 
   .mobileOverlay {
@@ -713,11 +723,13 @@
 @media (max-width: 48rem) {
   .inner {
     gap: var(--space-xs);
+    width: 100%;
+    padding: 0 var(--space-xs);
   }
 
   /* Hide huge enquire button from top bar to prevent header crowding/wrapping */
   .enquireBtn {
-    display: none;
+    display: none !important;
   }
 
   .navWhatsAppBtn {
