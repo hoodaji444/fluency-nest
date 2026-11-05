@@ -334,12 +334,12 @@ export default function HomePage() {
             {/* SLIDE 2: Offline Centre — Sonipat (Coming Soon) */}
             <div className={`${styles.heroSlidePane} ${heroSlide === 1 ? styles.heroSlidePaneActive : ""}`}>
               <div className={styles.heroBadge}>
-                <span>🏫 Sonipat Offline Centre (Coming Soon)</span>
+                <span>Sonipat, Haryana — 131001 (Offline Centre Coming Soon)</span>
               </div>
 
               <p className={styles.heroLocationOffline}>
                 <MapPin size={14} aria-hidden="true" />
-                SONIPAT, HARYANA · OFFLINE CLASSROOM BATCHES (COMING SOON)
+                Sonipat, Haryana — 131001 (Offline Centre Coming Soon)
               </p>
 
               <h2 className={`heading-display heading-xl ${styles.heroTitle}`}>
@@ -1012,7 +1012,7 @@ export default function HomePage() {
                 We are launching our dedicated offline classroom centre in <strong>Sonipat</strong> soon! Pre-register now to reserve your seat and get early-bird batch schedules. Live online batches are actively enrolling right now.
               </p>
               <div className={styles.classroomCtaMeta}>
-                <span>📍 Sonipat, Haryana (Offline Centre Coming Soon)</span>
+                <span>Sonipat, Haryana — 131001 (Offline Centre Coming Soon)</span>
                 <span>·</span>
                 <span>🕒 Live Online Batches Active Mon–Sat</span>
               </div>
@@ -1167,7 +1167,7 @@ export default function HomePage() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Fluency Nest — Sonipat Language Institute (Offline Centre Coming Soon)"
+                title="Fluency Nest — Sonipat, Haryana — 131001 (Offline Centre Coming Soon)"
               />
             </div>
           </div>

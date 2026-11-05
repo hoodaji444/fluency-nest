@@ -77,7 +77,7 @@ export const metadata: Metadata = {
 const LOCAL_FAQS = [
   {
     q: "Which is the best German language course in Sonipat?",
-    a: "Fluency Nest offers the leading German language course in Sonipat, Haryana (offline centre launching soon). We specialize in CEFR-aligned German courses from A1 to C2, offering official Goethe-Zertifikat and Telc exam preparation, interactive smart classrooms, small batches strictly limited to 8–10 students, and direct faculty mentorship. Live interactive online batches are actively running.",
+    a: "Fluency Nest offers the leading German language course in Sonipat, Haryana — 131001 (Offline Centre Coming Soon). We specialize in CEFR-aligned German courses from A1 to C2, offering official Goethe-Zertifikat and Telc exam preparation, interactive smart classrooms, small batches strictly limited to 8–10 students, and direct faculty mentorship. Live interactive online batches are actively running.",
   },
   {
     q: "What are the course levels, duration, and batch timings for German courses in Sonipat?",
@@ -100,8 +100,8 @@ const LOCAL_FAQS = [
     a: "Yes! Our German A1 Beginner course starts from absolute zero. You will learn the German alphabet, pronunciation, basic vocabulary, everyday dialogues, and foundational grammar with supportive faculty guidance.",
   },
   {
-    q: "Can students from DCRUST Murthal, Ashoka University, or Panipat commute easily?",
-    a: "Yes. Our upcoming Sonipat offline centre is conveniently located with easy access from GT Karnal Road (NH 44), making it accessible for students from DCRUST Murthal, Rajiv Gandhi Education City (Ashoka University, SRM), Kundli, and Panipat. Live online classes are also running daily.",
+    q: "Can students from DCRUST, Ashoka University, or Panipat commute easily?",
+    a: "Yes. Our upcoming Sonipat offline centre is conveniently located with easy access from GT Karnal Road (NH 44), making it accessible for students from DCRUST, Rajiv Gandhi Education City (Ashoka University, SRM), Kundli, and Panipat. Live online classes are also running daily.",
   },
   {
     q: "Do you offer both offline classroom batches and live online classes?",
@@ -141,7 +141,7 @@ export default function GermanClassesSonipatPage() {
         "email": "info@fluencynest.in",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+          "streetAddress": SITE_CONFIG.address.full,
           "addressLocality": "Sonipat",
           "addressRegion": "Haryana",
           "postalCode": "131001",
@@ -154,7 +154,6 @@ export default function GermanClassesSonipatPage() {
         },
         "areaServed": [
           { "@type": "City", "name": "Sonipat" },
-          { "@type": "Place", "name": "Murthal" },
           { "@type": "Place", "name": "Rai" },
           { "@type": "Place", "name": "Kundli" },
           { "@type": "City", "name": "Panipat" },
@@ -237,7 +236,7 @@ export default function GermanClassesSonipatPage() {
               "name": "Fluency Nest Language Institute (Sonipat)",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+                "streetAddress": SITE_CONFIG.address.full,
                 "addressLocality": "Sonipat",
                 "addressRegion": "Haryana",
                 "postalCode": "131001",
@@ -284,7 +283,7 @@ export default function GermanClassesSonipatPage() {
               "name": "Fluency Nest Language Institute (Sonipat)",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+                "streetAddress": SITE_CONFIG.address.full,
                 "addressLocality": "Sonipat",
                 "addressRegion": "Haryana",
                 "postalCode": "131001",
@@ -331,7 +330,7 @@ export default function GermanClassesSonipatPage() {
               "name": "Fluency Nest Language Institute (Sonipat)",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+                "streetAddress": SITE_CONFIG.address.full,
                 "addressLocality": "Sonipat",
                 "addressRegion": "Haryana",
                 "postalCode": "131001",
@@ -436,7 +435,7 @@ export default function GermanClassesSonipatPage() {
               Why Students in Sonipat &amp; Delhi-NCR Choose Our German Course
             </h2>
             <p className={styles.sectionDesc}>
-              Whether you are an engineering student at DCRUST Murthal, an academic aspirant in Rajiv Gandhi Education City, or a medical professional planning to work in Germany, our Sonipat course curriculum is tailored specifically for your career goals.
+              Whether you are an engineering student at DCRUST, an academic aspirant in Rajiv Gandhi Education City, or a medical professional planning to work in Germany, our Sonipat course curriculum is tailored specifically for your career goals.
             </p>
           </div>
 

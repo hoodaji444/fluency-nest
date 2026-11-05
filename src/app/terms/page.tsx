@@ -5,6 +5,9 @@ import styles from "../privacy-policy/legal.module.css";
 export const metadata: Metadata = {
   title: "Terms & Conditions — Fluency Nest",
   description: "Terms and Conditions for Fluency Nest German Language Institute.",
+  alternates: {
+    canonical: "https://www.fluencynest.in/terms",
+  },
 };
 
 export default function TermsPage() {

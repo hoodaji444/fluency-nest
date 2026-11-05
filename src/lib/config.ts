@@ -13,13 +13,14 @@ export const SITE_CONFIG = {
   // Contact Details — UPDATE THESE
   phone: "+91 93507 76044",
   whatsapp: "+919350776044", // No spaces or dashes — used in WhatsApp links
+  whatsappUrl: "https://wa.me/919350776044",
   whatsappMessage:
     "Hello, I am interested in your language courses. Please share the course details and fees.",
   email: "info@fluencynest.in",
 
   // Address
   address: {
-    line1: "Sonipat (Offline Centre Coming Soon)",
+    line1: "Sonipat, Haryana — 131001 (Offline Centre Coming Soon)",
     line2: "Haryana",
     city: "Sonipat",
     state: "Haryana",
@@ -58,8 +59,8 @@ export const COURSES = [
     title: "Beginner",
     subtitle: "German A1 — Beginner",
     description:
-      "Start your German language journey from absolute zero. Learn basic vocabulary, everyday expressions, simple conversations, pronunciation, and the foundational grammar you need to introduce yourself and interact in familiar situations.",
-    skills: ["Basic vocabulary", "Everyday expressions", "German pronunciation", "Simple grammar", "Self-introduction"],
+      "Start your German language journey from absolute zero. Learn basic vocabulary, everyday expressions, simple conversations, pronunciation, Goethe-Zertifikat and Telc A1 preparation, and the foundational grammar you need to introduce yourself and interact in familiar situations.",
+    skills: ["Basic vocabulary", "Everyday expressions", "German pronunciation", "Simple grammar", "Goethe & Telc A1 exam preparation"],
     duration: "Contact us for batch timings",
     fee: "Contact us for fee details",
     mode: ["Offline Classes", "Online Classes"],
@@ -90,8 +91,8 @@ export const COURSES = [
     title: "Intermediate",
     subtitle: "German B1 — Intermediate",
     description:
-      "Develop independent communication skills and significantly improve your reading, writing, listening, and speaking abilities. This level is recommended for those preparing for German language examinations or planning to study or work in a German-speaking environment.",
-    skills: ["Independent communication", "Extended reading", "Structured writing", "Exam preparation", "Professional vocabulary"],
+      "Develop independent communication skills and significantly improve your reading, writing, listening, and speaking abilities. This level is recommended for those preparing for official Goethe-Zertifikat and Telc B1 examinations or planning to study or work in a German-speaking environment.",
+    skills: ["Independent communication", "Extended reading", "Structured writing", "Goethe & Telc B1 exam preparation", "Professional vocabulary"],
     duration: "Contact us for batch timings",
     fee: "Contact us for fee details",
     mode: ["Offline Classes", "Online Classes"],

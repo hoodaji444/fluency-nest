@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Privacy Policy — Fluency Nest",
   description:
     "Privacy Policy for Fluency Nest — learn how we collect, use, and protect your personal data submitted through our student enquiry form.",
+  alternates: {
+    canonical: "https://www.fluencynest.in/privacy-policy",
+  },
 };
 
 export default function PrivacyPolicyPage() {

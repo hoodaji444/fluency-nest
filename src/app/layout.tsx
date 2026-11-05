@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Toaster } from "react-hot-toast";
+import "@/app/tokens.css";
 import "@/app/globals.css";
 import { SITE_CONFIG, FAQ_ITEMS } from "@/lib/config";
 import Navbar from "@/components/Navbar";
@@ -8,6 +9,9 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.siteUrl),
+  alternates: {
+    canonical: "/",
+  },
   title: {
     default: `${SITE_CONFIG.name} — German, French & Spoken English Institute in Sonipat`,
     template: `%s | ${SITE_CONFIG.name}`,
@@ -94,17 +98,36 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        {/* Fontshare & Google Fonts Preconnects */}
+        <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Editorial Serif Display: Sentient (Fontshare) */}
+        <link
+          href="https://api.fontshare.com/v2/css?f[]=sentient@400,500,700&display=swap"
+          rel="stylesheet"
+        />
+        {/* Google Fonts: Source Serif 4 (Display Fallback) & Hanken Grotesk (Body) */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body>
         <Toaster
           position="top-center"
           toastOptions={{
             duration: 4000,
             style: {
-              fontFamily: "Inter, sans-serif",
-              borderRadius: "12px",
-              padding: "14px 20px",
-              fontSize: "0.95rem",
-              boxShadow: "0 8px 32px rgba(13,27,46,0.18)",
+              fontFamily: "var(--font-body)",
+              borderRadius: "var(--radius-card, 4px)",
+              padding: "12px 18px",
+              fontSize: "var(--text-sm, 0.875rem)",
+              color: "var(--color-ink)",
+              backgroundColor: "var(--color-paper)",
+              border: "1px solid var(--color-rule)",
+              boxShadow: "var(--shadow-card)",
             },
           }}
         />
@@ -127,7 +150,7 @@ export default function RootLayout({
                   "email": SITE_CONFIG.email,
                   "address": {
                     "@type": "PostalAddress",
-                    "streetAddress": SITE_CONFIG.address.line1,
+                    "streetAddress": SITE_CONFIG.address.full,
                     "addressLocality": SITE_CONFIG.address.city,
                     "addressRegion": SITE_CONFIG.address.state,
                     "postalCode": SITE_CONFIG.address.pin,
@@ -215,7 +238,7 @@ export default function RootLayout({
                         "name": "Fluency Nest Sonipat Offline Centre (Coming Soon)",
                         "address": {
                           "@type": "PostalAddress",
-                          "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+                          "streetAddress": SITE_CONFIG.address.full,
                           "addressLocality": "Sonipat",
                           "addressRegion": "Haryana",
                           "postalCode": "131001",
@@ -261,7 +284,7 @@ export default function RootLayout({
                         "name": "Fluency Nest Sonipat Offline Centre (Coming Soon)",
                         "address": {
                           "@type": "PostalAddress",
-                          "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+                          "streetAddress": SITE_CONFIG.address.full,
                           "addressLocality": "Sonipat",
                           "addressRegion": "Haryana",
                           "postalCode": "131001",
@@ -307,7 +330,7 @@ export default function RootLayout({
                         "name": "Fluency Nest Sonipat Offline Centre (Coming Soon)",
                         "address": {
                           "@type": "PostalAddress",
-                          "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+                          "streetAddress": SITE_CONFIG.address.full,
                           "addressLocality": "Sonipat",
                           "addressRegion": "Haryana",
                           "postalCode": "131001",
@@ -353,7 +376,7 @@ export default function RootLayout({
                         "name": "Fluency Nest Sonipat Offline Centre (Coming Soon)",
                         "address": {
                           "@type": "PostalAddress",
-                          "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+                          "streetAddress": SITE_CONFIG.address.full,
                           "addressLocality": "Sonipat",
                           "addressRegion": "Haryana",
                           "postalCode": "131001",

@@ -1640,14 +1640,109 @@
 }
 
 @media (max-width: 768px) {
-  .hero { min-height: auto; padding: 120px 0 72px; }
-  .heroTitle { font-size: 2rem; }
-  .heroCTAs { flex-direction: column; }
-  .heroCTAs .btn { width: 100%; justify-content: center; }
-  .stepsGrid { grid-template-columns: 1fr; gap: 24px; }
-  .coursesGrid { grid-template-columns: 1fr; }
-  .courseTabs { flex-direction: column; width: 100%; }
-  .germanySection { padding: 80px 0; }
+  .hero {
+    min-height: auto;
+    padding: 100px 0 64px;
+  }
+  .heroContent {
+    padding-top: 20px;
+    padding-bottom: 48px;
+  }
+  .heroInner {
+    max-width: 100%;
+  }
+  .heroTitle {
+    font-size: clamp(1.85rem, 5vw, 2.5rem);
+    line-height: 1.2;
+  }
+  .heroSliderControls {
+    justify-content: center;
+    width: 100%;
+  }
+  .heroCTAs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 12px;
+    margin-inline: auto;
+  }
+  .heroCTAs > * {
+    width: 100% !important;
+    max-width: 360px !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin-inline: auto !important;
+    min-height: 48px;
+  }
+  .heroSonipatChips {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+  }
+  .heroSonipatChip {
+    width: 100% !important;
+    max-width: 360px !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin-inline: auto !important;
+  }
+  .heroLocationOfflineBadge {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+  .stepsGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .coursesGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .courseEnquireBtn {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    min-height: 48px;
+  }
+  .courseTabs {
+    flex-direction: column;
+    width: 100%;
+    max-width: 360px;
+    margin-inline: auto;
+    gap: 8px;
+  }
+  .courseTab {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    min-height: 48px;
+  }
+  .germanySection {
+    padding: 60px 0;
+  }
+  .germanyCta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 12px;
+    margin-inline: auto;
+  }
+  .germanyCta > * {
+    width: 100% !important;
+    max-width: 360px !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin-inline: auto !important;
+    min-height: 48px;
+  }
   .classroomProximityBar {
     grid-template-columns: 1fr;
   }
@@ -1657,5 +1752,70 @@
     background: var(--navy);
     padding: 12px;
     border-radius: 12px;
+  }
+  .classroomCtaCard {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 24px;
+    gap: 20px;
+  }
+  .classroomCtaRight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 12px;
+  }
+  .classroomCtaRight > * {
+    width: 100% !important;
+    max-width: 360px !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin-inline: auto !important;
+    min-height: 48px;
+  }
+  .sonipatProgramsGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .programBtn {
+    width: 100% !important;
+    max-width: 360px !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin-inline: auto !important;
+    min-height: 48px;
+  }
+  .sectionCenterCta {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .sectionCenterCta > * {
+    width: 100% !important;
+    max-width: 360px !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin-inline: auto !important;
+    min-height: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 1.75rem;
+  }
+  .stepCard {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .aboutValues {
+    grid-template-columns: 1fr;
+  }
+  .statsGrid {
+    grid-template-columns: 1fr;
   }
 }

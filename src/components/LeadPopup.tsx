@@ -1,7 +1,18 @@
 "use client";
 
-import { useState, useEffect, useCallback, FormEvent } from "react";
-import { X, User, Phone, CheckCircle, ArrowRight, Loader2, ShieldCheck, Sparkles } from "lucide-react";
+import { useState, useEffect, useCallback, FormEvent, useId } from "react";
+import {
+  X,
+  User,
+  Phone,
+  CheckCircle,
+  ArrowRight,
+  Loader2,
+  ShieldCheck,
+  Sparkles,
+  Laptop,
+  Building2,
+} from "lucide-react";
 import styles from "./LeadPopup.module.css";
 
 const POPUP_STORAGE_KEY = "fluencynest_popup_dismissed";
@@ -17,6 +28,9 @@ export default function LeadPopup() {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<{ fullName?: string; mobile?: string }>({});
+  const titleId = useId();
+  const nameId = useId();
+  const phoneId = useId();
 
   const closePopup = useCallback(() => {
     setIsOpen(false);
@@ -28,23 +42,8 @@ export default function LeadPopup() {
   }, []);
 
   useEffect(() => {
-    // Check if already submitted or dismissed in this session
-    try {
-      const isDismissed = sessionStorage.getItem(POPUP_STORAGE_KEY);
-      const isSubmitted = sessionStorage.getItem(POPUP_SUBMITTED_KEY);
-      if (isDismissed || isSubmitted) {
-        return;
-      }
-    } catch {
-      // continue
-    }
-
-    // Trigger after 4 seconds
-    const timer = setTimeout(() => {
-      setIsOpen(true);
-    }, 4000);
-
-    // Global listener so any button can also open it
+    // Intrusive 4-second auto-open eliminated (Hallmark Restraint Gate 69).
+    // Window event listener enables any button to trigger the modal.
     const handleOpen = () => setIsOpen(true);
     window.addEventListener("open-lead-popup", handleOpen);
 
@@ -57,7 +56,6 @@ export default function LeadPopup() {
     window.addEventListener("keydown", handleKeyDown);
 
     return () => {
-      clearTimeout(timer);
       window.removeEventListener("open-lead-popup", handleOpen);
       window.removeEventListener("keydown", handleKeyDown);
     };
@@ -130,7 +128,19 @@ export default function LeadPopup() {
     }
   };
 
-  if (!isOpen) return null;
+  if (!isOpen) {
+    return (
+      <button
+        type="button"
+        className={styles.discreetTrigger}
+        onClick={() => setIsOpen(true)}
+        aria-label="Request course consultation"
+      >
+        <Sparkles size={14} aria-hidden="true" />
+        <span>Course Consultation</span>
+      </button>
+    );
+  }
 
   return (
     <div
@@ -142,7 +152,7 @@ export default function LeadPopup() {
       }}
       role="dialog"
       aria-modal="true"
-      aria-labelledby="lead-popup-title"
+      aria-labelledby={titleId}
     >
       <div className={styles.modal}>
         {/* Close Button */}
@@ -159,15 +169,11 @@ export default function LeadPopup() {
           <>
             {/* Header */}
             <div className={styles.modalHeader}>
-              <div className={styles.topPill}>
-                <Sparkles size={12} />
-                <span>New Batches Enrolling</span>
-              </div>
-              <h2 className={styles.modalTitle} id="lead-popup-title">
+              <h2 className={styles.modalTitle} id={titleId}>
                 Get Course Details &amp; Fee Structure
               </h2>
               <p className={styles.modalSub}>
-                Enter your name and number below — our academic counselor will contact you with batch schedules, syllabus, and trial class access.
+                Enter your details below: our academic counselor will contact you with batch schedules, syllabus, and trial class access.
               </p>
             </div>
 
@@ -199,14 +205,14 @@ export default function LeadPopup() {
 
               {/* Full Name */}
               <div className={styles.formGroup}>
-                <label htmlFor="lead-name" className={styles.label}>
+                <label htmlFor={nameId} className={styles.inputTitle}>
                   Your Name <span>*</span>
                 </label>
                 <div className={styles.inputWrapper}>
                   <User size={16} className={styles.inputIcon} />
                   <input
                     type="text"
-                    id="lead-name"
+                    id={nameId}
                     name="fullName"
                     className={`${styles.input} ${errors.fullName ? styles.inputError : ""}`}
                     placeholder="e.g. Rahul Sharma"
@@ -225,14 +231,14 @@ export default function LeadPopup() {
 
               {/* Phone Number */}
               <div className={styles.formGroup}>
-                <label htmlFor="lead-mobile" className={styles.label}>
+                <label htmlFor={phoneId} className={styles.inputTitle}>
                   Mobile / WhatsApp Number <span>*</span>
                 </label>
                 <div className={styles.inputWrapper}>
                   <Phone size={16} className={styles.inputIcon} />
                   <input
                     type="tel"
-                    id="lead-mobile"
+                    id={phoneId}
                     name="mobile"
                     className={`${styles.input} ${errors.mobile ? styles.inputError : ""}`}
                     placeholder="e.g. 98765 43210"
@@ -250,14 +256,14 @@ export default function LeadPopup() {
 
               {/* Language Interest */}
               <div className={styles.formGroup}>
-                <label className={styles.label}>Language You Want to Learn</label>
+                <span className={styles.inputTitle}>Language You Want to Learn</span>
                 <div className={styles.pillsGrid}>
                   <button
                     type="button"
                     className={`${styles.pillBtn} ${language === "german" ? styles.pillBtnActive : ""}`}
                     onClick={() => setLanguage("german")}
                   >
-                    <span className={styles.pillEmoji}>🇩🇪</span>
+                    <span className={styles.pillCode}>DE</span>
                     <span>German</span>
                   </button>
                   <button
@@ -265,7 +271,7 @@ export default function LeadPopup() {
                     className={`${styles.pillBtn} ${language === "french" ? styles.pillBtnActive : ""}`}
                     onClick={() => setLanguage("french")}
                   >
-                    <span className={styles.pillEmoji}>🇫🇷</span>
+                    <span className={styles.pillCode}>FR</span>
                     <span>French</span>
                   </button>
                   <button
@@ -273,7 +279,7 @@ export default function LeadPopup() {
                     className={`${styles.pillBtn} ${language === "english" ? styles.pillBtnActive : ""}`}
                     onClick={() => setLanguage("english")}
                   >
-                    <span className={styles.pillEmoji}>🇬🇧</span>
+                    <span className={styles.pillCode}>EN</span>
                     <span>English</span>
                   </button>
                 </div>
@@ -281,21 +287,23 @@ export default function LeadPopup() {
 
               {/* Preferred Mode */}
               <div className={styles.formGroup}>
-                <label className={styles.label}>Preferred Learning Mode</label>
+                <span className={styles.inputTitle}>Preferred Learning Mode</span>
                 <div className={styles.modeToggle}>
                   <button
                     type="button"
                     className={`${styles.modeBtn} ${mode === "online" ? styles.modeBtnActive : ""}`}
                     onClick={() => setMode("online")}
                   >
-                    💻 Live Online Classes
+                    <Laptop size={14} aria-hidden="true" />
+                    <span>Live Online Classes</span>
                   </button>
                   <button
                     type="button"
                     className={`${styles.modeBtn} ${mode === "offline" ? styles.modeBtnActive : ""}`}
                     onClick={() => setMode("offline")}
                   >
-                    🏫 Offline In-Person
+                    <Building2 size={14} aria-hidden="true" />
+                    <span>Offline In-Person</span>
                   </button>
                 </div>
               </div>
@@ -305,7 +313,7 @@ export default function LeadPopup() {
                 {loading ? (
                   <>
                     <Loader2 size={18} className={styles.spinner} />
-                    <span>Submitting...</span>
+                    <span>Submitting…</span>
                   </>
                 ) : (
                   <>
@@ -330,7 +338,7 @@ export default function LeadPopup() {
             <h3 className={styles.successTitle}>Thank You, {fullName}!</h3>
             <p className={styles.successDesc}>
               We have received your enquiry for <strong>{language.toUpperCase()}</strong>.
-              Our academic counselor will call/WhatsApp you on <strong>{mobile}</strong> shortly with complete batch schedules and fee structure.
+              Our academic counselor will call or WhatsApp you on <strong>{mobile}</strong> shortly with complete batch schedules and fee structure.
             </p>
             <button
               type="button"

@@ -1,20 +1,17 @@
-/* ============================================================
-   LEAD POPUP / MODAL STYLES
-   Fluency Nest — High Conversion Aesthetic
-   ============================================================ */
+/* [hallmark] atelier / editorial / warm-ivory / authoritative-academic */
 
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(13, 27, 46, 0.72);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  z-index: 9999;
+  background: oklch(20% 0.015 260 / 0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: var(--z-modal, 400);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px;
-  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  padding: var(--space-md);
+  animation: fadeIn var(--dur-short, 220ms) var(--ease-out) forwards;
 }
 
 @keyframes fadeIn {
@@ -28,15 +25,14 @@
 
 .modal {
   position: relative;
-  background: #ffffff;
+  background: var(--color-paper);
   width: 100%;
   max-width: 480px;
-  border-radius: 20px;
+  border-radius: var(--radius-lg, 12px);
+  border: var(--rule-hair, 1px) solid var(--color-rule);
   overflow: hidden;
-  box-shadow: 
-    0 24px 60px -12px rgba(13, 27, 46, 0.35),
-    0 0 0 1px rgba(13, 27, 46, 0.08);
-  animation: modalSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  box-shadow: var(--shadow-lg);
+  animation: modalSlideUp var(--dur-short, 220ms) var(--ease-out) forwards;
 }
 
 @keyframes modalSlideUp {
@@ -58,93 +54,72 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: none;
-  background: rgba(13, 27, 46, 0.06);
-  color: #4a5568;
+  border: var(--rule-hair, 1px) solid var(--color-rule);
+  background: var(--color-paper-2);
+  color: var(--color-ink-2);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out);
   z-index: 10;
 }
 
 .closeBtn:hover {
-  background: rgba(200, 16, 46, 0.1);
-  color: #c8102e;
-  transform: rotate(90deg);
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
 }
 
-/* Modal Header with rich gradient accent */
+.closeBtn:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* Modal Header */
 .modalHeader {
-  padding: 28px 28px 20px 28px;
-  background: linear-gradient(135deg, #0d1b2e 0%, #172c47 100%);
-  color: #ffffff;
+  padding: 28px 28px 20px;
+  background: var(--color-paper-2);
+  border-bottom: var(--rule-hair, 1px) solid var(--color-rule);
+  color: var(--color-ink);
   position: relative;
 }
 
-.modalHeader::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #c8102e, #f59e0b, #10b981);
-}
-
-.topPill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(200, 16, 46, 0.25);
-  border: 1px solid rgba(200, 16, 46, 0.4);
-  color: #ffadb6;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 9999px;
-  margin-bottom: 12px;
-}
-
 .modalTitle {
-  font-family: var(--font-display), "Cinzel", Georgia, serif;
+  font-family: var(--font-display);
   font-size: 1.35rem;
   font-weight: 700;
   line-height: 1.3;
   margin: 0 0 8px 0;
-  color: #ffffff;
+  color: var(--color-ink);
   padding-right: 28px;
 }
 
 .modalSub {
   font-size: 0.85rem;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--color-ink-2);
   margin: 0;
 }
 
 /* Modal Body */
 .modalBody {
-  padding: 24px 28px 28px 28px;
+  padding: 24px 28px 28px;
 }
 
 .formGroup {
   margin-bottom: 16px;
 }
 
-.label {
+.inputTitle {
   display: block;
   font-size: 0.825rem;
   font-weight: 600;
-  color: #1a202c;
+  color: var(--color-ink);
   margin-bottom: 6px;
 }
 
-.label span {
-  color: #c8102e;
+.inputTitle span {
+  color: var(--color-accent);
 }
 
 .inputWrapper {
@@ -156,7 +131,7 @@
 .inputIcon {
   position: absolute;
   left: 14px;
-  color: #718096;
+  color: var(--color-muted);
   pointer-events: none;
 }
 
@@ -164,29 +139,28 @@
   width: 100%;
   height: 46px;
   padding: 0 14px 0 42px;
-  border: 1.5px solid #e2e8f0;
-  border-radius: 10px;
+  border: var(--rule-hair, 1px) solid var(--color-rule);
+  border-radius: var(--radius-sm, 4px);
   font-size: 0.95rem;
   font-family: inherit;
-  color: #1a202c;
-  background: #f8fafc;
-  transition: all 0.2s ease;
+  color: var(--color-ink);
+  background: var(--color-paper);
+  transition: border-color var(--dur-short) var(--ease-out);
   outline: none;
 }
 
-.input:focus {
-  background: #ffffff;
-  border-color: #0d1b2e;
-  box-shadow: 0 0 0 3px rgba(13, 27, 46, 0.1);
+.input:focus-visible {
+  border-color: var(--color-focus);
+  outline: 2px solid var(--color-focus);
+  outline-offset: 1px;
 }
 
 .inputError {
-  border-color: #c8102e;
-  background: #fff8f8;
+  border-color: var(--color-error);
 }
 
 .errorText {
-  color: #c8102e;
+  color: var(--color-error);
   font-size: 0.75rem;
   font-weight: 500;
   margin-top: 4px;
@@ -206,32 +180,34 @@
   align-items: center;
   justify-content: center;
   padding: 8px 6px;
-  background: #f8fafc;
-  border: 1.5px solid #e2e8f0;
-  border-radius: 10px;
+  background: var(--color-paper);
+  border: var(--rule-hair, 1px) solid var(--color-rule);
+  border-radius: var(--radius-sm, 4px);
   cursor: pointer;
   font-size: 0.8rem;
   font-weight: 600;
-  color: #4a5568;
+  color: var(--color-ink-2);
   font-family: inherit;
-  transition: all 0.2s ease;
+  white-space: nowrap;
+  transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out);
 }
 
 .pillBtn:hover {
-  background: #edf2f7;
-  border-color: #cbd5e1;
+  background: var(--color-paper-2);
+  border-color: var(--color-ink-2);
 }
 
 .pillBtnActive {
-  background: #0d1b2e;
-  border-color: #0d1b2e;
-  color: #ffffff;
-  box-shadow: 0 4px 10px -2px rgba(13, 27, 46, 0.3);
+  background: var(--color-ink);
+  border-color: var(--color-ink);
+  color: var(--color-paper);
 }
 
-.pillEmoji {
-  font-size: 1.15rem;
-  margin-bottom: 2px;
+.pillCode {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--text-xs);
+  margin-bottom: 3px;
 }
 
 /* Learning Mode Toggle */
@@ -242,23 +218,28 @@
 }
 
 .modeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   padding: 8px 12px;
-  background: #f8fafc;
-  border: 1.5px solid #e2e8f0;
-  border-radius: 8px;
+  background: var(--color-paper);
+  border: var(--rule-hair, 1px) solid var(--color-rule);
+  border-radius: var(--radius-pill);
   font-size: 0.8rem;
   font-weight: 600;
-  color: #4a5568;
+  color: var(--color-ink-2);
   cursor: pointer;
   font-family: inherit;
   text-align: center;
-  transition: all 0.2s ease;
+  white-space: nowrap;
+  transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out);
 }
 
 .modeBtnActive {
-  background: rgba(200, 16, 46, 0.08);
-  border-color: #c8102e;
-  color: #c8102e;
+  background: var(--color-paper-2);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
 }
 
 /* Submit Button */
@@ -266,10 +247,10 @@
   width: 100%;
   height: 48px;
   margin-top: 8px;
-  background: #c8102e;
-  color: #ffffff;
-  border: none;
-  border-radius: 10px;
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+  border: var(--rule-hair, 1px) solid var(--color-accent);
+  border-radius: var(--radius-pill);
   font-size: 0.95rem;
   font-weight: 700;
   font-family: inherit;
@@ -278,18 +259,24 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  box-shadow: 0 4px 14px rgba(200, 16, 46, 0.35);
-  transition: all 0.2s ease;
+  white-space: nowrap;
+  transition: background-color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out);
 }
 
 .submitBtn:hover:not(:disabled) {
-  background: #b00d27;
+  background: var(--color-ink);
+  border-color: var(--color-ink);
+  color: var(--color-paper);
   transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(200, 16, 46, 0.45);
+}
+
+.submitBtn:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
 }
 
 .submitBtn:disabled {
-  opacity: 0.7;
+  opacity: 0.6;
   cursor: not-allowed;
 }
 
@@ -298,6 +285,9 @@
 }
 
 @keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
   to {
     transform: rotate(360deg);
   }
@@ -309,12 +299,12 @@
   justify-content: center;
   gap: 6px;
   font-size: 0.72rem;
-  color: #718096;
+  color: var(--color-muted);
   text-align: center;
   margin-top: 12px;
 }
 
-/* Success View */
+/* Success Screen */
 .successBox {
   padding: 40px 28px;
   text-align: center;
@@ -324,57 +314,147 @@
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: #ecfdf5;
-  color: #10b981;
+  background: var(--color-paper-2);
+  color: var(--color-success);
+  border: var(--rule-hair, 1px) solid var(--color-rule);
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 18px auto;
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
 }
 
 .successTitle {
-  font-family: var(--font-display), "Cinzel", Georgia, serif;
+  font-family: var(--font-display);
   font-size: 1.35rem;
-  color: #0d1b2e;
+  color: var(--color-ink);
   margin: 0 0 10px 0;
 }
 
 .successDesc {
   font-size: 0.9rem;
   line-height: 1.6;
-  color: #4a5568;
+  color: var(--color-ink-2);
   margin: 0 0 20px 0;
 }
 
 .successCloseBtn {
   padding: 10px 24px;
-  background: #0d1b2e;
-  color: #ffffff;
+  background: var(--color-ink);
+  color: var(--color-paper);
   border: none;
-  border-radius: 8px;
+  border-radius: var(--radius-pill);
   font-size: 0.875rem;
   font-weight: 600;
   cursor: pointer;
   font-family: inherit;
-  transition: background 0.2s;
+  white-space: nowrap;
+  transition: background-color var(--dur-short) var(--ease-out);
 }
 
 .successCloseBtn:hover {
-  background: #172c47;
+  background: var(--color-accent);
 }
 
-@media (max-width: 480px) {
+/* Discreet User-Triggered Floating Button (Replacing intrusive popup) */
+.discreetTrigger {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: var(--z-sticky-nav, 300);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  min-height: 44px;
+  padding: 0 var(--space-md);
+  border-radius: var(--radius-pill);
+  background: var(--color-ink);
+  color: var(--color-paper);
+  border: var(--rule-hair, 1px) solid var(--color-rule);
+  box-shadow: var(--shadow-card);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out);
+}
+
+.discreetTrigger:hover {
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+  transform: translateY(-1px);
+}
+
+.discreetTrigger:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+@media (max-width: 520px) {
+  .overlay {
+    padding: 12px;
+    align-items: center;
+    justify-content: center;
+  }
+
   .modal {
     max-width: 100%;
+    max-height: calc(100vh - 24px);
+    overflow-y: auto;
+    border-radius: var(--radius-md, 12px);
   }
+
   .modalHeader {
-    padding: 24px 20px 16px 20px;
+    padding: 20px 20px 16px;
   }
-  .modalBody {
-    padding: 20px 20px 24px 20px;
-  }
+
   .modalTitle {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
+  }
+
+  .modalBody {
+    padding: 16px 20px 20px;
+  }
+
+  .pillGroup {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .pillBtn {
+    width: 100%;
+    justify-content: center;
+    min-height: 44px;
+  }
+
+  .modeGroup {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .modeBtn {
+    width: 100%;
+    justify-content: center;
+    min-height: 44px;
+  }
+
+  .submitBtn {
+    width: 100%;
+    justify-content: center;
+    min-height: 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay,
+  .modal,
+  .closeBtn,
+  .pillBtn,
+  .modeBtn,
+  .submitBtn,
+  .successCloseBtn,
+  .discreetTrigger {
+    transition: none !important;
+    animation: none !important;
   }
 }

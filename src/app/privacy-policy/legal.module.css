@@ -101,3 +101,14 @@
   margin-bottom: 0;
   font-size: 0.9rem;
 }
+
+@media (max-width: 640px) {
+  .legalHero {
+    padding: 100px 0 40px;
+  }
+
+  .legalSection {
+    padding: 24px 20px;
+    border-radius: 12px;
+  }
+}

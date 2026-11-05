@@ -75,7 +75,7 @@ export const metadata: Metadata = {
 const LOCAL_FAQS = [
   {
     q: "Where is Fluency Nest located in Sonipat for English classes?",
-    a: "Our upcoming offline centre is situated in Sonipat, Haryana — 131001, providing convenient connectivity from GT Karnal Road (NH 44). We are currently accepting offline batch pre-registrations while our live interactive online classes run actively.",
+    a: "Our upcoming offline centre is Sonipat, Haryana — 131001 (Offline Centre Coming Soon), providing convenient connectivity from GT Karnal Road (NH 44). We are currently accepting offline batch pre-registrations while our live interactive online classes run actively.",
   },
   {
     q: "I know English grammar in writing, but I freeze when speaking. Can you help?",
@@ -83,7 +83,7 @@ const LOCAL_FAQS = [
   },
   {
     q: "Do you prepare college students for campus placements and job interviews?",
-    a: "Yes! A significant portion of our students come from DCRUST Murthal, Ashoka University, OP Jindal, SRM, and local engineering/MBA colleges. We conduct intensive mock interviews, Group Discussion (GD) simulations, HR Q&A workshops, and resume-polishing sessions.",
+    a: "Yes! A significant portion of our students come from DCRUST, Ashoka University, OP Jindal, SRM, and local engineering/MBA colleges. We conduct intensive mock interviews, Group Discussion (GD) simulations, HR Q&A workshops, and resume-polishing sessions.",
   },
   {
     q: "How do you help learners overcome Mother Tongue Influence (MTI) and accent hesitation?",
@@ -127,7 +127,7 @@ export default function SpokenEnglishClassesSonipatPage() {
         "email": "info@fluencynest.in",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+          "streetAddress": SITE_CONFIG.address.full,
           "addressLocality": "Sonipat",
           "addressRegion": "Haryana",
           "postalCode": "131001",
@@ -213,7 +213,7 @@ export default function SpokenEnglishClassesSonipatPage() {
               "name": "Fluency Nest Language Institute (Sonipat)",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+                "streetAddress": SITE_CONFIG.address.full,
                 "addressLocality": "Sonipat",
                 "addressRegion": "Haryana",
                 "postalCode": "131001",
@@ -259,7 +259,7 @@ export default function SpokenEnglishClassesSonipatPage() {
               "name": "Fluency Nest Language Institute (Sonipat)",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+                "streetAddress": SITE_CONFIG.address.full,
                 "addressLocality": "Sonipat",
                 "addressRegion": "Haryana",
                 "postalCode": "131001",
@@ -305,7 +305,7 @@ export default function SpokenEnglishClassesSonipatPage() {
               "name": "Fluency Nest Language Institute (Sonipat)",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+                "streetAddress": SITE_CONFIG.address.full,
                 "addressLocality": "Sonipat",
                 "addressRegion": "Haryana",
                 "postalCode": "131001",
@@ -414,7 +414,7 @@ export default function SpokenEnglishClassesSonipatPage() {
                 Crack MNC Job Interviews &amp; Speak with Unshakable Confidence
               </h2>
               <p className={styles.careerDesc}>
-                Whether you are graduating from DCRUST Murthal, Ashoka University, or navigating corporate meetings in Kundli/Delhi-NCR, your English fluency dictates your career velocity. We train you in executive communication that commands respect.
+                Whether you are graduating from DCRUST, Ashoka University, or navigating corporate meetings in Kundli/Delhi-NCR, your English fluency dictates your career velocity. We train you in executive communication that commands respect.
               </p>
               <div className={styles.careerPointsList}>
                 <div className={styles.careerPointItem}>

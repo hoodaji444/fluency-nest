@@ -1,0 +1,186 @@
+/* Hallmark · theme: Atelier (by request) · posture: restrained · hero: Settled · job: book · pre-emit critique: P5 H5 E5 S5 R5 V4 · weakest: V, institute curriculum follows standard CEFR levels; differentiated by tactile editorial layout and live consultation scheduler */
+
+:root {
+  color-scheme: light;
+
+  /* ── 1. Shared Spacing Scale ── */
+  --space-3xs: 2px;
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+  --space-4xl: 144px;
+
+  /* ── 2. Sizing & Typography Scale ── */
+  --text-xs: 0.8125rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5625rem;
+  --text-2xl: 1.953rem;
+  --text-3xl: 2.441rem;
+
+  --text-display-s: clamp(2.25rem, 3.5vw + 0.5rem, 3.5rem);
+  --text-display: clamp(2.5rem, 4.5vw + 0.75rem, 4.75rem);
+  --text-section: clamp(2rem, 2.5vw + 1rem, 3.5rem);
+  --text-title: clamp(1.25rem, 0.75vw + 0.875rem, 1.625rem);
+  --text-lead: clamp(1.0625rem, 0.35vw + 0.95rem, 1.25rem);
+
+  /* ── 3. Animation Easing & Transitions ── */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --dur-micro: 120ms;
+  --dur-short: 220ms;
+  --dur-long: 420ms;
+
+  /* ── 4. Layout & Capped Container ── */
+  --container: 1440px;
+  --gutter: clamp(16px, 4vw, 64px);
+  --gap-columns: clamp(16px, 2.5vw, 32px);
+  --section-gap-s: clamp(48px, 6vw, 120px);
+  --section-gap: clamp(64px, 8vw, 144px);
+  --section-gap-l: clamp(80px, 10vw, 176px);
+
+  /* ── 5. Layer Elevation (Z-Index) ── */
+  --z-base: 1;
+  --z-raised: 10;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-sticky-nav: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+  --z-tooltip: 600;
+
+  /* ── 6. Hallmark Editorial OKLCH Colors (No Pure #fff / #000) ── */
+  /* Paper Surfaces — tinted warm limewash parchment */
+  --color-paper: oklch(97.5% 0.008 85);
+  --color-paper-2: oklch(95% 0.012 85);
+  --color-paper-3: oklch(92% 0.015 85);
+
+  /* Inks — deep umber / slate tone with minimum 0.005 chroma */
+  --color-ink: oklch(20% 0.015 260);
+  --color-ink-2: oklch(38% 0.012 260);
+  --color-muted: oklch(50% 0.015 260);
+  --color-rule: oklch(86% 0.012 85);
+
+  /* Accents — warm academic crimson and paired high-contrast ink */
+  --color-accent: oklch(52% 0.18 32);
+  --color-accent-hover: oklch(46% 0.18 32);
+  --color-accent-ink: oklch(98% 0.005 85);
+  --color-focus: oklch(52% 0.20 32);
+
+  /* Semantic Feedback */
+  --color-error: oklch(52% 0.19 27);
+  --color-success: oklch(50% 0.12 150);
+
+  /* Card and Sheet Surfaces */
+  --color-card: oklch(97.6% 0.007 82);
+  --color-card-edge: oklch(86% 0.012 72);
+
+  /* ── 6b. Hero Dark Surface & Overlay Tokens (OKLCH) ── */
+  --color-hero-overlay: linear-gradient(
+    to right,
+    oklch(14% 0.015 260 / 0.90) 0%,
+    oklch(16% 0.015 260 / 0.74) 55%,
+    oklch(14% 0.015 260 / 0.52) 100%
+  );
+  --color-hero-pill-bg: oklch(97.5% 0.008 85 / 0.10);
+  --color-hero-pill-border: oklch(97.5% 0.008 85 / 0.20);
+  --color-hero-pill-hover: oklch(97.5% 0.008 85 / 0.18);
+  --color-hero-pill-active-bg: oklch(52% 0.18 32 / 0.22);
+  --color-hero-pill-active-border: oklch(52% 0.18 32 / 0.65);
+  --color-hero-pill-active-text: var(--color-paper);
+  --color-hero-badge-bg: oklch(52% 0.18 32 / 0.16);
+  --color-hero-badge-border: oklch(52% 0.18 32 / 0.35);
+  --color-hero-surface-dark: oklch(14% 0.015 260 / 0.75);
+  --color-hero-text-muted: oklch(97.5% 0.008 85 / 0.75);
+
+  /* ── 7. Typography Families & Hierarchy ── */
+  --font-display: "Sentient", "Source Serif 4", Georgia, ui-serif, serif;
+  --font-body: "Hanken Grotesk", "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-outlier: var(--font-body);
+
+  --display-weight: 400;
+  --serif-small: 500;
+  --tracking-display: -0.02em;
+
+  /* ── 8. Elevation, Borders & Radii ── */
+  --radius-card: 4px;
+  --radius-pill: 999px;
+  --rule-hair: 1px;
+  --rule-head: 1px;
+  --shadow-card: 0 1px 3px oklch(20% 0.01 260 / 0.06);
+
+  /* ── 9. Backward-Compatible Variable Mappings ── */
+  /* Legacy Color Mappings to New OKLCH Tokens */
+  --navy: var(--color-ink);
+  --navy-light: var(--color-ink-2);
+  --navy-medium: var(--color-ink);
+  --white: var(--color-paper);
+  --off-white: var(--color-paper);
+  --beige: var(--color-paper-2);
+  --beige-dark: var(--color-paper-3);
+  --red-accent: var(--color-accent);
+  --red-hover: var(--color-accent-hover);
+  --text-primary: var(--color-ink);
+  --text-secondary: var(--color-ink-2);
+  --text-muted: var(--color-muted);
+  --border: var(--color-rule);
+  --border-color: var(--color-rule);
+
+  /* Legacy Component & Sheet Mappings */
+  --bg-primary: var(--color-paper);
+  --bg-secondary: var(--color-paper-2);
+  --bg-card: var(--color-paper);
+  --card-bg: var(--color-paper);
+  --tag-bg: var(--color-paper-2);
+  --tag-color: var(--color-ink-2);
+
+  /* Legacy Shadows */
+  --shadow-sm: 0 1px 4px oklch(20% 0.015 260 / 0.08);
+  --shadow-md: 0 4px 16px oklch(20% 0.015 260 / 0.10);
+  --shadow-lg: 0 8px 32px oklch(20% 0.015 260 / 0.14);
+
+  /* Legacy Radii */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Legacy Font Mappings */
+  --font-serif: var(--font-display);
+  --font-sans: var(--font-body);
+
+  /* Legacy Spacing & Transitions */
+  --section-py: 96px;
+  --section-py-sm: 56px;
+  --ease: var(--ease-out);
+}
+
+@media (max-width: 60rem) {
+  :root {
+    --gutter: 24px;
+    --section-gap-s: 80px;
+    --section-gap: 96px;
+    --section-gap-l: 120px;
+    --section-py: 64px;
+    --section-py-sm: 40px;
+  }
+}
+
+@media (max-width: 40rem) {
+  :root {
+    --gutter: 16px;
+    --section-gap-s: 56px;
+    --section-gap: 72px;
+    --section-gap-l: 96px;
+    --gap-columns: 16px;
+    --section-py: 48px;
+    --section-py-sm: 32px;
+  }
+}

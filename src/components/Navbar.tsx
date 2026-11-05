@@ -3,19 +3,31 @@
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, ChevronDown } from "lucide-react";
+import {
+  Menu,
+  X,
+  ChevronDown,
+  MapPin,
+  BookOpen,
+  Globe,
+  MessageSquare,
+  Phone,
+} from "lucide-react";
 import styles from "./Navbar.module.css";
 import { SITE_CONFIG } from "@/lib/config";
+
+interface DropdownItem {
+  href: string;
+  label: string;
+  highlight?: boolean;
+  icon?: "map-pin" | "german" | "french" | "english";
+}
 
 interface NavLinkItem {
   href?: string;
   label: string;
   isSpecial?: boolean;
-  dropdown?: Array<{
-    href: string;
-    label: string;
-    highlight?: boolean;
-  }>;
+  dropdown?: DropdownItem[];
 }
 
 const NAV_LINKS: NavLinkItem[] = [
@@ -33,10 +45,27 @@ const NAV_LINKS: NavLinkItem[] = [
     label: "Sonipat Centre",
     isSpecial: true,
     dropdown: [
-      { href: "/#classroom", label: "📍 Offline Campus (Coming Soon)", highlight: true },
-      { href: "/german-classes-sonipat", label: "🇩🇪 German Course in Sonipat" },
-      { href: "/french-classes-sonipat", label: "🇫🇷 French Classes in Sonipat" },
-      { href: "/spoken-english-classes-sonipat", label: "🇬🇧 Spoken English in Sonipat" },
+      {
+        href: "/#classroom",
+        label: "Offline Campus (Coming Soon)",
+        highlight: true,
+        icon: "map-pin",
+      },
+      {
+        href: "/german-classes-sonipat",
+        label: "German Course in Sonipat",
+        icon: "german",
+      },
+      {
+        href: "/french-classes-sonipat",
+        label: "French Classes in Sonipat",
+        icon: "french",
+      },
+      {
+        href: "/spoken-english-classes-sonipat",
+        label: "Spoken English in Sonipat",
+        icon: "english",
+      },
     ],
   },
   { href: "/#why-us", label: "Why Choose Us" },
@@ -44,10 +73,36 @@ const NAV_LINKS: NavLinkItem[] = [
   { href: "/#contact", label: "Contact" },
 ];
 
+function renderDropdownIcon(icon?: string) {
+  switch (icon) {
+    case "map-pin":
+      return <MapPin size={14} aria-hidden="true" className={styles.itemIcon} />;
+    case "german":
+      return <BookOpen size={14} aria-hidden="true" className={styles.itemIcon} />;
+    case "french":
+      return <Globe size={14} aria-hidden="true" className={styles.itemIcon} />;
+    case "english":
+      return <MessageSquare size={14} aria-hidden="true" className={styles.itemIcon} />;
+    default:
+      return null;
+  }
+}
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [expandedMobileGroups, setExpandedMobileGroups] = useState<Record<string, boolean>>({
+    "Courses": true,
+    "Sonipat Centre": true,
+  });
+
+  const toggleMobileGroup = (label: string) => {
+    setExpandedMobileGroups((prev) => ({
+      ...prev,
+      [label]: !prev[label],
+    }));
+  };
 
   const handleScroll = useCallback(() => {
     setScrolled(window.scrollY > 48);
@@ -80,6 +135,9 @@ export default function Navbar() {
     form?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const cleanPhone = SITE_CONFIG.phone.replace(/\s+/g, "");
+  const whatsappTarget = `https://wa.me/${SITE_CONFIG.whatsapp.replace(/\+/g, "")}`;
+
   return (
     <>
       <header
@@ -88,7 +146,12 @@ export default function Navbar() {
       >
         <div className={`container ${styles.inner}`}>
           {/* Logo */}
-          <Link href="/" className={styles.logo} onClick={closeMenu} aria-label="Fluency Nest Home">
+          <Link
+            href="/"
+            className={styles.logo}
+            onClick={closeMenu}
+            aria-label="Fluency Nest Home"
+          >
             <div className={styles.logoIcon}>
               <Image
                 src="/logo.png"
@@ -116,22 +179,35 @@ export default function Navbar() {
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
                   <button
-                    className={`${styles.navLink} ${link.isSpecial ? styles.specialNavLink : ""}`}
+                    type="button"
+                    className={`${styles.navLink} ${
+                      link.isSpecial ? styles.specialNavLink : ""
+                    }`}
                     aria-expanded={activeDropdown === link.label}
                   >
-                    {link.isSpecial && <span className={styles.navLocationDot} aria-hidden="true" />}
                     {link.label}
-                    <ChevronDown size={14} className={activeDropdown === link.label ? styles.chevronOpen : ""} />
+                    <ChevronDown
+                      size={14}
+                      className={activeDropdown === link.label ? styles.chevronOpen : ""}
+                      aria-hidden="true"
+                    />
                   </button>
-                  <div className={`${styles.dropdown} ${activeDropdown === link.label ? styles.dropdownOpen : ""}`}>
+                  <div
+                    className={`${styles.dropdown} ${
+                      activeDropdown === link.label ? styles.dropdownOpen : ""
+                    }`}
+                  >
                     {link.dropdown.map((item) => (
                       <Link
                         key={item.href}
                         href={item.href}
-                        className={`${styles.dropdownItem} ${item.highlight ? styles.highlightDropdownItem : ""}`}
+                        className={`${styles.dropdownItem} ${
+                          item.highlight ? styles.highlightDropdownItem : ""
+                        }`}
                         onClick={closeMenu}
                       >
-                        {item.label}
+                        {renderDropdownIcon(item.icon)}
+                        <span>{item.label}</span>
                       </Link>
                     ))}
                   </div>
@@ -144,21 +220,54 @@ export default function Navbar() {
             )}
           </nav>
 
-          {/* CTA */}
+          {/* CTA Area */}
           <div className={styles.ctaArea}>
-            <button className={`btn btn-primary ${styles.enquireBtn}`} onClick={handleEnquireClick} id="nav-enquire-btn">
+            <a
+              href={`tel:${cleanPhone}`}
+              className={styles.navPhoneLink}
+              aria-label={`Call Fluency Nest at ${SITE_CONFIG.phone}`}
+            >
+              <Phone size={14} aria-hidden="true" />
+              <span className={styles.navPhoneText}>{SITE_CONFIG.phone}</span>
+            </a>
+            <a
+              href={whatsappTarget}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.navWhatsAppBtn}
+              aria-label="Direct WhatsApp consultation"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width="15"
+                height="15"
+                aria-hidden="true"
+                className={styles.whatsappIcon}
+              >
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg>
+              <span>WhatsApp</span>
+            </a>
+            <button
+              type="button"
+              className={`btn btn-primary ${styles.enquireBtn}`}
+              onClick={handleEnquireClick}
+              id="nav-enquire-btn"
+            >
               Enquire Now
             </button>
           </div>
 
           {/* Mobile Toggle */}
           <button
+            type="button"
             className={styles.mobileToggle}
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
           </button>
         </div>
       </header>
@@ -177,46 +286,135 @@ export default function Navbar() {
         aria-hidden={!isOpen}
       >
         <div className={styles.mobileMenuInner}>
-          {NAV_LINKS.map((link) =>
-            link.dropdown ? (
-              <div key={link.label} className={styles.mobileGroup}>
-                <div className={`${styles.mobileGroupLabel} ${link.isSpecial ? styles.mobileSpecialLabel : ""}`}>
-                  {link.isSpecial && <span className={styles.navLocationDot} aria-hidden="true" />}
-                  {link.label}
-                </div>
-                {link.dropdown.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className={`${styles.mobileSub} ${item.highlight ? styles.mobileHighlightSub : ""}`}
-                    onClick={closeMenu}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
+          {/* Mobile Drawer Header */}
+          <div className={styles.mobileMenuHeader}>
+            <div className={styles.mobileMenuBrand}>
+              <div className={styles.mobileMenuLogoIcon}>
+                <Image
+                  src="/logo.png"
+                  alt="Fluency Nest"
+                  width={38}
+                  height={24}
+                  className={styles.mobileMenuLogoImg}
+                />
               </div>
-            ) : (
-              <Link
-                key={link.href}
-                href={link.href!}
-                className={styles.mobileLink}
-                onClick={closeMenu}
+              <div className={styles.mobileMenuBrandText}>
+                <span className={styles.mobileMenuBrandName}>{SITE_CONFIG.name}</span>
+                <span className={styles.mobileMenuBrandSub}>Language Institute Sonipat</span>
+              </div>
+            </div>
+            <button
+              type="button"
+              className={styles.mobileMenuCloseBtn}
+              onClick={closeMenu}
+              aria-label="Close menu"
+            >
+              <X size={20} aria-hidden="true" />
+            </button>
+          </div>
+
+          {/* Quick Action CTAs inside Drawer */}
+          <div className={styles.mobileActionsTop}>
+            <button
+              type="button"
+              className={`btn btn-primary ${styles.mobileEnquireBtn}`}
+              onClick={handleEnquireClick}
+              id="mobile-drawer-enquire-btn"
+            >
+              Enquire Now
+            </button>
+            <a
+              href={whatsappTarget}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.mobileWhatsAppBtn}
+              aria-label="Chat on WhatsApp"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width="16"
+                height="16"
+                aria-hidden="true"
+                className={styles.whatsappIcon}
               >
-                {link.label}
-              </Link>
-            )
-          )}
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg>
+              <span>WhatsApp</span>
+            </a>
+          </div>
 
           <div className={styles.mobileDivider} />
-          <button
-            className={`btn btn-primary btn-lg ${styles.mobileEnquireBtn}`}
-            onClick={handleEnquireClick}
-            id="mobile-enquire-btn"
-          >
-            Enquire Now
-          </button>
+
+          {/* Navigation Items */}
+          <div className={styles.mobileNavLinksList}>
+            {NAV_LINKS.map((link) =>
+              link.dropdown ? (
+                <div key={link.label} className={styles.mobileGroup}>
+                  <button
+                    type="button"
+                    className={`${styles.mobileGroupToggle} ${
+                      link.isSpecial ? styles.mobileSpecialLabel : ""
+                    }`}
+                    onClick={() => toggleMobileGroup(link.label)}
+                    aria-expanded={expandedMobileGroups[link.label] ?? true}
+                  >
+                    <span>{link.label}</span>
+                    <ChevronDown
+                      size={16}
+                      className={`${styles.mobileChevron} ${
+                        (expandedMobileGroups[link.label] ?? true) ? styles.mobileChevronOpen : ""
+                      }`}
+                      aria-hidden="true"
+                    />
+                  </button>
+                  <div
+                    className={`${styles.mobileSubList} ${
+                      (expandedMobileGroups[link.label] ?? true) ? styles.mobileSubListOpen : ""
+                    }`}
+                  >
+                    {link.dropdown.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className={`${styles.mobileSub} ${
+                          item.highlight ? styles.mobileHighlightSub : ""
+                        }`}
+                        onClick={closeMenu}
+                      >
+                        {renderDropdownIcon(item.icon)}
+                        <span>{item.label}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href!}
+                  className={styles.mobileLink}
+                  onClick={closeMenu}
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
+          </div>
+
+          <div className={styles.mobileDivider} />
+
           <div className={styles.mobileContact}>
-            <a href={`tel:${SITE_CONFIG.phone}`}>{SITE_CONFIG.phone}</a>
+            <a
+              href={`tel:${cleanPhone}`}
+              className={styles.mobilePhoneLink}
+              aria-label={`Call Fluency Nest at ${SITE_CONFIG.phone}`}
+            >
+              <Phone size={15} aria-hidden="true" />
+              <span className={styles.mobilePhoneText}>{SITE_CONFIG.phone}</span>
+            </a>
+            <p className={styles.mobileLocationNote}>
+              Sonipat, Haryana (Offline Centre Coming Soon)
+            </p>
           </div>
         </div>
       </nav>

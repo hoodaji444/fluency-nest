@@ -73,7 +73,7 @@ export const metadata: Metadata = {
 const LOCAL_FAQS = [
   {
     q: "Where is Fluency Nest located in Sonipat for French classes?",
-    a: "Our upcoming physical centre is located in Sonipat, Haryana — 131001, conveniently situated near the GT Karnal Road (NH 44). We are currently accepting offline batch pre-registrations while our live interactive online classes run actively nationwide.",
+    a: "Our upcoming physical centre is Sonipat, Haryana — 131001 (Offline Centre Coming Soon), conveniently situated near the GT Karnal Road (NH 44). We are currently accepting offline batch pre-registrations while our live interactive online classes run actively nationwide.",
   },
   {
     q: "Can I learn French from scratch (zero level) at your Sonipat centre?",
@@ -88,8 +88,8 @@ const LOCAL_FAQS = [
     a: "Yes. All our French courses strictly follow the CEFR international framework (A1, A2, B1, B2) aligned with the French Ministry of National Education (Alliance Française syllabus). We conduct mock examinations, oral interview simulations, and audio listening drills.",
   },
   {
-    q: "Can university students from DCRUST Murthal, Ashoka, or OP Jindal commute easily?",
-    a: "Yes. Our upcoming offline centre in Sonipat will be easily accessible from DCRUST Murthal and Rajiv Gandhi Education City (Ashoka University, SRM University). We offer flexible morning, evening, and weekend batches to match university timetables, and live online batches are available right now.",
+    q: "Can university students from DCRUST, Ashoka, or OP Jindal commute easily?",
+    a: "Yes. Our upcoming offline centre in Sonipat will be easily accessible from DCRUST and Rajiv Gandhi Education City (Ashoka University, SRM University). We offer flexible morning, evening, and weekend batches to match university timetables, and live online batches are available right now.",
   },
   {
     q: "Are classes available both in-person (offline) and live online?",
@@ -125,7 +125,7 @@ export default function FrenchClassesSonipatPage() {
         "email": "info@fluencynest.in",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+          "streetAddress": SITE_CONFIG.address.full,
           "addressLocality": "Sonipat",
           "addressRegion": "Haryana",
           "postalCode": "131001",
@@ -211,7 +211,7 @@ export default function FrenchClassesSonipatPage() {
               "name": "Fluency Nest Language Institute (Sonipat)",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+                "streetAddress": SITE_CONFIG.address.full,
                 "addressLocality": "Sonipat",
                 "addressRegion": "Haryana",
                 "postalCode": "131001",
@@ -257,7 +257,7 @@ export default function FrenchClassesSonipatPage() {
               "name": "Fluency Nest Language Institute (Sonipat)",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+                "streetAddress": SITE_CONFIG.address.full,
                 "addressLocality": "Sonipat",
                 "addressRegion": "Haryana",
                 "postalCode": "131001",
@@ -303,7 +303,7 @@ export default function FrenchClassesSonipatPage() {
               "name": "Fluency Nest Language Institute (Sonipat)",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Sonipat (Offline Centre Coming Soon)",
+                "streetAddress": SITE_CONFIG.address.full,
                 "addressLocality": "Sonipat",
                 "addressRegion": "Haryana",
                 "postalCode": "131001",
